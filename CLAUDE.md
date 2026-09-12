@@ -41,13 +41,15 @@ Codex vyžaduje přihlášení, ale existuje veřejný mirror:
 Nezkoušeno: `animate_cascade.py`, `phase3_rigor.py`, embodiment (MuJoCo neinstalováno).
 
 ## Experiment 1 (12. 9. 2026) — vlastní, `experiments/`
-Otázka: propíše se MB učení do motorického výstupu? **Ne.** 20 losů pachu,
-paired vs placebo je hod mincí (10/20 párově, median |D| 4,22 vs 3,90 Hz).
-Odor-specifita na MBON ale PLATÍ (+23,7 p. b. proti placebu +5,6).
-Podrobně `experiments/EXP01-VYSLEDEK.md`. Co si odnést do každé další studie:
+Otázka: propíše se MB učení do motorického výstupu? **Odpověď závisí na
+`weight_scale`, což je volný parametr** — medián paired−placebo je +2,31 Hz
+(19/20 losů, CI nad nulou) při ws 0,12, ale −7,58 Hz při ws 0,30. Podrobně
+`experiments/EXP01-VYSLEDEK.md`. Co si odnést do každé další studie:
+- **Volný parametr ukotvit PŘED experimentem**, nezávisle na měřené veličině.
 - **Tři seedy nestačí** — seed 0 sám dal čistě vypadající +12,4 Hz, na 20 losech
-  to zmizelo. Los pachu je silnější zdroj rozptylu než testovaný zásah.
-- **Placebo rameno** (stejná odebraná váha, přeházené kompartmenty) rozhodlo.
-- **Odečet není chaotický**: jedna synapse zeslabená o 50 % nepohne motorickým
-  výstupem o 0,001 Hz (`exp01b_citlivost.py`).
+  zmizel. Los pachu je největší zdroj rozptylu (sd 7,85 Hz).
+- **Párové rozdíly** (týž los v obou ramenech), ne porovnání mediánů ramen.
+- **Podlaha šumu je 2,36 Hz** — rozhýbání všech vah o 0,1 % (`exp01d_rozklad.py`).
+  Efekt menší než tohle je nečitelný. Jedna synapse přitom nedělá nic, takže
+  z ní na (ne)chaotičnost usuzovat NELZE.
 - Prahy formulovat na medián/podíl seedů, ne na minimum přes všechny.

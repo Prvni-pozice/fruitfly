@@ -232,7 +232,7 @@ def report(results: list[dict], args) -> None:
     logger.info("Pozor: weight_scale=%g je volný parametr, connectome váhy nenese.", args.weight_scale)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    path = OUT_DIR / "exp01_conditioning.json"
+    path = OUT_DIR / f"exp01_conditioning_ws{args.weight_scale:g}.json"
     path.write_text(json.dumps({"args": {k: str(v) for k, v in vars(args).items()},
                                 "verdikt": verdikt, "results": results}, indent=2, ensure_ascii=False))
     logger.info("Uloženo -> %s", path)
