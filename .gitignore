@@ -19,3 +19,6 @@ logs/
 *.log
 *.sqlite
 *.db
+
+# upstream klon má vlastní git
+flybrain/
