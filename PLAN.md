@@ -16,11 +16,15 @@ neprojde kontrolami — záporný nález je taky výsledek a zapisuje se.
   Shiu et al. 2024, nezávisle na našem odečtu. Bez toho se obracelo
   znaménko závěru. `experiments/UKOTVENI-WEIGHT-SCALE.md`.
 
+- **2. Uzavřená smyčka + učení nad ní** (exp02, HOTOVO 12. 9. 2026).
+  `flyagent.py`: vjem → mozek → akce → odměna → změna vah. Smyčka se naučí
+  zatáčet podle vjemu (paired +0,268 proti placebu +0,042, 20/20 losů,
+  chování překlopeno v 16/20) a po obrácení pravidla se PŘEUČÍ (10/10,
+  kontrola 0/10) — je to učení kontingence, ne drift.
+  `experiments/EXP02-VYSLEDEK.md`.
+
 ## Kde jsme
-- **2. Uzavřená smyčka + řiditelný akční kanál** (`experiments/flyagent.py`).
-  Akce = bilance sestupných neuronů (638 vlevo / 644 vpravo), vjem = vizuální
-  neurony po stranách. Změřeno: kanál je dekódovatelný (rozdíl bilance 0,21).
-  BĚŽÍ exp02 — naučí se smyčka zatáčet podle vjemu? Preregistrace hotová.
+- **4. Vjem z obrazovky.** Další na řadě.
 
 ## Dál
 - **3. Prostor akcí větší než dvě.** ČÁSTEČNĚ VYŘEŠENO 12. 9. 2026:
