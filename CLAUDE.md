@@ -39,3 +39,15 @@ Codex vyžaduje přihlášení, ale existuje veřejný mirror:
 | `add_plasticity.py` | PAM odměna: CS+ v inervovaných MBON −67 %, CS− jen −5 % (odor-specific), corr(DA gate, deprese) = 0,91 |
 
 Nezkoušeno: `animate_cascade.py`, `phase3_rigor.py`, embodiment (MuJoCo neinstalováno).
+
+## Experiment 1 (12. 9. 2026) — vlastní, `experiments/`
+Otázka: propíše se MB učení do motorického výstupu? **Ne.** 20 losů pachu,
+paired vs placebo je hod mincí (10/20 párově, median |D| 4,22 vs 3,90 Hz).
+Odor-specifita na MBON ale PLATÍ (+23,7 p. b. proti placebu +5,6).
+Podrobně `experiments/EXP01-VYSLEDEK.md`. Co si odnést do každé další studie:
+- **Tři seedy nestačí** — seed 0 sám dal čistě vypadající +12,4 Hz, na 20 losech
+  to zmizelo. Los pachu je silnější zdroj rozptylu než testovaný zásah.
+- **Placebo rameno** (stejná odebraná váha, přeházené kompartmenty) rozhodlo.
+- **Odečet není chaotický**: jedna synapse zeslabená o 50 % nepohne motorickým
+  výstupem o 0,001 Hz (`exp01b_citlivost.py`).
+- Prahy formulovat na medián/podíl seedů, ne na minimum přes všechny.
