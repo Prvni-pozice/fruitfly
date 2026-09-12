@@ -48,7 +48,7 @@ def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--n", type=int, default=10, help="opakování na zdroj")
     p.add_argument("--eps", type=float, default=0.001, help="relativní rozhýbání všech vah")
-    p.add_argument("--weight-scale", type=float, default=0.2)
+    p.add_argument("--weight-scale", type=float, default=0.124)
     p.add_argument("--amp", type=float, default=2.0)
     p.add_argument("--steps", type=int, default=300)
     args = p.parse_args()

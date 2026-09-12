@@ -130,7 +130,8 @@ def main() -> None:
     p.add_argument("--lr", type=float, default=0.2)
     p.add_argument("--kc-sparsity", type=float, default=0.05)
     p.add_argument("--overlap", type=float, default=0.1)
-    p.add_argument("--weight-scale", type=float, default=0.2, help="volný parametr, viz preregistrace")
+    p.add_argument("--weight-scale", type=float, default=0.124,
+                   help="ukotveno na Shiu et al. 2024, viz UKOTVENI-WEIGHT-SCALE.md")
     p.add_argument("--amp", type=float, default=2.0)
     p.add_argument("--steps", type=int, default=300)
     p.add_argument("--fast", action="store_true", help="jen začátek a konec tréninku, bez křivky")

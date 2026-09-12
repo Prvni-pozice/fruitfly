@@ -46,6 +46,9 @@ Otázka: propíše se MB učení do motorického výstupu? **Odpověď závisí 
 (19/20 losů, CI nad nulou) při ws 0,12, ale −7,58 Hz při ws 0,30. Podrobně
 `experiments/EXP01-VYSLEDEK.md`. Co si odnést do každé další studie:
 - **Volný parametr ukotvit PŘED experimentem**, nezávisle na měřené veličině.
+  Pro `weight_scale` to je hotové: **0,124**, odvozeno z publikovaných parametrů
+  Shiu et al. 2024 (`experiments/UKOTVENI-WEIGHT-SCALE.md`). Výchozí hodnota
+  0,2 z upstream `simulate_taste.py` je NEUKOTVENÁ a dává jiné závěry.
 - **Tři seedy nestačí** — seed 0 sám dal čistě vypadající +12,4 Hz, na 20 losech
   zmizel. Los pachu je největší zdroj rozptylu (sd 7,85 Hz).
 - **Párové rozdíly** (týž los v obou ramenech), ne porovnání mediánů ramen.
