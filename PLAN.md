@@ -23,8 +23,18 @@ neprojde kontrolami — záporný nález je taky výsledek a zapisuje se.
   kontrola 0/10) — je to učení kontingence, ne drift.
   `experiments/EXP02-VYSLEDEK.md`.
 
+- **4. Vjem z obrazovky** (exp03, HOTOVO 13. 9. 2026). `retina.py` promítá
+  obrázek na 768 sloupců podle publikovaného přiřazení FlyWire. Poloha se
+  v mozku zachová (chyba 0,013, korelace 0,991) i několik synapsí hluboko.
+  Dráha ON je v modelu nepoužitelná (L1 je inhibiční) — kóduje se tma.
+  `experiments/EXP03-VYSLEDEK.md`.
+
 ## Kde jsme
-- **4. Vjem z obrazovky.** Další na řadě.
+- **5. Spojit vjem s akcí.** Kroky 2 a 4 zatím existují vedle sebe: učení
+  běží nad hrubým buzením „vizuální neurony vlevo/vpravo", ne nad retinou.
+  Otázka: dojde retinotopický podnět (tmavá skvrna vlevo/vpravo) až
+  k sestupným neuronům a dá lateralizovanou odpověď? Bez toho hra nemá
+  jak řídit mouchu.
 
 ## Dál
 - **3. Prostor akcí větší než dvě.** ČÁSTEČNĚ VYŘEŠENO 12. 9. 2026:
@@ -44,12 +54,12 @@ neprojde kontrolami — záporný nález je taky výsledek a zapisuje se.
   a strukturu; nesmí se z toho udělat náhodné plácnutí do poolu).
   Kontrola: dva různé snímky musí dát různý vzorec aktivity, dva podobné
   podobný.
-- **5. Úloha s odloženou odměnou.** Ve hře nepřijde odměna hned. Potřebuje
+- **6. Úloha s odloženou odměnou.** Ve hře nepřijde odměna hned. Potřebuje
   to eligibility trace přes víc kroků. Tady čekám největší problém.
-- **6. Rychlost.** Teď jeden průchod smyčkou trvá ~1,5 s na CPU. Hra
+- **7. Rychlost.** Teď jeden průchod smyčkou trvá ~1,5 s na CPU. Hra
   potřebuje aspoň 10 kroků za sekundu → 15× zrychlení, nebo běh v dávkách
   mimo reálný čas (hra se přehraje offline, ne živě).
-- **7. Napojení na hru.** Server drží mozek, hra v prohlížeči posílá snímky
+- **8. Napojení na hru.** Server drží mozek, hra v prohlížeči posílá snímky
   a dostává akce. Až sem, ne dřív.
 
 ## Pravidla, která platí pro každý krok
@@ -62,3 +72,7 @@ neprojde kontrolami — záporný nález je taky výsledek a zapisuje se.
 5. Volné parametry ukotvit nezávisle na měřené veličině.
 6. Co je z connectomu a co je naše inženýrská volba, se píše zvlášť.
    Zapojení je doložené. Učicí pravidlo mimo houbovité tělísko není.
+7. **Práh pro kontrolu se nesmí střílet od boku — null se napřed změří.**
+   V exp03 byl práh 0,3 nesplnitelný, protože null měl medián 0,35.
+8. **Pro polohové úlohy měřit chybu dekódování, ne korelaci.** Chyba
+   oddělila signál od nullu 18×, korelace jen 1,4×.
