@@ -41,3 +41,16 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Design
+
+Písma a neutrály přebírají design systém Prvni pozice (`web-1P`):
+Roboto + Roboto Mono (self-hostované přes @fontsource, žádný požadavek
+na Google Fonts), neutrální škála `--n-*`, značková limetka `#98c800`.
+
+Limetka se používá **decentně** — odkazy, nadpisek v hlavičce, linka nad
+odbornou sekcí. Není to marketingová stránka, je to výzkumný deník.
+
+Barevné značky výsledků (zelená / červená / oranžová / fialová) jsou
+vlastní a nesou informaci, ne dekoraci: vyšlo / nevyšlo / napůl / zásadní
+nález. Proto se nesjednocují se značkovou paletou.

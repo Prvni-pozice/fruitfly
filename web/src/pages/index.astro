@@ -91,12 +91,12 @@ const pocet = {
 
   <style>
     header { padding: 72px 0 40px; border-bottom: 1px solid var(--linka); }
-    .mini { text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--slabe); margin: 0 0 12px; }
+    .mini { font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--akcent); margin: 0 0 12px; }
     h1 { font-size: clamp(32px, 6.5vw, 50px); line-height: 1.1; margin: 0 0 20px; letter-spacing: -0.025em; }
     .perex { font-size: 19px; color: var(--slabe); margin: 0 0 28px; max-width: 58ch; }
     .perex strong { color: var(--text); }
     .skore { list-style: none; display: flex; gap: 28px; padding: 0; margin: 0; font-size: 13px; color: var(--slabe); }
-    .skore b { display: block; font-size: 28px; color: var(--text); font-variant-numeric: tabular-nums; line-height: 1.2; }
+    .skore b { display: block; font-family: var(--mono); font-size: 28px; color: var(--text); font-variant-numeric: tabular-nums; line-height: 1.2; }
     h2 { font-size: 21px; margin: 48px 0 14px; letter-spacing: -0.015em; }
     .pravidla ol { padding-left: 22px; margin: 0; }
     .pravidla li { margin-bottom: 10px; color: var(--slabe); }
@@ -108,13 +108,13 @@ const pocet = {
     .karta.ne { border-left-color: var(--ne); }
     .karta.pul { border-left-color: var(--pul); }
     .karta.zas { border-left-color: var(--zas); }
-    .karta a { display: block; padding: 20px 22px; text-decoration: none; }
+    .karta a { display: block; padding: 20px 22px; text-decoration: none; color: inherit; }
     .hlava { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 10px; }
-    .datum { font-size: 12px; color: var(--slabe); font-variant-numeric: tabular-nums; }
+    .datum { font-family: var(--mono); font-size: 12px; color: var(--slabe); font-variant-numeric: tabular-nums; }
     .karta h3 { margin: 0 0 3px; font-size: 21px; letter-spacing: -0.02em; line-height: 1.25; }
     .podtitul { margin: 0 0 12px; color: var(--slabe); font-size: 15px; }
     .shrnuti { margin: 0 0 12px; }
-    .vic { font-size: 14px; color: var(--slabe); }
+    .vic { font-size: 14px; color: var(--akcent); }
     footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--linka); font-size: 14px; color: var(--slabe); }
     .drobne { font-size: 13px; opacity: 0.85; }
   </style>

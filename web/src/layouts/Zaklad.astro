@@ -1,4 +1,13 @@
 ---
+// Písma a neutrály přebírají design systém Prvni pozice (web-1P).
+// Limetka se používá jen decentně — odkazy, patička, drobné akcenty.
+// Barevné značky výsledků pokusů zůstávají vlastní, nesou informaci.
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource/roboto-mono/400.css";
+
 const { titul, popis } = Astro.props;
 ---
 <html lang="cs">
@@ -13,33 +22,46 @@ const { titul, popis } = Astro.props;
     <slot />
     <style is:global>
       :root {
-        --pozadi: #fbfaf7; --text: #1c1b19; --slabe: #6b675f; --linka: #e4e0d8;
-        --karta: #fff; --ok: #2f7d52; --ne: #b4462f; --pul: #b07d1e; --zas: #5a4bbf;
+        /* neutrály a limetka převzaté z 1P design systému */
+        --n-0: #ffffff; --n-50: #f7f8f5; --n-200: #dde0d8; --n-300: #c7cbc1;
+        --n-600: #5d625a; --n-800: #333333; --n-900: #1d1f1e;
+        --lime: #98c800; --lime-800: #4f6900;
+
+        --pozadi: var(--n-50); --text: var(--n-800); --slabe: var(--n-600);
+        --linka: var(--n-200); --karta: var(--n-0); --akcent: var(--lime-800);
+        --ok: #2f9e57; --ne: #db4c3f; --pul: #e0962f; --zas: #5a4bbf;
+        --pismo: Roboto, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        --mono: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
         color-scheme: light;
       }
       @media (prefers-color-scheme: dark) {
         :root:not([data-theme="light"]) {
-          --pozadi: #16151a; --text: #eceaf2; --slabe: #a5a1ae; --linka: #2d2b33;
-          --karta: #1e1d23; --ok: #5fc98a; --ne: #f08a6e; --pul: #e2b558; --zas: #a695ff;
+          --pozadi: #151714; --text: #e8eae5; --slabe: #a6aaa0; --linka: #2b2e29;
+          --karta: #1c1f1b; --akcent: #a8d42b;
+          --ok: #5fc98a; --ne: #f08a6e; --pul: #e2b558; --zas: #a695ff;
           color-scheme: dark;
         }
       }
       :root[data-theme="dark"] {
-        --pozadi: #16151a; --text: #eceaf2; --slabe: #a5a1ae; --linka: #2d2b33;
-        --karta: #1e1d23; --ok: #5fc98a; --ne: #f08a6e; --pul: #e2b558; --zas: #a695ff;
+        --pozadi: #151714; --text: #e8eae5; --slabe: #a6aaa0; --linka: #2b2e29;
+        --karta: #1c1f1b; --akcent: #a8d42b;
+        --ok: #5fc98a; --ne: #f08a6e; --pul: #e2b558; --zas: #a695ff;
         color-scheme: dark;
       }
       * { box-sizing: border-box; }
       body {
         margin: 0; background: var(--pozadi); color: var(--text);
-        font: 17px/1.7 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        font: 400 17px/1.7 var(--pismo);
         padding: 0 20px 72px; -webkit-font-smoothing: antialiased;
       }
-      a { color: inherit; }
+      a { color: var(--akcent); text-underline-offset: 2px; }
+      a:hover { color: var(--text); }
+      strong, b { font-weight: 500; }
+      h1, h2, h3 { font-weight: 700; }
       .obal { max-width: 720px; margin: 0 auto; }
       .znacka {
-        text-transform: uppercase; letter-spacing: 0.08em; font-weight: 650;
-        font-size: 11.5px; font-variant-numeric: tabular-nums;
+        font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.08em;
+        font-weight: 500; font-size: 11px; font-variant-numeric: tabular-nums;
       }
       .ok .znacka, .znacka.ok { color: var(--ok); }
       .ne .znacka, .znacka.ne { color: var(--ne); }
