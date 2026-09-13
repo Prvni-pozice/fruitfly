@@ -204,7 +204,12 @@
         "membránová konstanta",
         "jak rychle neuron zapomíná to, co do něj přiteklo; u mouchy zhruba 20 tisícin sekundy"
       ]
-    ]
+    ],
+    "video": {
+      "soubor": "/videa/jeden-parametr.mp4",
+      "popis": "Upoutávka ke třetímu pokusu: jedno číslo, které obrací závěr naruby.",
+      "titulek": "Jedno číslo, které si můžete vybrat — a s ním i výsledek."
+    }
   },
   {
     "id": "naucila-se-zatacet",

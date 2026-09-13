@@ -79,3 +79,20 @@ Kartička článku v seznamu má vlevo čtvercový náhled:
   varování, hvězda zásadní nález. Barva podle výsledku.
 
 Na úzké obrazovce se náhled přesune nad text a zploští na pás.
+
+### Velikost videí
+
+Videa na úvodu se přehrávají automaticky, takže se hlídá objem. Cílový
+formát: dlouhá hrana do 1112 px, H.264, CRF 28, faststart, zhruba 2,5 MB
+na osm sekund.
+
+Překódování (ffmpeg je jako dev závislost `ffmpeg-static`, není potřeba
+systémově):
+
+    node_modules/ffmpeg-static/ffmpeg -i vstup.mp4 \
+      -vf "scale=-2:1112" -c:v libx264 -preset slow -crf 28 \
+      -pix_fmt yuv420p -c:a aac -b:a 96k -movflags +faststart \
+      public/videa/<id-clanku>.mp4
+
+Jedno dodané video mělo 1080×1920 a 21 Mbit/s, tedy 21 MB — po překódování
+2,5 MB beze ztráty patrné kvality v této velikosti zobrazení.

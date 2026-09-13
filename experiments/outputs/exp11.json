@@ -1,0 +1,89 @@
+{
+  "verdikt": "ZÁPORNÝ: ani opravené pravidlo se nenaučí -> učení do graduované vrstvy",
+  "vysledky": [
+    {
+      "seed": 0,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 0,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.28125,
+      "zmena": 0.07500000000000001
+    },
+    {
+      "seed": 0,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 1,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 1,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.24375,
+      "zmena": 0.037500000000000006
+    },
+    {
+      "seed": 1,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.21875,
+      "zmena": 0.012500000000000011
+    },
+    {
+      "seed": 2,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.35,
+      "zmena": 0.14375
+    },
+    {
+      "seed": 2,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.25,
+      "zmena": 0.04375000000000001
+    },
+    {
+      "seed": 3,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 3,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.3,
+      "zmena": 0.09375
+    },
+    {
+      "seed": 3,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.275,
+      "zmena": 0.06875000000000003
+    }
+  ]
+}
