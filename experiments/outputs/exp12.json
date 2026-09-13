@@ -1,0 +1,257 @@
+{
+  "verdikt": "ZÁPORNÝ: neučí se ani 12 parametrů -> hra na vrozeném chování",
+  "vysledky": [
+    {
+      "seed": 0,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 0,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2125,
+      "zmena": 0.0062500000000000056
+    },
+    {
+      "seed": 0,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.2875,
+      "zmena": 0.08124999999999999
+    },
+    {
+      "seed": 1,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 1,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2625,
+      "zmena": 0.05625000000000002
+    },
+    {
+      "seed": 1,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.23125,
+      "zmena": 0.025000000000000022
+    },
+    {
+      "seed": 2,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2375,
+      "zmena": 0.03125
+    },
+    {
+      "seed": 2,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.25625,
+      "zmena": 0.04999999999999999
+    },
+    {
+      "seed": 3,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 3,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2625,
+      "zmena": 0.05625000000000002
+    },
+    {
+      "seed": 3,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 4,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 4,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.26875,
+      "zmena": 0.0625
+    },
+    {
+      "seed": 4,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.28125,
+      "zmena": 0.07500000000000001
+    },
+    {
+      "seed": 5,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 5,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.28125,
+      "zmena": 0.07500000000000001
+    },
+    {
+      "seed": 5,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.225,
+      "zmena": 0.018750000000000017
+    },
+    {
+      "seed": 6,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 6,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2,
+      "zmena": -0.006249999999999978
+    },
+    {
+      "seed": 6,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.1875,
+      "zmena": -0.01874999999999999
+    },
+    {
+      "seed": 7,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 7,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.26875,
+      "zmena": 0.0625
+    },
+    {
+      "seed": 7,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.15625,
+      "zmena": -0.04999999999999999
+    },
+    {
+      "seed": 8,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 8,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.275,
+      "zmena": 0.06875000000000003
+    },
+    {
+      "seed": 8,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.21875,
+      "zmena": 0.012500000000000011
+    },
+    {
+      "seed": 9,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 9,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.325,
+      "zmena": 0.11875000000000002
+    },
+    {
+      "seed": 9,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.21875,
+      "zmena": 0.012500000000000011
+    },
+    {
+      "seed": 10,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 10,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.225,
+      "zmena": 0.018750000000000017
+    },
+    {
+      "seed": 10,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.23125,
+      "zmena": 0.025000000000000022
+    },
+    {
+      "seed": 11,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 11,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2375,
+      "zmena": 0.03125
+    },
+    {
+      "seed": 11,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.2375,
+      "zmena": 0.03125
+    }
+  ]
+}

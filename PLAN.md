@@ -61,7 +61,25 @@ neprojde kontrolami — záporný nález je taky výsledek a zapisuje se.
 Cíl zůstává: octomilka hraje hru v prohlížeči. Zbývá k němu pět kroků a
 jeden rozcestník. Pořadí je dané závislostmi, ne chutí.
 
-### 6. Učení s odloženou odměnou — BĚŽÍ (exp09)
+### 6. Učení s odloženou odměnou — UZAVŘENO 13. 9. 2026, ZÁPORNĚ
+
+Čtyři pokusy (exp09–exp12), pokaždé s platným měřidlem (`sham` 0,000
+ve všech 48 kontrolních bězích). Postupně vyloučeno: odklad odměny
+(exp10), hrubost odečtu, rozptyl mezi epizodami (exp09), špatně umístěný
+explorační šum (exp11). Poslední pokus učil jen 12 synapsí na rozhraní
+a dal **náznak pod prahem**: paired +5,6 proti placebu +2,2, tedy rozdíl
++3,4 p. b. proti zapsanému prahu 5, párově 7/12.
+
+**Práh se dodatečně neohýbá.** Odměnové učení v téhle podobě se uzavírá
+jako nepotvrzené. Kdyby se k němu projekt vracel, cesta je jasná: efekt
++3,4 p. b. potřebuje k rozhodnutí zhruba 40 losů místo 12, což je ~5 hodin
+strojového času — udělat to až tehdy, když bude čím podepřít, že to stojí za to.
+
+### 6b. Hra na vrozeném chování — DALŠÍ NA ŘADĚ
+Moucha sleduje cíl, protože to má v zapojení (exp07), ne protože se to
+naučila. Je to míň, než byl původní cíl, ale je to hratelné a poctivé.
+Učení zůstává otevřenou samostatnou větví, ne podmínkou hry.
+
 Pevná zkušební sada 8 epizod, stejná pro všechna ramena, při jejím hraní se
 neučí. První predikce je kontrola měřidla: `sham` se nesmí pohnout o víc než
 2 p. b., jinak je běh neplatný.
