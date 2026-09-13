@@ -137,7 +137,12 @@
         "placebo rameno",
         "kontrola, kde zasáhneme stejně silně, ale bez obsahu — odhalí, kolik efektu dělá samotné šťouchnutí"
       ]
-    ]
+    ],
+    "video": {
+      "soubor": "/videa/falesny-poplach.mp4",
+      "popis": "Upoutávka k druhému pokusu: nález, který vydržel jeden jediný los.",
+      "titulek": "Takhle vypadá objev, který vydrží přesně do druhého měření."
+    }
   },
   {
     "id": "jeden-parametr",

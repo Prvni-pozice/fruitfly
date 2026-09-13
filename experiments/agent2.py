@@ -156,8 +156,22 @@ class Agent2:
         return snimek[row, col].astype(np.float32)
 
     # --- akce ---
-    def act(self, snimek: np.ndarray, predchozi=None, zesileni: float = 1.0) -> Akce2:
+    def act(self, snimek: np.ndarray, predchozi=None, zesileni: float = 1.0,
+            sum_dna: float = 0.0, rng=None) -> Akce2:
+        """`sum_dna` vpustí explorační šum PŘÍMO do neuronů DNa02.
+
+        Šum přičtený až k výsledné akci (první verze, 13. 9. 2026) nefunguje:
+        váhy se na takovém vybočení nijak nepodílely, takže korelovat je
+        s odměnou je odhad gradientu, který žádný gradient neodhaduje.
+        Node perturbation vyžaduje šum v NEURONU, ne za ním.
+        """
         ext = self.vjem(snimek, predchozi) * zesileni
+        if sum_dna and rng is not None:
+            self._posledni_sum = {}
+            for strana, ix in (("vlevo", self.dna_l), ("vpravo", self.dna_r)):
+                e = float(rng.normal(0, sum_dna))
+                ext[ix] += e
+                self._posledni_sum[strana] = e
         sim = Simulator2(self.W_spike, weight_scale=WS)
         res = sim.run(self.steps, external=ext)
         sc = res.spike_counts.numpy(); dur = res.duration_s
@@ -174,6 +188,24 @@ class Agent2:
             lo, hi = self.W_spike.indptr[r], self.W_spike.indptr[r + 1]
             pos.append(np.arange(lo, hi)); src.append(self.W_spike.indices[lo:hi])
         return (np.concatenate(pos), np.concatenate(src)) if len(pos) else (np.array([],int), np.array([],int))
+
+    def odmena_perturbaci(self, stopy: dict[str, np.ndarray], delta: float,
+                          sila: float = 0.08) -> None:
+        """Node perturbation: každá strana má vlastní stopu z VLASTNÍHO šumu.
+
+        Stopa strany = předsynaptická aktivita × šum vpuštěný do TÉ strany.
+        Kladná odchylka odměny posílí to, co doprovázelo kladné vybočení.
+        """
+        for strana, ix in (("vlevo", self.dna_l), ("vpravo", self.dna_r)):
+            pos, src = self._vstupy(ix)
+            if not len(pos):
+                continue
+            e = stopy[strana][src]
+            mx = np.abs(e).max()
+            if mx > 0:
+                e = e / mx
+            self.W_spike.data[pos] *= (1.0 + sila * delta * e).astype(np.float32)
+        np.clip(self.W_spike.data, -self._wmax, self._wmax, out=self.W_spike.data)
 
     def odmena_gradient(self, stopa: np.ndarray, delta: float, sila: float = 0.05) -> None:
         """Učení podle literatury: eligibility trace × chyba predikce odměny.

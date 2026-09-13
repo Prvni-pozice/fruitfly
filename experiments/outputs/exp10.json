@@ -1,0 +1,267 @@
+{
+  "verdikt": "ZÁPORNÝ: odklad za to nemůže, nefunguje ani bez něj -> změnit pravidlo nebo odečet",
+  "mediany": {
+    "1": 0.0,
+    "2": 0.015625,
+    "5": 0.03125000000000003,
+    "10": -0.003124999999999989
+  },
+  "vysledky": [
+    {
+      "odklad": 1,
+      "seed": 0,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 1,
+      "seed": 0,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 1,
+      "seed": 1,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 1,
+      "seed": 1,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 1,
+      "seed": 2,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 1,
+      "seed": 2,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 1,
+      "seed": 3,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 1,
+      "seed": 3,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 2,
+      "seed": 0,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 2,
+      "seed": 0,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.25625,
+      "zmena": 0.04999999999999999
+    },
+    {
+      "odklad": 2,
+      "seed": 1,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 2,
+      "seed": 1,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.34375,
+      "zmena": 0.1375
+    },
+    {
+      "odklad": 2,
+      "seed": 2,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 2,
+      "seed": 2,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.1875,
+      "zmena": -0.01874999999999999
+    },
+    {
+      "odklad": 2,
+      "seed": 3,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 2,
+      "seed": 3,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.175,
+      "zmena": -0.03125
+    },
+    {
+      "odklad": 5,
+      "seed": 0,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 5,
+      "seed": 0,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2,
+      "zmena": -0.006249999999999978
+    },
+    {
+      "odklad": 5,
+      "seed": 1,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 5,
+      "seed": 1,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.1625,
+      "zmena": -0.04374999999999998
+    },
+    {
+      "odklad": 5,
+      "seed": 2,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 5,
+      "seed": 2,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.275,
+      "zmena": 0.06875000000000003
+    },
+    {
+      "odklad": 5,
+      "seed": 3,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 5,
+      "seed": 3,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2875,
+      "zmena": 0.08124999999999999
+    },
+    {
+      "odklad": 10,
+      "seed": 0,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 10,
+      "seed": 0,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 10,
+      "seed": 1,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 10,
+      "seed": 1,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2,
+      "zmena": -0.006249999999999978
+    },
+    {
+      "odklad": 10,
+      "seed": 2,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 10,
+      "seed": 2,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.18125,
+      "zmena": -0.024999999999999994
+    },
+    {
+      "odklad": 10,
+      "seed": 3,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "odklad": 10,
+      "seed": 3,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.23125,
+      "zmena": 0.025000000000000022
+    }
+  ]
+}
