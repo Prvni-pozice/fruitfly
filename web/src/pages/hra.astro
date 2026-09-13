@@ -1,0 +1,255 @@
+---
+import Zaklad from "../layouts/Zaklad.astro";
+import politika from "../data/politika.json";
+---
+
+<Zaklad
+  titul="Hra: octomilka sleduje cíl — fruitfly"
+  popis="Tuhle hru neřídí naprogramovaná pravidla, ale rozhodnutí simulovaného mozku octomilky z connectomu FlyWire."
+>
+  <article class="obal">
+    <p class="zpet"><a href="/">← všechny pokusy</a></p>
+    <h1>Nechte mouchu hlídat cíl</h1>
+    <p class="podtitul">
+      Zatáčení neřídí naprogramované pravidlo, ale simulovaný mozek octomilky.
+      Čtete tady rozhodnutí dvou konkrétních neuronů.
+    </p>
+
+    <div class="plocha">
+      <canvas id="platno" width="720" height="300"></canvas>
+      <div class="pult">
+        <div class="mericka">
+          <div class="radek">
+            <span>DNa02 vlevo</span>
+            <div class="pas"><i id="pas-l"></i></div>
+            <b id="hz-l">0</b>
+          </div>
+          <div class="radek">
+            <span>DNa02 vpravo</span>
+            <div class="pas"><i id="pas-p"></i></div>
+            <b id="hz-p">0</b>
+          </div>
+        </div>
+        <div class="stav">
+          <span>na cíli <b id="skore">0 %</b></span>
+          <span>odchylka <b id="odch">0°</b></span>
+        </div>
+        <div class="tlacitka">
+          <button id="btn-pauza">Pauza</button>
+          <button id="btn-reset">Nový pokus</button>
+          <label><input type="checkbox" id="btn-ja" /> řídím já</label>
+        </div>
+        <p class="napoveda">
+          Když si zaškrtnete „řídím já", ovládáte mouchu šipkami vlevo a vpravo.
+          Zkuste, jestli jste lepší než ona.
+        </p>
+      </div>
+    </div>
+
+    <section class="vysvetleni">
+      <h2>Co se tady vlastně děje</h2>
+      <p>
+        Moucha kouká dopředu a někde v okolí je tmavý sloup, který se sám
+        pohybuje. Úkolem je udržet ho před sebou.
+      </p>
+      <p>
+        Každý snímek se spočítá, co moucha vidí, to se pošle do simulovaného
+        mozku a z něj se přečte aktivita dvou neuronů zvaných <b>DNa02</b> —
+        u skutečné mouchy jsou to právě ony, kdo řídí zatáčení. Když víc pálí
+        levý, moucha se točí doleva.
+      </p>
+      <p>
+        Rozhodnutí mozku jsou předpočítaná, protože jeden průchod celou sítí
+        trvá čtvrt sekundy a hra by se sekala. Mozek je ale deterministický —
+        na stejný pohled odpoví vždycky stejně — takže tabulka je věrný záznam
+        toho, co by odpověděl živě, ne náhražka.
+      </p>
+      <p class="varovani">
+        <b>A teď to nepříjemné:</b> tohle chování se moucha nenaučila. Má ho
+        v zapojení. Čtyři pokusy o učení z odměny skončily neúspěchem, což si
+        můžete přečíst v článcích — nejpodrobněji v tom, kde se rameno bez
+        učení „zlepšilo" o devět bodů. Takže ano, moucha hraje. Ne, netrénovali
+        jsme ji.
+      </p>
+    </section>
+
+    <p class="cisla">
+      {politika.neuronu.spikujicich.toLocaleString("cs")} spikujících neuronů ·
+      {politika.neuronu.graduovanych.toLocaleString("cs")} graduovaných ·
+      {politika.odchylky.length} × {politika.posuny.length} předpočítaných pohledů ·
+      {politika.kroku_simulace} kroků simulace na rozhodnutí
+    </p>
+  </article>
+
+  <script define:vars={{ politika }}>
+    const P = politika;
+    const platno = document.getElementById("platno");
+    const ctx = platno.getContext("2d");
+    const ZORNE_POLE = 120;
+
+    let stav = {};
+    function reset() {
+      stav = {
+        uhel: 0,
+        cil: (Math.random() * 100 - 50),
+        smer: Math.random() < 0.5 ? -1 : 1,
+        pred: null,
+        kroku: 0,
+        trefa: 0,
+        pauza: false,
+        hz: [0, 0],
+      };
+    }
+    reset();
+
+    const styl = () => getComputedStyle(document.documentElement);
+
+    function interpoluj(mrizka, o, d) {
+      // lineární dopočet mezi body tabulky ve dvou rozměrech
+      const najdi = (pole, v) => {
+        let i = 0;
+        while (i < pole.length - 2 && pole[i + 1] < v) i++;
+        const t = (v - pole[i]) / (pole[i + 1] - pole[i]);
+        return [i, Math.max(0, Math.min(1, t))];
+      };
+      const [i, ti] = najdi(P.odchylky, Math.max(P.odchylky[0], Math.min(P.odchylky.at(-1), o)));
+      const [j, tj] = najdi(P.posuny, Math.max(P.posuny[0], Math.min(P.posuny.at(-1), d)));
+      const a = mrizka[i][j], b = mrizka[i][j + 1];
+      const c = mrizka[i + 1][j], e = mrizka[i + 1][j + 1];
+      return (a * (1 - tj) + b * tj) * (1 - ti) + (c * (1 - tj) + e * tj) * ti;
+    }
+
+    function odchylka() {
+      return ((stav.cil - stav.uhel + 540) % 360) - 180;
+    }
+
+    function krok() {
+      if (stav.pauza) return;
+      const o = odchylka();
+      const d = stav.pred === null ? 0 : o - stav.pred;
+      stav.pred = o;
+
+      let zataceni;
+      if (document.getElementById("btn-ja").checked) {
+        zataceni = klavesy.vlevo ? 0.8 : klavesy.vpravo ? -0.8 : 0;
+        stav.hz = [0, 0];
+      } else {
+        zataceni = interpoluj(P.zataceni, o, d);
+        const l = interpoluj(P.dna.map((r) => r.map((x) => x[0])), o, d);
+        const p = interpoluj(P.dna.map((r) => r.map((x) => x[1])), o, d);
+        stav.hz = [l, p];
+      }
+
+      stav.uhel -= Math.max(-1, Math.min(1, zataceni)) * 9;
+      stav.cil += stav.smer * 4.5;
+      if (Math.abs(stav.cil) > 70) {
+        stav.smer *= -1;
+        stav.cil = Math.max(-70, Math.min(70, stav.cil));
+      }
+      stav.kroku++;
+      if (Math.abs(odchylka()) < 20) stav.trefa++;
+      vykresli();
+    }
+
+    function vykresli() {
+      const s = styl();
+      const w = platno.width, h = platno.height;
+      const o = odchylka();
+      ctx.fillStyle = s.getPropertyValue("--pozadi");
+      ctx.fillRect(0, 0, w, h);
+
+      // zorné pole
+      ctx.fillStyle = s.getPropertyValue("--karta");
+      ctx.fillRect(0, 0, w, h - 60);
+      ctx.strokeStyle = s.getPropertyValue("--linka");
+      ctx.strokeRect(0.5, 0.5, w - 1, h - 61);
+
+      // cíl
+      if (Math.abs(o) <= ZORNE_POLE / 2) {
+        const x = (o / ZORNE_POLE + 0.5) * w;
+        ctx.fillStyle = s.getPropertyValue("--text");
+        ctx.fillRect(x - 22, 20, 44, h - 100);
+      }
+      // střed pohledu
+      ctx.strokeStyle = s.getPropertyValue("--akcent");
+      ctx.setLineDash([5, 5]);
+      ctx.beginPath(); ctx.moveTo(w / 2, 10); ctx.lineTo(w / 2, h - 70); ctx.stroke();
+      ctx.setLineDash([]);
+
+      // pruh světa dole
+      ctx.fillStyle = s.getPropertyValue("--linka");
+      ctx.fillRect(0, h - 46, w, 2);
+      const px = (x) => ((((x + 180) % 360) + 360) % 360) / 360 * w;
+      ctx.fillStyle = s.getPropertyValue("--text");
+      ctx.beginPath(); ctx.arc(px(stav.uhel), h - 45, 7, 0, 7); ctx.fill();
+      ctx.fillStyle = s.getPropertyValue("--akcent");
+      ctx.beginPath(); ctx.arc(px(stav.cil), h - 45, 5, 0, 7); ctx.fill();
+
+      document.getElementById("hz-l").textContent = Math.round(stav.hz[0]);
+      document.getElementById("hz-p").textContent = Math.round(stav.hz[1]);
+      const max = Math.max(60, stav.hz[0], stav.hz[1]);
+      document.getElementById("pas-l").style.width = (100 * stav.hz[0] / max) + "%";
+      document.getElementById("pas-p").style.width = (100 * stav.hz[1] / max) + "%";
+      document.getElementById("skore").textContent =
+        stav.kroku ? Math.round(100 * stav.trefa / stav.kroku) + " %" : "0 %";
+      document.getElementById("odch").textContent = Math.round(o) + "°";
+    }
+
+    const klavesy = { vlevo: false, vpravo: false };
+    addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { klavesy.vlevo = true; e.preventDefault(); }
+      if (e.key === "ArrowRight") { klavesy.vpravo = true; e.preventDefault(); }
+    });
+    addEventListener("keyup", (e) => {
+      if (e.key === "ArrowLeft") klavesy.vlevo = false;
+      if (e.key === "ArrowRight") klavesy.vpravo = false;
+    });
+    document.getElementById("btn-reset").onclick = () => { reset(); vykresli(); };
+    document.getElementById("btn-pauza").onclick = (e) => {
+      stav.pauza = !stav.pauza;
+      e.target.textContent = stav.pauza ? "Pokračovat" : "Pauza";
+    };
+    vykresli();
+    setInterval(krok, 110);
+  </script>
+
+  <style>
+    article { padding: 40px 0 0; }
+    .zpet { font-size: 14px; color: var(--slabe); margin: 0 0 28px; }
+    .zpet a { text-decoration: none; }
+    h1 { font-size: clamp(30px, 5.5vw, 42px); line-height: 1.13; margin: 0 0 10px; letter-spacing: -0.025em; }
+    .podtitul { font-size: 19px; color: var(--slabe); margin: 0 0 32px; }
+    .plocha { display: grid; grid-template-columns: 1fr 230px; gap: 20px; align-items: start; }
+    canvas { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--linka); display: block; }
+    .pult { display: grid; gap: 16px; }
+    .radek { display: grid; grid-template-columns: 1fr; gap: 4px; margin-bottom: 10px; font-size: 13px; color: var(--slabe); }
+    .radek b { font-family: var(--mono); font-size: 13px; color: var(--text); }
+    .pas { height: 8px; background: var(--linka); border-radius: 4px; overflow: hidden; }
+    .pas i { display: block; height: 100%; width: 0; background: var(--akcent); transition: width .1s linear; }
+    .stav { display: grid; gap: 6px; font-size: 13px; color: var(--slabe); }
+    .stav b { font-family: var(--mono); color: var(--text); }
+    .tlacitka { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px; }
+    button {
+      font: inherit; font-size: 13px; padding: 6px 12px; cursor: pointer;
+      background: var(--karta); color: var(--text);
+      border: 1px solid var(--linka); border-radius: 7px;
+    }
+    button:hover { border-color: var(--slabe); }
+    label { color: var(--slabe); display: flex; gap: 5px; align-items: center; }
+    .napoveda { font-size: 12.5px; color: var(--slabe); margin: 0; }
+    .vysvetleni { margin-top: 44px; }
+    .vysvetleni h2 { font-size: 22px; margin: 0 0 12px; }
+    .vysvetleni p { margin: 0 0 16px; }
+    .varovani {
+      background: var(--karta); border: 1px solid var(--linka);
+      border-left: 3px solid var(--pul); border-radius: 8px; padding: 14px 16px;
+    }
+    .cisla {
+      font-family: var(--mono); font-size: 13px; color: var(--slabe);
+      border-top: 1px solid var(--linka); padding-top: 14px; margin-top: 32px;
+    }
+    @media (max-width: 640px) {
+      .plocha { grid-template-columns: 1fr; }
+    }
+  </style>
+</Zaklad>

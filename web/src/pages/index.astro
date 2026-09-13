@@ -42,6 +42,7 @@ const pocet = {
       > a každý jejich spoj. Stáhli jsme si ji, pustili na serveru a snažíme se z
       ní dostat chování. Tohle je zápis toho, co vyšlo. A hlavně toho, co ne.
     </p>
+    <p class="hrat"><a href="/hra/">▸ Zahrát si s mouchou</a></p>
     <ul class="skore">
       <li><b>{pocet.ano}</b> vyšlo</li>
       <li><b>{pocet.ne}</b> nevyšlo</li>
@@ -163,6 +164,12 @@ const pocet = {
     h1 { font-size: clamp(32px, 6.5vw, 50px); line-height: 1.1; margin: 0 0 20px; letter-spacing: -0.025em; }
     .perex { font-size: 19px; color: var(--slabe); margin: 0 0 28px; max-width: 58ch; }
     .perex strong { color: var(--text); }
+    .hrat { margin: 0 0 26px; font-size: 16px; }
+    .hrat a {
+      display: inline-block; text-decoration: none; padding: 9px 16px;
+      border: 1px solid var(--akcent); border-radius: 8px; color: var(--akcent);
+    }
+    .hrat a:hover { background: var(--akcent); color: var(--n-0); }
     .skore { list-style: none; display: flex; gap: 28px; padding: 0; margin: 0; font-size: 13px; color: var(--slabe); }
     .skore b { display: block; font-family: var(--mono); font-size: 28px; color: var(--text); font-variant-numeric: tabular-nums; line-height: 1.2; }
     h2 { font-size: 21px; margin: 48px 0 14px; letter-spacing: -0.015em; }
