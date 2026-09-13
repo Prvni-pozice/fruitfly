@@ -67,6 +67,7 @@ class Agent2:
         self.W_spike = W[self.i_spike][:, self.i_spike].tocsr()
         self.W_g2s = W[self.i_spike][:, self.i_graded].tocsr()   # graduovaná -> spikující
         self.W0 = self.W_spike.copy()
+        self._W_g2s0 = self.W_g2s.copy()
         self._wmax = float(np.abs(self.W_spike.data).max())
 
         # odečty (pozice uvnitř spikující části)
@@ -146,6 +147,7 @@ class Agent2:
                 mx = v.max()
                 x[poz] = v / mx if mx > 0 else 0.0
         stav = self.rate.ustaleny_stav(x)
+        self._posledni_stav = stav          # pro učení na rozhraní graduovaná -> spikující
         return (self.W_g2s @ stav).astype(np.float32)
 
     @staticmethod
@@ -188,6 +190,32 @@ class Agent2:
             lo, hi = self.W_spike.indptr[r], self.W_spike.indptr[r + 1]
             pos.append(np.arange(lo, hi)); src.append(self.W_spike.indices[lo:hi])
         return (np.concatenate(pos), np.concatenate(src)) if len(pos) else (np.array([],int), np.array([],int))
+
+    def uc_rozhrani(self, stopy: dict[str, np.ndarray], delta: float, sila: float = 0.25) -> None:
+        """Učí VSTUPY DNa02 z graduované vrstvy — dvanáct synapsí celkem.
+
+        Předchozí pokusy učily 60 tisíc neuronů spikující části a utopily se
+        v šumu (exp09–exp11: paired k nerozeznání od placeba na 12 losech).
+        Tady se mění jen to, co skutečně vede od zraku k zatáčení: 7 synapsí
+        do levého DNa02 a 5 do pravého. Zůstává to omezené connectomem —
+        mění se síla existujících spojů, žádný nový nevzniká.
+        """
+        if not hasattr(self, "_W_g2s_uc"):
+            self._W_g2s_uc = self.W_g2s.tolil()
+        for strana, ix in (("vlevo", self.dna_l), ("vpravo", self.dna_r)):
+            for r in ix:
+                lo, hi = self.W_g2s.indptr[r], self.W_g2s.indptr[r + 1]
+                if lo == hi:
+                    continue
+                src = self.W_g2s.indices[lo:hi]
+                e = stopy[strana][src]
+                mx = np.abs(e).max()
+                if mx > 0:
+                    e = e / mx
+                self.W_g2s.data[lo:hi] *= (1.0 + sila * delta * e).astype(np.float32)
+
+    def reset_rozhrani(self) -> None:
+        self.W_g2s = self._W_g2s0.copy()
 
     def odmena_perturbaci(self, stopy: dict[str, np.ndarray], delta: float,
                           sila: float = 0.08) -> None:

@@ -592,5 +592,204 @@
         "vždy stejný vstup → vždy stejný výstup, žádná náhoda"
       ]
     ]
+  },
+  {
+    "id": "pevna-zkouska",
+    "datum": "2026-09-13",
+    "nazev": "Měřili jsme metrem z gumy",
+    "podtitul": "Rameno, které se neučilo, se zlepšilo o devět bodů",
+    "vysledek": "zasadni",
+    "shrnuti": "Než jsme zjistili, jestli se moucha učí, museli jsme zjistit, že naše měřítko lže.",
+    "pribeh": [
+      "Třikrát po sobě nám učení s odloženou odměnou nevyšlo. Už jsme chtěli psát, že to prostě nejde, když nás zarazil jeden řádek ve výsledcích.",
+      "Kontrolní rameno — to, kde se úmyslně vůbec nic neučí — se zlepšilo o devět bodů. V jednom případě dokonce o osmnáct.",
+      "Což je nemožné. Nic se nezměnilo, tak se nemá co zlepšit.",
+      "Chyba byla v tom, jak měříme. Porovnávali jsme první a poslední kola tréninku, jenže každé kolo začíná s náhodně umístěným cílem. Některá kola jsou prostě snazší. Takže se dalo „zlepšit\" čistě tím, že se ke konci vylosovaly lehčí úlohy.",
+      "Opravili jsme to nudně a spolehlivě: osm pevných zkušebních epizod, pořád stejných, stejných pro všechna ramena, a při jejich hraní se neučí ani nešumí. Trénink běží jinde.",
+      "Od té chvíle dává kontrolní rameno přesnou nulu. Ne skoro nulu — nulu na tři desetinná místa, ve všech následujících třiceti šesti bězích.",
+      "Není to objev o mouše. Je to objev o nás. A bez něj by všechno ostatní na téhle stránce byla literatura faktu o šumu."
+    ],
+    "cisla": "sham +9,0 p. b. před opravou · 0,000 po opravě · 36 běhů po sobě",
+    "metodika": {
+      "design": "Oddělení tréninkové a zkušební sady. Zkouška: 8 epizod s pevnými seedy (1000–1007) po 20 krocích, bez učení a bez explorace, měřená před tréninkem i po něm. Trénink na jiných, náhodně losovaných epizodách.",
+      "vstupy": "20 tréninkových bloků po 10 krocích, síla učení 0,08, explorační šum 0,35.",
+      "ramena": "sham (žádné učení — kontrola měřidla) · paired (skutečná odměna) · placebo (odměna se stejným rozsahem, ale bez vazby na výkon)",
+      "vysledky": [
+        [
+          "sham před opravou měřidla",
+          "+9,0 p. b. (medián)"
+        ],
+        [
+          "sham v jednom losu",
+          "+18,0 p. b."
+        ],
+        [
+          "sham po opravě",
+          "0,000 ve všech losech"
+        ],
+        [
+          "paired po opravě",
+          "0 ze 4 losů nad prahem"
+        ],
+        [
+          "placebo po opravě",
+          "o 4,7 p. b. lepší než paired"
+        ]
+      ],
+      "omezeni": "Oprava měřidla neříká nic o tom, jestli se moucha učí. Říká jen, že předchozí tři pokusy měřily šum. Samotný výsledek po opravě je záporný: pravidlo se nenaučí."
+    },
+    "zkratky": [
+      [
+        "zkušební sada",
+        "pevná skupina úloh, na které se měří výkon; nesmí se na ní trénovat, jinak se dá naučit nazpaměť"
+      ],
+      [
+        "p. b. (procentní bod)",
+        "rozdíl dvou procent. Z 20 % na 29 % je devět procentních bodů"
+      ],
+      [
+        "sham",
+        "rameno, kde se schválně nic nemění; kdyby se pohnulo, je chyba v měření"
+      ],
+      [
+        "explorace",
+        "náhodné vybočení z naučeného chování, bez kterého se nedá objevit nic lepšího"
+      ]
+    ]
+  },
+  {
+    "id": "zebrik-odkladu",
+    "datum": "2026-09-13",
+    "nazev": "Vyloučili jsme podezřelého, na kterého jsme sázeli",
+    "podtitul": "Odměna se zpožděním? Ona nefunguje ani bez zpoždění",
+    "vysledek": "ne",
+    "shrnuti": "Mysleli jsme, že vinu nese odklad odměny. Nenese. Problém byl někde úplně jinde.",
+    "pribeh": [
+      "Ve hře odměna nepřijde hned — uděláte deset tahů a teprve pak se ukáže, jak jste dopadli. Je to známý těžký problém a byl náš hlavní podezřelý.",
+      "Tak jsme postavili žebřík. Odměna po jednom kroku, po dvou, po pěti, po deseti. Kdyby to fungovalo při jednom a prasklo u pěti, je vinen odklad a víme, co opravovat.",
+      "Nefungovalo to na žádné příčce. Ani při odkladu jedna, což odklad prakticky není.",
+      "Takže odklad je z podezřelých venku — a to je cennější, než to zní. Přestali jsme vylepšovat něco, co nebylo rozbité.",
+      "A jedna příčka žebříku byla navíc úplně k ničemu, což jsme zjistili až potom. Při odkladu jedna trvá blok jediný krok, a ten je hned po restartu scény. Jenže naše moucha je detektor pohybu a na nehybné scéně vydá přesnou nulu. Takže se nic neaktivovalo, nic se nezměnilo a my měřili prázdno.",
+      "Je to ta samá past, na kterou jsme narazili už u první verze hry. Šlápli jsme do ní podruhé."
+    ],
+    "cisla": "odklad 1: 0 · 0 · 0 · 0 (artefakt) · odklad 2 až 10: náhodný rozptyl kolem nuly · měřidlo drží ve všech 16 bězích",
+    "metodika": {
+      "design": "Žebřík odkladu odměny: 1, 2, 5 a 10 kroků, stejný celkový počet kroků učení pro každou příčku (mění se počet odměn, ne počet kroků). Táž pevná zkušební sada jako v předchozím pokusu, aby byla čísla srovnatelná.",
+      "vstupy": "4 losy na příčku, 200 kroků učení, síla 0,08, explorační šum 0,35.",
+      "vysledky": [
+        [
+          "odklad 1 — paired",
+          "0,0 (neplatné, viz omezení)"
+        ],
+        [
+          "odklad 2 — paired medián",
+          "+1,6 p. b."
+        ],
+        [
+          "odklad 5 — paired medián",
+          "+3,1 p. b."
+        ],
+        [
+          "odklad 10 — paired medián",
+          "−0,3 p. b."
+        ],
+        [
+          "sham na všech příčkách",
+          "0,000"
+        ]
+      ],
+      "omezeni": "Příčka s odkladem 1 neměřila nic: jediný krok bloku připadl na restart scény, kde se nic nehýbe, a detektor pohybu proto vydal nulovou aktivitu. Bez aktivity není stopa a bez stopy není změna vah. Chyba v návrhu, ne výsledek."
+    },
+    "zkratky": [
+      [
+        "odklad odměny",
+        "kolik kroků uplyne mezi činem a odměnou; čím víc, tím hůř se pozná, co za odměnu mohlo"
+      ],
+      [
+        "blok",
+        "skupina kroků, na jejímž konci se vyhodnotí a udělí odměna"
+      ],
+      [
+        "detektor pohybu",
+        "neuron, který nereaguje na to, co vidí, ale na to, jak se to hýbe"
+      ],
+      [
+        "artefakt",
+        "výsledek, který vznikl způsobem měření, ne měřenou věcí"
+      ]
+    ]
+  },
+  {
+    "id": "sum-do-neuronu",
+    "datum": "2026-09-13",
+    "nazev": "Čtyři pokusy si to vymyslely. Podruhé",
+    "podtitul": "Našli jsme skutečnou chybu a stejně z toho nic nebylo",
+    "vysledek": "ne",
+    "shrnuti": "Opravili jsme vážnou chybu v pravidle, první čtyři losy vypadaly skvěle — a dalších osm je smetlo.",
+    "pribeh": [
+      "Když odklad nebyl vinen, zbývalo podívat se na pravidlo samotné. A tam byla chyba, za kterou se člověk zastydí.",
+      "Aby se mozek mohl zlepšovat, musí občas udělat něco jinak, než by udělal — zkusit to a podívat se, jestli to bylo lepší. My jsme tohle náhodné vybočení přičítali k výsledné akci, tedy až za mozek.",
+      "Jenže pak se na tom vybočení mozek vůbec nepodílel. Udělal svoje a někdo mu za zády pohnul rukou. Hledat potom v jeho neuronech, co za to může, je jako zkoumat záznam z kamery v domě, před kterým zaparkovalo cizí auto.",
+      "Metoda, kterou používají ostatní, se jmenuje node perturbation právě proto, že se šum má vpustit do neuronu, ne za něj. Přesunuli jsme ho tedy přímo do neuronu, který řídí zatáčení.",
+      "První čtyři losy: všechny kladné, medián osm a půl bodu, kontrolní rameno na nule. Vypadalo to jako konec dlouhého trápení.",
+      "Přidali jsme dalších osm losů. Medián spadl na dva a půl bodu a placebo — rameno s náhodnou odměnou — bylo dokonce lepší.",
+      "Celkově přes dvanáct losů: učení 3,8, placebo 4,1, a párově je učení lepší v sedmi případech z dvanácti. Hod mincí.",
+      "Je to podruhé, co nás první měření navedla špatným směrem. Po prvním takovém případu jsme si napsali pravidlo o dvaceti opakováních. A stejně jsme se u čtyř nechali unést — dokonce jsme u toho nahlas psali, že závěry zatím dělat nebudeme."
+    ],
+    "cisla": "první 4 losy: učení +8,4 vs placebo +2,9 · všech 12: +3,8 vs +4,1 · párově 7 z 12",
+    "metodika": {
+      "design": "Node perturbation: explorační šum se vpouští přímo do neuronů DNa02, každá strana má vlastní šum a vlastní stopu. Stopa = předsynaptická aktivita × velikost šumu na dané straně, s rozpadem 0,8 mezi kroky. Odměna jako odchylka od klouzavého průměru. Táž pevná zkušební sada.",
+      "vstupy": "12 losů, 20 bloků po 10 krocích, síla učení 0,08, šum 0,6. Před každým blokem jeden krok navíc, aby se scéna rozhýbala.",
+      "ramena": "sham · paired · placebo (odměna ze stejného rozdělení, bez vazby na výkon)",
+      "vysledky": [
+        [
+          "sham (12 losů)",
+          "0,000 ve všech"
+        ],
+        [
+          "paired, medián",
+          "+3,8 p. b."
+        ],
+        [
+          "placebo, medián",
+          "+4,1 p. b."
+        ],
+        [
+          "párově paired > placebo",
+          "7 z 12"
+        ],
+        [
+          "první 4 losy — paired vs placebo",
+          "+8,4 vs +2,9"
+        ],
+        [
+          "dalších 8 losů — paired vs placebo",
+          "+2,5 vs +4,7"
+        ]
+      ],
+      "omezeni": "Oprava pravidla byla správná a chyba skutečná — jen nestačila. Záporný výsledek neříká, že odměnové učení ve spikující síti nejde; říká, že v téhle podobě, s tímhle počtem parametrů a tímhle poměrem signálu k šumu nejde."
+    },
+    "zkratky": [
+      [
+        "node perturbation",
+        "způsob učení bez zpětného šíření: šum se vpustí do neuronu, a co s ním korelovalo při odměně, to se posílí"
+      ],
+      [
+        "DNa02",
+        "konkrétní neuron, jeden na každé straně, kterým skutečná moucha řídí zatáčení"
+      ],
+      [
+        "eligibility trace",
+        "stopa po nedávné aktivitě, která pomalu vyprchává; odměna posílí to, co v ní ještě svítí"
+      ],
+      [
+        "párové srovnání",
+        "porovnání dvou ramen na TÉMŽE losu; citlivější než porovnávat jejich průměry"
+      ],
+      [
+        "regrese k průměru",
+        "jev, kdy se výjimečně dobré první měření při opakování vrátí k běžné hodnotě"
+      ]
+    ]
   }
 ]

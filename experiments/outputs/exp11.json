@@ -2,88 +2,172 @@
   "verdikt": "ZÁPORNÝ: ani opravené pravidlo se nenaučí -> učení do graduované vrstvy",
   "vysledky": [
     {
-      "seed": 0,
+      "seed": 4,
       "rezim": "sham",
       "pred": 0.20625,
       "po": 0.20625,
       "zmena": 0.0
     },
     {
-      "seed": 0,
+      "seed": 4,
       "rezim": "paired",
       "pred": 0.20625,
-      "po": 0.28125,
-      "zmena": 0.07500000000000001
+      "po": 0.2,
+      "zmena": -0.006249999999999978
     },
     {
-      "seed": 0,
+      "seed": 4,
       "rezim": "placebo",
       "pred": 0.20625,
-      "po": 0.20625,
-      "zmena": 0.0
+      "po": 0.275,
+      "zmena": 0.06875000000000003
     },
     {
-      "seed": 1,
+      "seed": 5,
       "rezim": "sham",
       "pred": 0.20625,
       "po": 0.20625,
       "zmena": 0.0
     },
     {
-      "seed": 1,
+      "seed": 5,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.21875,
+      "zmena": 0.012500000000000011
+    },
+    {
+      "seed": 5,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.2625,
+      "zmena": 0.05625000000000002
+    },
+    {
+      "seed": 6,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 6,
       "rezim": "paired",
       "pred": 0.20625,
       "po": 0.24375,
       "zmena": 0.037500000000000006
     },
     {
-      "seed": 1,
+      "seed": 6,
       "rezim": "placebo",
-      "pred": 0.20625,
-      "po": 0.21875,
-      "zmena": 0.012500000000000011
-    },
-    {
-      "seed": 2,
-      "rezim": "sham",
-      "pred": 0.20625,
-      "po": 0.20625,
-      "zmena": 0.0
-    },
-    {
-      "seed": 2,
-      "rezim": "paired",
-      "pred": 0.20625,
-      "po": 0.35,
-      "zmena": 0.14375
-    },
-    {
-      "seed": 2,
-      "rezim": "placebo",
-      "pred": 0.20625,
-      "po": 0.25,
-      "zmena": 0.04375000000000001
-    },
-    {
-      "seed": 3,
-      "rezim": "sham",
-      "pred": 0.20625,
-      "po": 0.20625,
-      "zmena": 0.0
-    },
-    {
-      "seed": 3,
-      "rezim": "paired",
       "pred": 0.20625,
       "po": 0.3,
       "zmena": 0.09375
     },
     {
-      "seed": 3,
+      "seed": 7,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 7,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.26875,
+      "zmena": 0.0625
+    },
+    {
+      "seed": 7,
       "rezim": "placebo",
       "pred": 0.20625,
-      "po": 0.275,
-      "zmena": 0.06875000000000003
+      "po": 0.24375,
+      "zmena": 0.037500000000000006
+    },
+    {
+      "seed": 8,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 8,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2125,
+      "zmena": 0.0062500000000000056
+    },
+    {
+      "seed": 8,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.26875,
+      "zmena": 0.0625
+    },
+    {
+      "seed": 9,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 9,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.1875,
+      "zmena": -0.01874999999999999
+    },
+    {
+      "seed": 9,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.2,
+      "zmena": -0.006249999999999978
+    },
+    {
+      "seed": 10,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 10,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.25,
+      "zmena": 0.04375000000000001
+    },
+    {
+      "seed": 10,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.1875,
+      "zmena": -0.01874999999999999
+    },
+    {
+      "seed": 11,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 11,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.24375,
+      "zmena": 0.037500000000000006
+    },
+    {
+      "seed": 11,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.21875,
+      "zmena": 0.012500000000000011
     }
   ]
 }
