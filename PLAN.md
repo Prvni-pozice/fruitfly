@@ -29,12 +29,23 @@ neprojde kontrolami — záporný nález je taky výsledek a zapisuje se.
   Dráha ON je v modelu nepoužitelná (L1 je inhibiční) — kóduje se tma.
   `experiments/EXP03-VYSLEDEK.md`.
 
+- **5. Spojit vjem s akcí** (13. 9. 2026): ZÁPORNÝ NÁLEZ, mění plán.
+  Retinotopický podnět k sestupným neuronům použitelně NEDOJDE (populace DN
+  nerozliší ani osvětlené oko: 8/16 = náhoda). Příčina: optický lalok je
+  z velké části nespikující, spikující LIF je na něj špatný nástroj.
+  Vedlejší nález: upstream simulátor nemá synaptickou integraci, takže T4/T5
+  nemohou vystřelit vůbec — doplněno v `sim2.py`, kotva se tím mění na
+  **ws = 0,0393**. Detailně `experiments/NALEZ-OPTICKY-LALOK.md`.
+
 ## Kde jsme
-- **5. Spojit vjem s akcí.** Kroky 2 a 4 zatím existují vedle sebe: učení
-  běží nad hrubým buzením „vizuální neurony vlevo/vpravo", ne nad retinou.
-  Otázka: dojde retinotopický podnět (tmavá skvrna vlevo/vpravo) až
-  k sestupným neuronům a dá lateralizovanou odpověď? Bez toho hra nemá
-  jak řídit mouchu.
+- **5b. Obejít optický lalok.** Budit rovnou vizuální projekční neurony
+  (LC/LPLC, 7 682 kusů) — ty spikují a v DN dávají 1,7–5,8 Hz při ~1 %
+  aktivity, lateralizovaně (LPLC2 vpravo +0,181, LC4 vpravo +0,122).
+  Rysy ze snímku se spočítají mimo model a nasadí na LC podle jejich známé
+  funkce. Cena: 77 812 neuronů optického laloku se z modelu vyřazuje a
+  moucha „vidí" naším kódem. Musí se to psát nahlas u každého výsledku.
+  Nejdřív ověřit preregistrovaně, že LC → DN nese SMĚR (levý vs pravý
+  podnět) nad rámec nullu z přehozených map.
 
 ## Dál
 - **3. Prostor akcí větší než dvě.** ČÁSTEČNĚ VYŘEŠENO 12. 9. 2026:
