@@ -67,3 +67,15 @@ jen nahrát soubor a přidat klíč, nikde jinde se nesahá.
 
 Na úzké obrazovce se karty skládají pod sebe (`auto-fit, minmax(220px, 1fr)`).
 Videa v pásu jsou bez ovládání, ztlumená a ve smyčce; v článku mají ovládání.
+
+### Náhledy v kartičkách
+
+Kartička článku v seznamu má vlevo čtvercový náhled:
+- **s videem** — první snímek přes `#t=0.5`, odznak „video", při najetí
+  myší se přehraje a po odjetí vrátí na začátek (vypnuto při
+  `prefers-reduced-motion`),
+- **bez videa** — ikonka kreslící PRŮBĚH pokusu, ne dekoraci: stoupající
+  čára vyšlo, padající nevyšlo, rozdvojená napůl, vykřičník v trojúhelníku
+  varování, hvězda zásadní nález. Barva podle výsledku.
+
+Na úzké obrazovce se náhled přesune nad text a zploští na pás.
