@@ -1,0 +1,118 @@
+---
+import Zaklad from "../../layouts/Zaklad.astro";
+import pokusy from "../../data/pokusy.json";
+
+export function getStaticPaths() {
+  return pokusy.map((p) => ({ params: { id: p.id }, props: { p } }));
+}
+const { p } = Astro.props;
+const znacky = {
+  ano: { text: "vyšlo", barva: "ok" },
+  ne: { text: "nevyšlo", barva: "ne" },
+  castecne: { text: "napůl", barva: "pul" },
+  varovani: { text: "varování", barva: "pul" },
+  zasadni: { text: "zásadní nález", barva: "zas" },
+};
+const z = znacky[p.vysledek];
+const m = p.metodika;
+const i = pokusy.findIndex((x) => x.id === p.id);
+const dalsi = pokusy[i + 1];
+---
+
+<Zaklad titul={`${p.nazev} — fruitfly`} popis={p.shrnuti}>
+  <article class="obal">
+    <p class="zpet"><a href="/">← všechny pokusy</a></p>
+    <div class={`hlava ${z.barva}`}>
+      <span class="datum">{p.datum}</span>
+      <span class="znacka">{z.text}</span>
+    </div>
+    <h1>{p.nazev}</h1>
+    <p class="podtitul">{p.podtitul}</p>
+
+    <div class="pribeh">
+      {p.pribeh.map((o) => <p>{o}</p>)}
+    </div>
+
+    <p class="cisla">{p.cisla}</p>
+
+    <section class="detail">
+      <h2>Přesně a odborně</h2>
+      <p class="uvod-detail">
+        Až sem to bylo vyprávění. Teď to samé bez zjednodušení — pro každého, kdo
+        si to chce ověřit nebo zopakovat.
+      </p>
+
+      <dl>
+        <dt>Návrh pokusu</dt>
+        <dd>{m.design}</dd>
+        {m.vstupy && (<><dt>Vstupy a data</dt><dd>{m.vstupy}</dd></>)}
+        {m.postup && (<><dt>Postup</dt><dd>{m.postup}</dd></>)}
+        {m.ramena && (<><dt>Kontrolní ramena</dt><dd>{m.ramena}</dd></>)}
+      </dl>
+
+      <h3>Naměřené hodnoty</h3>
+      <table>
+        <tbody>
+          {m.vysledky.map(([k, v]) => (
+            <tr><th>{k}</th><td>{v}</td></tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h3>Omezení a co z toho neplyne</h3>
+      <p>{m.omezeni}</p>
+
+      <h3>Slovníček</h3>
+      <dl class="slovnicek">
+        {p.zkratky.map(([k, v]) => (<><dt>{k}</dt><dd>{v}</dd></>))}
+      </dl>
+    </section>
+
+    <nav class="dalsi">
+      {dalsi ? (
+        <a href={`/pokus/${dalsi.id}/`}>Další pokus: {dalsi.nazev} →</a>
+      ) : (
+        <a href="/">Zpět na přehled →</a>
+      )}
+    </nav>
+  </article>
+
+  <style>
+    article { padding: 40px 0 0; }
+    .zpet { font-size: 14px; color: var(--slabe); margin: 0 0 32px; }
+    .zpet a { text-decoration: none; }
+    .hlava { display: flex; gap: 14px; align-items: center; margin-bottom: 12px; }
+    .datum { font-size: 12px; color: var(--slabe); font-variant-numeric: tabular-nums; }
+    h1 { font-size: clamp(30px, 5.5vw, 42px); line-height: 1.13; margin: 0 0 10px; letter-spacing: -0.025em; }
+    .podtitul { font-size: 19px; color: var(--slabe); margin: 0 0 36px; }
+    .pribeh p { margin: 0 0 20px; }
+    .pribeh p:first-child { font-size: 19px; }
+    .cisla {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13.5px;
+      color: var(--slabe); background: var(--karta); border: 1px solid var(--linka);
+      border-radius: 8px; padding: 14px 16px; margin: 32px 0 0; line-height: 1.7;
+    }
+    .detail { margin-top: 56px; padding-top: 8px; border-top: 2px solid var(--linka); }
+    .detail h2 { font-size: 22px; margin: 28px 0 6px; letter-spacing: -0.015em; }
+    .uvod-detail { color: var(--slabe); font-size: 15px; margin: 0 0 28px; }
+    .detail h3 { font-size: 16px; margin: 32px 0 10px; letter-spacing: 0.01em; }
+    dl { margin: 0; }
+    dt { font-weight: 650; font-size: 14.5px; margin-top: 16px; }
+    dd { margin: 4px 0 0; color: var(--slabe); font-size: 15.5px; }
+    .slovnicek dt { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13.5px; }
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    th { text-align: left; font-weight: 400; color: var(--slabe); padding: 9px 0; border-bottom: 1px solid var(--linka); }
+    td {
+      text-align: right; padding: 9px 0; border-bottom: 1px solid var(--linka);
+      font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px;
+      font-variant-numeric: tabular-nums; white-space: nowrap;
+    }
+    .dalsi { margin: 52px 0 0; padding-top: 22px; border-top: 1px solid var(--linka); font-size: 15px; }
+    .dalsi a { text-decoration: none; color: var(--slabe); }
+    @media (max-width: 520px) {
+      table, tbody, tr, th, td { display: block; }
+      th { border: none; padding-bottom: 0; }
+      td { text-align: left; padding-top: 2px; }
+    }
+  </style>
+</Zaklad>

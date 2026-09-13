@@ -1,4 +1,5 @@
 ---
+import Zaklad from "../layouts/Zaklad.astro";
 import pokusy from "../data/pokusy.json";
 
 const znacky = {
@@ -8,6 +9,7 @@ const znacky = {
   varovani: { text: "varování", barva: "pul" },
   zasadni: { text: "zásadní nález", barva: "zas" },
 };
+const razene = [...pokusy].reverse();
 const pocet = {
   ano: pokusy.filter((p) => p.vysledek === "ano").length,
   ne: pokusy.filter((p) => p.vysledek === "ne").length,
@@ -15,182 +17,105 @@ const pocet = {
 };
 ---
 
-<html lang="cs">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>fruitfly — deník pokusů s mozkem octomilky</title>
-    <meta
-      name="description"
-      content="Simulujeme celý mozek octomilky z connectomu FlyWire a snažíme se ho naučit hrát hru. Deník toho, co vyšlo a co ne."
-    />
-  </head>
-  <body>
-    <header>
-      <p class="nadpis-mini">deník jednoho VPS</p>
-      <h1>Učíme octomilku hrát hru</h1>
-      <p class="perex">
-        Vzali jsme zveřejněnou mapu <strong>všech 138 584 neuronů</strong> mozku
-        octomilky, rozběhli ji na jednom serveru a snažíme se z ní dostat
-        chování. Tohle je poctivý zápis toho, co vyšlo — a hlavně toho, co ne.
-      </p>
-      <ul class="skore">
-        <li><b>{pocet.ano}</b> vyšlo</li>
-        <li><b>{pocet.ne}</b> nevyšlo</li>
-        <li><b>{pocet.jine}</b> něco mezi</li>
-      </ul>
-    </header>
+<Zaklad
+  titul="fruitfly — učíme octomilku hrát hru"
+  popis="Simulujeme celý mozek octomilky z connectomu FlyWire a snažíme se ho naučit hrát. Deník toho, co vyšlo a co ne."
+>
+  <header class="obal">
+    <p class="mini">deník jednoho serveru</p>
+    <h1>Učíme octomilku hrát hru</h1>
+    <p class="perex">
+      Vědci zveřejnili kompletní mapu zapojení mozku octomilky — <strong
+        >všech 138 584 neuronů</strong
+      > a každý jejich spoj. Stáhli jsme si ji, pustili na serveru a snažíme se z
+      ní dostat chování. Tohle je zápis toho, co vyšlo. A hlavně toho, co ne.
+    </p>
+    <ul class="skore">
+      <li><b>{pocet.ano}</b> vyšlo</li>
+      <li><b>{pocet.ne}</b> nevyšlo</li>
+      <li><b>{pocet.jine}</b> něco mezi</li>
+    </ul>
+  </header>
 
-    <main>
-      <section class="pravidla">
-        <h2>Tři pravidla, kterých se držíme</h2>
-        <ol>
-          <li>
-            <b>Predikce se píšou předem.</b> Včetně toho, co bude znamenat, že
-            jsme se spletli. Jinak si výsledek vždycky nějak vysvětlíme.
-          </li>
-          <li>
-            <b>Ke každému pokusu placebo.</b> Rameno, kde zasáhneme stejně
-            silně, ale bez obsahu. Několikrát nám zachránilo ostudu.
-          </li>
-          <li>
-            <b>Jeden pokus není pokus.</b> Minimálně dvacet opakování. Viz
-            druhý řádek níž.
-          </li>
-        </ol>
-      </section>
+  <main class="obal">
+    <section class="pravidla">
+      <h2>Tři pravidla, kterých se držíme</h2>
+      <ol>
+        <li>
+          <b>Predikce se píšou předem</b> — včetně toho, co bude znamenat, že
+          jsme se spletli. Jinak si výsledek vždycky nějak vysvětlíme.
+        </li>
+        <li>
+          <b>Ke každému pokusu placebo.</b> Rameno, kde zasáhneme stejně silně, ale
+          bez obsahu. Několikrát nás zachránilo od ostudy.
+        </li>
+        <li>
+          <b>Jeden pokus není pokus.</b> Minimálně dvacet opakování. Proč, o tom
+          je druhý článek zdola.
+        </li>
+      </ol>
+    </section>
 
-      <ol class="denik">
-        {
-          pokusy.map((p) => (
-            <li class={`karta ${znacky[p.vysledek].barva}`}>
+    <ol class="denik">
+      {
+        razene.map((p) => (
+          <li class={`karta ${znacky[p.vysledek].barva}`}>
+            <a href={`/pokus/${p.id}/`}>
               <div class="hlava">
                 <span class="datum">{p.datum}</span>
                 <span class="znacka">{znacky[p.vysledek].text}</span>
               </div>
               <h3>{p.nazev}</h3>
-              <p class="otazka">{p.otazka}</p>
-              <p class="text">{p.text}</p>
-              <p class="cisla">{p.cisla}</p>
-            </li>
-          ))
-        }
-      </ol>
+              <p class="podtitul">{p.podtitul}</p>
+              <p class="shrnuti">{p.shrnuti}</p>
+              <span class="vic">Číst celé →</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </main>
 
-      <section class="pravidla">
-        <h2>Co dál</h2>
-        <p>
-          Moucha vidí a umí zatáčet. Neumí se ale zlepšovat, když odměna přijde
-          se zpožděním — a to je přesně to, co hra vyžaduje. Další na řadě je
-          pevná sada hodnoticích epizod, ať vůbec poznáme, jestli se zlepšuje
-          ona, nebo jen naše měřítko.
-        </p>
-      </section>
-    </main>
+  <footer class="obal">
+    <p>
+      Mozek: <a href="https://codex.flywire.ai/">FlyWire</a> v783 · zrak:
+      <a href="https://github.com/TuragaLab/flyvis">flyvis</a> (Nature 2024) ·
+      simulace podle Shiu et al. 2024 · kód na
+      <a href="https://github.com/Prvni-pozice/fruitfly">GitHubu</a>
+    </p>
+    <p class="drobne">
+      Nic z toho neznamená, že v serveru bydlí moucha. Znamená to, že v něm běží
+      model jejího zapojení — a ten se chová překvapivě mouše podobně.
+    </p>
+  </footer>
 
-    <footer>
-      <p>
-        Mozek: <a href="https://codex.flywire.ai/">FlyWire</a> v783 · zrak:
-        <a href="https://github.com/TuragaLab/flyvis">flyvis</a> (Nature 2024) ·
-        simulace podle Shiu et al. 2024
-      </p>
-      <p class="drobne">
-        Nic z toho neznamená, že v serveru bydlí moucha. Znamená to, že v něm
-        běží model jejího zapojení — a ten se chová překvapivě mouše podobně.
-      </p>
-    </footer>
-
-    <style>
-      :root {
-        --pozadi: #fbfaf7;
-        --text: #1c1b19;
-        --slabe: #6b675f;
-        --linka: #e4e0d8;
-        --karta: #fff;
-        --ok: #2f7d52;
-        --ne: #b4462f;
-        --pul: #b07d1e;
-        --zas: #5a4bbf;
-        color-scheme: light;
-      }
-      :root:not([data-theme="light"]) {
-        @media (prefers-color-scheme: dark) {
-          --pozadi: #16151a;
-          --text: #eceaf2;
-          --slabe: #a5a1ae;
-          --linka: #2d2b33;
-          --karta: #1e1d23;
-          --ok: #5fc98a;
-          --ne: #f08a6e;
-          --pul: #e2b558;
-          --zas: #a695ff;
-          color-scheme: dark;
-        }
-      }
-      :root[data-theme="dark"] {
-        --pozadi: #16151a;
-        --text: #eceaf2;
-        --slabe: #a5a1ae;
-        --linka: #2d2b33;
-        --karta: #1e1d23;
-        --ok: #5fc98a;
-        --ne: #f08a6e;
-        --pul: #e2b558;
-        --zas: #a695ff;
-        color-scheme: dark;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        background: var(--pozadi);
-        color: var(--text);
-        font: 16px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-        padding: 0 20px 64px;
-      }
-      header, main, footer { max-width: 760px; margin: 0 auto; }
-      header { padding: 64px 0 40px; border-bottom: 1px solid var(--linka); }
-      .nadpis-mini {
-        text-transform: uppercase; letter-spacing: 0.14em;
-        font-size: 12px; color: var(--slabe); margin: 0 0 12px;
-      }
-      h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.12; margin: 0 0 18px; letter-spacing: -0.02em; }
-      .perex { font-size: 18px; color: var(--slabe); margin: 0 0 26px; max-width: 58ch; }
-      .perex strong { color: var(--text); }
-      .skore { list-style: none; display: flex; gap: 26px; padding: 0; margin: 0; font-size: 14px; color: var(--slabe); }
-      .skore b { display: block; font-size: 26px; color: var(--text); font-variant-numeric: tabular-nums; }
-      h2 { font-size: 20px; margin: 44px 0 14px; letter-spacing: -0.01em; }
-      .pravidla ol { padding-left: 20px; margin: 0; }
-      .pravidla li { margin-bottom: 10px; color: var(--slabe); }
-      .pravidla li b { color: var(--text); }
-      .pravidla p { color: var(--slabe); max-width: 60ch; }
-      .denik { list-style: none; padding: 0; margin: 40px 0 0; display: grid; gap: 16px; }
-      .karta {
-        background: var(--karta); border: 1px solid var(--linka);
-        border-left: 3px solid var(--slabe); border-radius: 10px; padding: 18px 20px;
-      }
-      .karta.ok { border-left-color: var(--ok); }
-      .karta.ne { border-left-color: var(--ne); }
-      .karta.pul { border-left-color: var(--pul); }
-      .karta.zas { border-left-color: var(--zas); }
-      .hlava { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
-      .datum, .znacka { font-size: 12px; font-variant-numeric: tabular-nums; }
-      .datum { color: var(--slabe); }
-      .znacka { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
-      .ok .znacka { color: var(--ok); }
-      .ne .znacka { color: var(--ne); }
-      .pul .znacka { color: var(--pul); }
-      .zas .znacka { color: var(--zas); }
-      .karta h3 { margin: 0 0 4px; font-size: 19px; letter-spacing: -0.01em; }
-      .otazka { margin: 0 0 10px; color: var(--slabe); font-style: italic; }
-      .text { margin: 0 0 12px; }
-      .cisla {
-        margin: 0; font-family: ui-monospace, "SF Mono", Menlo, monospace;
-        font-size: 13px; color: var(--slabe);
-        border-top: 1px dashed var(--linka); padding-top: 10px;
-      }
-      footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--linka); font-size: 14px; color: var(--slabe); }
-      footer a { color: inherit; }
-      .drobne { font-size: 13px; opacity: 0.8; }
-    </style>
-  </body>
-</html>
+  <style>
+    header { padding: 72px 0 40px; border-bottom: 1px solid var(--linka); }
+    .mini { text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; color: var(--slabe); margin: 0 0 12px; }
+    h1 { font-size: clamp(32px, 6.5vw, 50px); line-height: 1.1; margin: 0 0 20px; letter-spacing: -0.025em; }
+    .perex { font-size: 19px; color: var(--slabe); margin: 0 0 28px; max-width: 58ch; }
+    .perex strong { color: var(--text); }
+    .skore { list-style: none; display: flex; gap: 28px; padding: 0; margin: 0; font-size: 13px; color: var(--slabe); }
+    .skore b { display: block; font-size: 28px; color: var(--text); font-variant-numeric: tabular-nums; line-height: 1.2; }
+    h2 { font-size: 21px; margin: 48px 0 14px; letter-spacing: -0.015em; }
+    .pravidla ol { padding-left: 22px; margin: 0; }
+    .pravidla li { margin-bottom: 10px; color: var(--slabe); }
+    .pravidla li b { color: var(--text); }
+    .denik { list-style: none; padding: 0; margin: 44px 0 0; display: grid; gap: 14px; }
+    .karta { background: var(--karta); border: 1px solid var(--linka); border-left: 3px solid var(--slabe); border-radius: 10px; transition: transform .12s ease, border-color .12s ease; }
+    .karta:hover { transform: translateY(-2px); }
+    .karta.ok { border-left-color: var(--ok); }
+    .karta.ne { border-left-color: var(--ne); }
+    .karta.pul { border-left-color: var(--pul); }
+    .karta.zas { border-left-color: var(--zas); }
+    .karta a { display: block; padding: 20px 22px; text-decoration: none; }
+    .hlava { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .datum { font-size: 12px; color: var(--slabe); font-variant-numeric: tabular-nums; }
+    .karta h3 { margin: 0 0 3px; font-size: 21px; letter-spacing: -0.02em; line-height: 1.25; }
+    .podtitul { margin: 0 0 12px; color: var(--slabe); font-size: 15px; }
+    .shrnuti { margin: 0 0 12px; }
+    .vic { font-size: 14px; color: var(--slabe); }
+    footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--linka); font-size: 14px; color: var(--slabe); }
+    .drobne { font-size: 13px; opacity: 0.85; }
+  </style>
+</Zaklad>
