@@ -29,6 +29,22 @@ const dalsi = pokusy[i + 1];
     <h1>{p.nazev}</h1>
     <p class="podtitul">{p.podtitul}</p>
 
+    {p.video && (
+      <figure class="video">
+        <video
+          src={p.video.soubor}
+          controls
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-label={p.video.popis}
+        />
+        <figcaption>{p.video.titulek}</figcaption>
+      </figure>
+    )}
+
     <div class="pribeh">
       {p.pribeh.map((o) => <p>{o}</p>)}
     </div>
@@ -85,6 +101,15 @@ const dalsi = pokusy[i + 1];
     .datum { font-family: var(--mono); font-size: 12px; color: var(--slabe); font-variant-numeric: tabular-nums; }
     h1 { font-size: clamp(30px, 5.5vw, 42px); line-height: 1.13; margin: 0 0 10px; letter-spacing: -0.025em; }
     .podtitul { font-size: 19px; color: var(--slabe); margin: 0 0 36px; }
+    .video { margin: 0 0 36px; }
+    .video video {
+      width: 100%; display: block; border-radius: 12px;
+      border: 1px solid var(--linka); background: #000;
+    }
+    .video figcaption {
+      margin-top: 10px; font-size: 14px; color: var(--slabe);
+      font-style: italic;
+    }
     .pribeh p { margin: 0 0 20px; }
     .pribeh p:first-child { font-size: 19px; }
     .cisla {

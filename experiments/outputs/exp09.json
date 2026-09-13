@@ -1,0 +1,89 @@
+{
+  "verdikt": "ZÁPORNÝ: měřítko v pořádku, ale pravidlo se nenaučí",
+  "vysledky": [
+    {
+      "seed": 0,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 0,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 0,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.23125,
+      "zmena": 0.025000000000000022
+    },
+    {
+      "seed": 1,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 1,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.2,
+      "zmena": -0.006249999999999978
+    },
+    {
+      "seed": 1,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.26875,
+      "zmena": 0.0625
+    },
+    {
+      "seed": 2,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.18125,
+      "zmena": -0.024999999999999994
+    },
+    {
+      "seed": 2,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.23125,
+      "zmena": 0.025000000000000022
+    },
+    {
+      "seed": 3,
+      "rezim": "sham",
+      "pred": 0.20625,
+      "po": 0.20625,
+      "zmena": 0.0
+    },
+    {
+      "seed": 3,
+      "rezim": "paired",
+      "pred": 0.20625,
+      "po": 0.23125,
+      "zmena": 0.025000000000000022
+    },
+    {
+      "seed": 3,
+      "rezim": "placebo",
+      "pred": 0.20625,
+      "po": 0.30625,
+      "zmena": 0.10000000000000003
+    }
+  ]
+}

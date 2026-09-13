@@ -1,0 +1,89 @@
+---
+/**
+ * Pás upoutávek na domovské stránce: až tři vedle sebe.
+ * Na úzké obrazovce se skládají pod sebe (grid s auto-fit).
+ * Karta bez videa zůstává plnohodnotným odkazem — jen místo videa
+ * ukáže klidnou plochu, takže se dá doplňovat postupně.
+ */
+import pokusy from "../data/pokusy.json";
+
+const { ids } = Astro.props;
+const vybrane = ids
+  .map((id) => pokusy.find((p) => p.id === id))
+  .filter(Boolean)
+  .slice(0, 3);
+---
+
+<section class="upoutavky" aria-label="Vybrané pokusy">
+  <div class="mrizka">
+    {
+      vybrane.map((p) => (
+        <article class="karta">
+          <a href={`/pokus/${p.id}/`}>
+            <div class="platno">
+              {p.video ? (
+                <video
+                  src={p.video.soubor}
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  aria-label={p.video.popis}
+                />
+              ) : (
+                <div class="prazdno" aria-hidden="true">
+                  <span>brzy</span>
+                </div>
+              )}
+            </div>
+            <h3>{p.nazev}</h3>
+            <p>{p.podtitul}</p>
+          </a>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .upoutavky { margin: 44px 0 8px; }
+  .mrizka {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+  }
+  .karta {
+    background: var(--karta);
+    border: 1px solid var(--linka);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.14s ease, border-color 0.14s ease;
+  }
+  .karta:hover { transform: translateY(-2px); border-color: var(--slabe); }
+  .karta a { display: block; text-decoration: none; color: inherit; }
+  .platno { aspect-ratio: 16 / 9; background: var(--pozadi); overflow: hidden; }
+  .platno video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .prazdno {
+    width: 100%; height: 100%;
+    display: grid; place-items: center;
+    background: repeating-linear-gradient(
+      -45deg, transparent, transparent 9px,
+      color-mix(in srgb, var(--linka) 60%, transparent) 9px,
+      color-mix(in srgb, var(--linka) 60%, transparent) 10px
+    );
+  }
+  .prazdno span {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--slabe);
+    background: var(--karta); padding: 4px 10px; border-radius: 20px;
+  }
+  .karta h3 {
+    margin: 14px 16px 4px; font-size: 17px; line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+  .karta p { margin: 0 16px 16px; font-size: 14px; color: var(--slabe); }
+  @media (prefers-reduced-motion: reduce) {
+    .karta { transition: none; }
+  }
+</style>

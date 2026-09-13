@@ -1,6 +1,7 @@
 ---
 import Zaklad from "../layouts/Zaklad.astro";
 import pokusy from "../data/pokusy.json";
+import Upoutavky from "../components/Upoutavky.astro";
 
 const znacky = {
   ano: { text: "vyšlo", barva: "ok" },
@@ -38,6 +39,8 @@ const pocet = {
   </header>
 
   <main class="obal">
+    <Upoutavky ids={["mozek-nabehl", "pulka-mozku-nespikuje", "vidi-a-ridi"]} />
+
     <section class="pravidla">
       <h2>Tři pravidla, kterých se držíme</h2>
       <ol>

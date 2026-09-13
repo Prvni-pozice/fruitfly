@@ -54,3 +54,16 @@ odbornou sekcí. Není to marketingová stránka, je to výzkumný deník.
 Barevné značky výsledků (zelená / červená / oranžová / fialová) jsou
 vlastní a nesou informaci, ne dekoraci: vyšlo / nevyšlo / napůl / zásadní
 nález. Proto se nesjednocují se značkovou paletou.
+
+## Videa a upoutávky
+
+Videa leží v `public/videa/`, odkazují se z `src/data/pokusy.json` klíčem
+`video` (`soubor`, `popis` pro čtečky, `titulek` pod video v článku).
+
+Pás na domovské stránce bere tři id z `<Upoutavky ids={[...]} />`.
+Karta bez videa se nepřeskakuje — ukáže šrafovanou plochu se štítkem
+„brzy" a zůstává plnohodnotným odkazem na článek. Doplnit video znamená
+jen nahrát soubor a přidat klíč, nikde jinde se nesahá.
+
+Na úzké obrazovce se karty skládají pod sebe (`auto-fit, minmax(220px, 1fr)`).
+Videa v pásu jsou bez ovládání, ztlumená a ve smyčce; v článku mají ovládání.

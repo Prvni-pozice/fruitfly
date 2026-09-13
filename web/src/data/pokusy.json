@@ -18,21 +18,56 @@
       "vstupy": "FlyWire connectome, verze v783. Čtyři tabulky z veřejného úložiště: seznam spojů (5 342 446 řádků), neurony s předpovězeným neuropřenašečem, zařazení do tříd, typy buněk. Celkem 69 MB.",
       "postup": "Spoje se převedou na řídkou matici 138 584 × 138 584 se znaménkem podle neuropřenašeče (acetylcholin budí, GABA a glutamát tlumí — u much je glutamát tlumivý, na rozdíl od savců). Matice se nikdy nerozbaluje do husté podoby, ta by měla 78 GB.",
       "vysledky": [
-        ["cukr → sosákové motoneurony", "90 Hz"],
-        ["bez podnětu", "0 Hz"],
-        ["hořká chuť samotná", "1,4 Hz"],
-        ["cukr + hořká zároveň", "31,4 Hz"],
-        ["zpoždění odpovědi", "15 ms"]
+        [
+          "cukr → sosákové motoneurony",
+          "90 Hz"
+        ],
+        [
+          "bez podnětu",
+          "0 Hz"
+        ],
+        [
+          "hořká chuť samotná",
+          "1,4 Hz"
+        ],
+        [
+          "cukr + hořká zároveň",
+          "31,4 Hz"
+        ],
+        [
+          "zpoždění odpovědi",
+          "15 ms"
+        ]
       ],
       "omezeni": "Connectome říká, KDO je s kým spojen a kolika synapsemi. Neříká, jak silná ta synapse je. Sílu jsme museli dodat my — a to je problém, kterému se věnuje třetí článek."
     },
     "zkratky": [
-      ["connectome", "kompletní mapa zapojení nervové soustavy — kdo je s kým spojen a kolika synapsemi"],
-      ["neuron", "nervová buňka; základní stavební prvek mozku"],
-      ["synapse", "spoj mezi dvěma neurony; jedna dvojice neuronů jich může mít i stovky"],
-      ["Hz (hertz)", "kolikrát za sekundu neuron vyšle signál. 90 Hz = devadesátkrát za sekundu"],
-      ["neuropřenašeč", "chemická látka, kterou neuron mluví na další neuron; určuje, jestli ho budí nebo tlumí"]
-    ]
+      [
+        "connectome",
+        "kompletní mapa zapojení nervové soustavy — kdo je s kým spojen a kolika synapsemi"
+      ],
+      [
+        "neuron",
+        "nervová buňka; základní stavební prvek mozku"
+      ],
+      [
+        "synapse",
+        "spoj mezi dvěma neurony; jedna dvojice neuronů jich může mít i stovky"
+      ],
+      [
+        "Hz (hertz)",
+        "kolikrát za sekundu neuron vyšle signál. 90 Hz = devadesátkrát za sekundu"
+      ],
+      [
+        "neuropřenašeč",
+        "chemická látka, kterou neuron mluví na další neuron; určuje, jestli ho budí nebo tlumí"
+      ]
+    ],
+    "video": {
+      "soubor": "/videa/mozek-nabehl.mp4",
+      "popis": "Krátká upoutávka k prvnímu pokusu: mozek octomilky se rozbalí a naběhne.",
+      "titulek": "Jak to vypadá, když někomu rozbalíte mozek jako zip."
+    }
   },
   {
     "id": "falesny-poplach",
@@ -54,21 +89,54 @@
       "vstupy": "20 nezávisle losovaných pachových vzorců (každý budí 5 % Kenyonových buněk), 18 tréninkových kol, síla učení 0,2.",
       "ramena": "sham (nic se nemění, kontrola determinismu) · paired (skutečná dopaminová brána z connectomu) · placebo (stejně velký zásah, ale brána přeházená mezi buňkami) · unpaired (odměna přiřazená k jinému pachu)",
       "vysledky": [
-        ["paired − placebo, medián", "+2,80 Hz"],
-        ["95% interval spolehlivosti", "−0,80 až +6,79"],
-        ["losů se správným znaménkem", "13 z 20"],
-        ["velikost efektu (Cohenovo d)", "0,62"],
-        ["podlaha šumu měření", "2,36 Hz"]
+        [
+          "paired − placebo, medián",
+          "+2,80 Hz"
+        ],
+        [
+          "95% interval spolehlivosti",
+          "−0,80 až +6,79"
+        ],
+        [
+          "losů se správným znaménkem",
+          "13 z 20"
+        ],
+        [
+          "velikost efektu (Cohenovo d)",
+          "0,62"
+        ],
+        [
+          "podlaha šumu měření",
+          "2,36 Hz"
+        ]
       ],
       "omezeni": "Podlaha šumu se zjistila tak, že jsme rozhýbali VŠECHNY synapse o jednu tisícinu. Výsledek se pohnul o 2,36 Hz — tedy zhruba stejně jako celý měřený efekt. Zajímavé je, že oslabení jediné synapse o 50 % nepohnulo vůbec ničím."
     },
     "zkratky": [
-      ["houbovité tělísko", "část mouššího mozku, kde vzniká paměť na pachy; obdoba hipokampu"],
-      ["Kenyonovy buňky", "5 177 neuronů v houbovitém tělísku, které kódují pachy; každý pach zapne jen malou část z nich"],
-      ["dopamin", "látka, kterou mozek signalizuje odměnu nebo trest"],
-      ["interval spolehlivosti", "rozsah, ve kterém výsledek nejspíš leží. Když obsahuje nulu, nemůžeme vyloučit, že efekt neexistuje"],
-      ["medián", "prostřední hodnota, když výsledky seřadíte. Odolnější vůči výstřelkům než průměr"],
-      ["placebo rameno", "kontrola, kde zasáhneme stejně silně, ale bez obsahu — odhalí, kolik efektu dělá samotné šťouchnutí"]
+      [
+        "houbovité tělísko",
+        "část mouššího mozku, kde vzniká paměť na pachy; obdoba hipokampu"
+      ],
+      [
+        "Kenyonovy buňky",
+        "5 177 neuronů v houbovitém tělísku, které kódují pachy; každý pach zapne jen malou část z nich"
+      ],
+      [
+        "dopamin",
+        "látka, kterou mozek signalizuje odměnu nebo trest"
+      ],
+      [
+        "interval spolehlivosti",
+        "rozsah, ve kterém výsledek nejspíš leží. Když obsahuje nulu, nemůžeme vyloučit, že efekt neexistuje"
+      ],
+      [
+        "medián",
+        "prostřední hodnota, když výsledky seřadíte. Odolnější vůči výstřelkům než průměr"
+      ],
+      [
+        "placebo rameno",
+        "kontrola, kde zasáhneme stejně silně, ale bez obsahu — odhalí, kolik efektu dělá samotné šťouchnutí"
+      ]
     ]
   },
   {
@@ -91,19 +159,46 @@
       "vstupy": "Referenční implementace Shiu et al. 2024 (Nature) — z jejich kódu: klidový potenciál −52 mV, práh −45 mV, váha 0,275 mV na synapsi, membránová konstanta 20 ms, synaptická 5 ms.",
       "postup": "Srovnávanou veličinou je vrchol odpovědi na jeden vstupní signál jako podíl vzdálenosti k prahu — to rozhoduje o tom, jestli neuron vystřelí, a jde porovnat mezi různě postavenými modely. Druhé kritérium: jediný signál nesmí sám vystřelit cílový neuron.",
       "vysledky": [
-        ["síla 0,12 — efekt", "+2,31 Hz, 19 z 20 losů"],
-        ["síla 0,20 — efekt", "+2,80 Hz, 13 z 20 losů"],
-        ["síla 0,30 — efekt", "−7,58 Hz, 7 z 20 losů"],
-        ["ukotvená hodnota", "0,0393"],
-        ["podíl spojů, kde jeden signál stačí k výstřelu", "0,24 %"]
+        [
+          "síla 0,12 — efekt",
+          "+2,31 Hz, 19 z 20 losů"
+        ],
+        [
+          "síla 0,20 — efekt",
+          "+2,80 Hz, 13 z 20 losů"
+        ],
+        [
+          "síla 0,30 — efekt",
+          "−7,58 Hz, 7 z 20 losů"
+        ],
+        [
+          "ukotvená hodnota",
+          "0,0393"
+        ],
+        [
+          "podíl spojů, kde jeden signál stačí k výstřelu",
+          "0,24 %"
+        ]
       ],
       "omezeni": "Autoři referenčního modelu svou hodnotu sami označují v kódu jako „volný parametr\". Ukotvili jsme se tedy na standard oboru, ne na měření. Je to o řád lepší než naše volba, ale není to biologická konstanta."
     },
     "zkratky": [
-      ["volný parametr", "číslo, které v datech není a musí se dosadit zvenčí; nebezpečné, protože se dá vybrat tak, aby vyšlo, co chcete"],
-      ["mV (milivolt)", "jednotka napětí. Neuron vystřelí, když jeho napětí přeleze práh"],
-      ["práh", "hranice napětí, po jejímž překročení neuron vyšle signál"],
-      ["membránová konstanta", "jak rychle neuron zapomíná to, co do něj přiteklo; u mouchy zhruba 20 tisícin sekundy"]
+      [
+        "volný parametr",
+        "číslo, které v datech není a musí se dosadit zvenčí; nebezpečné, protože se dá vybrat tak, aby vyšlo, co chcete"
+      ],
+      [
+        "mV (milivolt)",
+        "jednotka napětí. Neuron vystřelí, když jeho napětí přeleze práh"
+      ],
+      [
+        "práh",
+        "hranice napětí, po jejímž překročení neuron vyšle signál"
+      ],
+      [
+        "membránová konstanta",
+        "jak rychle neuron zapomíná to, co do něj přiteklo; u mouchy zhruba 20 tisícin sekundy"
+      ]
     ]
   },
   {
@@ -126,20 +221,50 @@
       "vstupy": "Vizuální neurony levé a pravé strany. 20 nezávislých losů, 10 tréninkových kol, síla učení 0,05.",
       "ramena": "sham (žádná odměna) · paired (odměna za správnou stranu) · placebo (odměna na náhodnou stranu) · unpaired (odměna vždy doleva bez ohledu na podnět)",
       "vysledky": [
-        ["paired, medián zlepšení", "+0,268"],
-        ["placebo", "+0,042"],
-        ["unpaired", "+0,055"],
-        ["rozdíl paired − placebo", "+0,196 (interval 0,173 až 0,259)"],
-        ["po obrácení pravidla: pokles", "10 z 10"],
-        ["kontrola pokračující starým pravidlem", "0 z 10, dál roste +0,376"]
+        [
+          "paired, medián zlepšení",
+          "+0,268"
+        ],
+        [
+          "placebo",
+          "+0,042"
+        ],
+        [
+          "unpaired",
+          "+0,055"
+        ],
+        [
+          "rozdíl paired − placebo",
+          "+0,196 (interval 0,173 až 0,259)"
+        ],
+        [
+          "po obrácení pravidla: pokles",
+          "10 z 10"
+        ],
+        [
+          "kontrola pokračující starým pravidlem",
+          "0 z 10, dál roste +0,376"
+        ]
       ],
       "omezeni": "Úloha je konstrukčně snadná — oba podněty budí zcela oddělené skupiny neuronů. Dokazuje to, že smyčka umí měnit chování podle odměny, ne že je chytrá. A učicí pravidlo je naše inženýrská volba, ne doložená mouší biologie. Z connectomu je jen zapojení."
     },
     "zkratky": [
-      ["sestupné neurony", "1 290 neuronů, kterými mozek posílá povely do těla; mouší „kabel do míchy\""],
-      ["uzavřená smyčka", "když akce mění to, co agent vzápětí vidí — na rozdíl od pasivního koukání"],
-      ["placebo rameno", "kontrola se stejně velkým zásahem, ale bez obsahu"],
-      ["přeučení (reversal)", "klasický test učení: obrátí se pravidlo a sleduje se, jestli se subjekt přizpůsobí"]
+      [
+        "sestupné neurony",
+        "1 290 neuronů, kterými mozek posílá povely do těla; mouší „kabel do míchy\""
+      ],
+      [
+        "uzavřená smyčka",
+        "když akce mění to, co agent vzápětí vidí — na rozdíl od pasivního koukání"
+      ],
+      [
+        "placebo rameno",
+        "kontrola se stejně velkým zásahem, ale bez obsahu"
+      ],
+      [
+        "přeučení (reversal)",
+        "klasický test učení: obrátí se pravidlo a sleduje se, jestli se subjekt přizpůsobí"
+      ]
     ]
   },
   {
@@ -162,21 +287,54 @@
       "design": "Tmavá skvrna na 49 pozicích (mřížka 7×7). Odečet: těžiště aktivity v souřadnicích sloupců u pěti vrstev různě hluboko. Kontrola: 20 nezávislých přeházení mapy sloupců.",
       "vstupy": "Soubor column_assignment z FlyWire Codexu: 45 528 neuronů, 785 sloupců vlevo a 796 vpravo, hexagonální souřadnice. Vstupní vrstva L2 (dráha reagující na tmu), jeden neuron na sloupec.",
       "vysledky": [
-        ["Tm1 — chyba polohy", "0,013"],
-        ["Tm2", "0,025"],
-        ["Tm4", "0,020"],
-        ["L5", "0,041"],
-        ["T1", "0,040"],
-        ["kontrola s přeházenou mapou", "0,232"]
+        [
+          "Tm1 — chyba polohy",
+          "0,013"
+        ],
+        [
+          "Tm2",
+          "0,025"
+        ],
+        [
+          "Tm4",
+          "0,020"
+        ],
+        [
+          "L5",
+          "0,041"
+        ],
+        [
+          "T1",
+          "0,040"
+        ],
+        [
+          "kontrola s přeházenou mapou",
+          "0,232"
+        ]
       ],
       "omezeni": "Jedna z předem zapsaných predikcí neprošla: dali jsme si práh „kontrola musí mít korelaci pod 0,3\", jenže náhodné přeházení dává běžně 0,35 a v maximu 0,69. Práh byl nesplnitelný bez ohledu na výsledek, protože jsme ho stanovili, aniž bychom změřili, co dává náhoda. Poučení: nejdřív změřit náhodu, pak stanovit práh."
     },
     "zkratky": [
-      ["ommatidium", "jedno drobné očičko složeného oka; moucha jich má kolem 800 na každé straně"],
-      ["sloupec", "svislý svazek neuronů zpracovávající obraz z jednoho očička — v podstatě jeden pixel"],
-      ["retinotopie", "vlastnost, že sousední místa v obraze zpracovávají sousední neurony; mapa obrazu uvnitř mozku"],
-      ["dráha ON a OFF", "dva oddělené kanály zraku: jeden hlásí zesvětlení, druhý ztmavení"],
-      ["null / nulové rozdělení", "co vyjde, když je výsledek jen náhoda; bez toho nevíte, co je ještě náhoda a co už nález"]
+      [
+        "ommatidium",
+        "jedno drobné očičko složeného oka; moucha jich má kolem 800 na každé straně"
+      ],
+      [
+        "sloupec",
+        "svislý svazek neuronů zpracovávající obraz z jednoho očička — v podstatě jeden pixel"
+      ],
+      [
+        "retinotopie",
+        "vlastnost, že sousední místa v obraze zpracovávají sousední neurony; mapa obrazu uvnitř mozku"
+      ],
+      [
+        "dráha ON a OFF",
+        "dva oddělené kanály zraku: jeden hlásí zesvětlení, druhý ztmavení"
+      ],
+      [
+        "null / nulové rozdělení",
+        "co vyjde, když je výsledek jen náhoda; bez toho nevíte, co je ještě náhoda a co už nález"
+      ]
     ]
   },
   {
@@ -198,20 +356,50 @@
       "design": "Diagnostika po záporném běhu. Postupné vyloučení příčin: síla podnětu, chybějící sčítání v čase, hodnota volného parametru, a nakonec typ signálu.",
       "vstupy": "Statické i pohyblivé podněty přes retinu, různé hodnoty síly synapsí, měření aktivity po typech neuronů.",
       "vysledky": [
-        ["T5a — excitační synapse celkem", "83"],
-        ["kolik jich je potřeba k výstřelu", "161"],
-        ["po doplnění sčítání v čase", "T5 vystřelí 1 727×"],
-        ["aktivita při ukotvené síle 0,039", "T5 mlčí"],
-        ["aktivita při síle 0,124", "22 % mozku aktivní"]
+        [
+          "T5a — excitační synapse celkem",
+          "83"
+        ],
+        [
+          "kolik jich je potřeba k výstřelu",
+          "161"
+        ],
+        [
+          "po doplnění sčítání v čase",
+          "T5 vystřelí 1 727×"
+        ],
+        [
+          "aktivita při ukotvené síle 0,039",
+          "T5 mlčí"
+        ],
+        [
+          "aktivita při síle 0,124",
+          "22 % mozku aktivní"
+        ]
       ],
       "omezeni": "Závěr o plynulých odpovědích je z literatury, ne z našeho měření — my jsme změřili jen to, že spikující model nefunguje. Ověření: záznamy z T5 ukazují jen podprahové plynulé odpovědi, drobné výkyvy 1–2 mV nešlo potvrdit jako spiky. U HS buněk je to popsané jako plynulý posun napětí axonu."
     },
     "zkratky": [
-      ["spike", "krátký impulz, kterým neuron posílá zprávu; buď je, nebo není"],
-      ["plynulá (graduovaná) odpověď", "místo impulzů neuron mění napětí spojitě, jako stmívač; kratší vzdálenosti v mozku to zvládnou"],
-      ["T4 a T5", "detektory pohybu v mouším oku; první místo, kde mozek pozná směr pohybu"],
-      ["HS buňky", "šest velkých neuronů, které sčítají pohyb přes celé zorné pole a řídí zatáčení"],
-      ["LIF model", "zjednodušený model neuronu: nabírá napětí, a když přeleze práh, vystřelí a vynuluje se"]
+      [
+        "spike",
+        "krátký impulz, kterým neuron posílá zprávu; buď je, nebo není"
+      ],
+      [
+        "plynulá (graduovaná) odpověď",
+        "místo impulzů neuron mění napětí spojitě, jako stmívač; kratší vzdálenosti v mozku to zvládnou"
+      ],
+      [
+        "T4 a T5",
+        "detektory pohybu v mouším oku; první místo, kde mozek pozná směr pohybu"
+      ],
+      [
+        "HS buňky",
+        "šest velkých neuronů, které sčítají pohyb přes celé zorné pole a řídí zatáčení"
+      ],
+      [
+        "LIF model",
+        "zjednodušený model neuronu: nabírá napětí, a když přeleze práh, vystřelí a vynuluje se"
+      ]
     ]
   },
   {
@@ -234,19 +422,46 @@
       "vstupy": "flyvis (Lappalainen et al., Nature 2024), 50 předtrénovaných modelů, spuštěno na procesoru. Náš detektor pohybu typu Hassenstein-Reichardt pro rychlé běhy.",
       "postup": "Most páruje sloupce přes hexagonální souřadnice nejbližším sousedem, 712 až 775 sloupců na typ. Plynulá vrstva počítá ustálený stav lineárně-prahové sítě; váhy musí být normalizované na součet vstupů, jinak se síť rozkmitá.",
       "vysledky": [
-        ["pohyb doleva → zatáčení", "+0,426"],
-        ["pohyb doprava → zatáčení", "−0,087"],
-        ["poloh se správným znaménkem", "5 z 5"],
-        ["čas jednoho kroku", "0,25 s"],
-        ["velikost spikující části", "60 117 neuronů"]
+        [
+          "pohyb doleva → zatáčení",
+          "+0,426"
+        ],
+        [
+          "pohyb doprava → zatáčení",
+          "−0,087"
+        ],
+        [
+          "poloh se správným znaménkem",
+          "5 z 5"
+        ],
+        [
+          "čas jednoho kroku",
+          "0,25 s"
+        ],
+        [
+          "velikost spikující části",
+          "60 117 neuronů"
+        ]
       ],
       "omezeni": "Zrakovou část dělá cizí model, ne connectome. Poctivý popis není „moucha hraje\", ale „centrální mozek mouchy dostává zrakové rysy a řídí podle nich akci\". A dvě chyby, které jsme cestou našli: sousedy pro detektor pohybu je nutné brát podle skutečného směru v zorném poli (ne podle pořadí), a zrcadlení druhého oka musí prohodit i směrové podtypy, ne jen souřadnice."
     },
     "zkratky": [
-      ["DNa02", "konkrétní neuron (jeden na každé straně), kterým skutečná moucha řídí zatáčení"],
-      ["flyvis", "zveřejněný model mouššího oka natrénovaný na odhad pohybu z videa"],
-      ["Hassenstein-Reichardt", "klasický způsob, jak z porovnání dvou sousedních bodů v čase spočítat směr pohybu; objevený právě na hmyzu"],
-      ["ustálený stav", "hodnota, na které se síť zastaví, když ji necháte běžet dost dlouho"]
+      [
+        "DNa02",
+        "konkrétní neuron (jeden na každé straně), kterým skutečná moucha řídí zatáčení"
+      ],
+      [
+        "flyvis",
+        "zveřejněný model mouššího oka natrénovaný na odhad pohybu z videa"
+      ],
+      [
+        "Hassenstein-Reichardt",
+        "klasický způsob, jak z porovnání dvou sousedních bodů v čase spočítat směr pohybu; objevený právě na hmyzu"
+      ],
+      [
+        "ustálený stav",
+        "hodnota, na které se síť zastaví, když ji necháte běžet dost dlouho"
+      ]
     ]
   },
   {
@@ -267,18 +482,42 @@
       "design": "Deset epizod po 25 krocích, měří se podíl kroků, kdy je cíl do 20 stupňů od středu pohledu. Žádné učení, jen zapojení.",
       "ramena": "skutečné přiřazení směrů · přeházené přiřazení směrů (zničí informaci o pohybu, vše ostatní nechá) · nehybná moucha (dolní mez — jak často cíl projde středem sám od sebe)",
       "vysledky": [
-        ["skutečné směry, medián", "0,260"],
-        ["přeházené směry", "0,140"],
-        ["nehybná moucha", "0,180"],
-        ["epizod, kde skutečné > přeházené", "6 z 10"],
-        ["rozsah mezi epizodami", "0,08 až 0,52"]
+        [
+          "skutečné směry, medián",
+          "0,260"
+        ],
+        [
+          "přeházené směry",
+          "0,140"
+        ],
+        [
+          "nehybná moucha",
+          "0,180"
+        ],
+        [
+          "epizod, kde skutečné > přeházené",
+          "6 z 10"
+        ],
+        [
+          "rozsah mezi epizodami",
+          "0,08 až 0,52"
+        ]
       ],
       "omezeni": "Dvě ze tří předem zapsaných predikcí prošly, ta nejdůležitější ne. Deset epizod na tenhle rozptyl nestačí."
     },
     "zkratky": [
-      ["optomotorická reakce", "vrozený reflex: když se obraz světa posune, zvíře se otočí za ním, aby ho srovnalo"],
-      ["medián", "prostřední hodnota po seřazení"],
-      ["epizoda", "jeden pokus od začátku do konce; tady 25 kroků hry"]
+      [
+        "optomotorická reakce",
+        "vrozený reflex: když se obraz světa posune, zvíře se otočí za ním, aby ho srovnalo"
+      ],
+      [
+        "medián",
+        "prostřední hodnota po seřazení"
+      ],
+      [
+        "epizoda",
+        "jeden pokus od začátku do konce; tady 25 kroků hry"
+      ]
     ]
   },
   {
@@ -302,19 +541,46 @@
       "vstupy": "Pravidlo podle literatury: eligibility trace s rozpadem 0,8 · odměna jako odchylka od klouzavého průměru · explorační šum 0,35 v akci · posilování odchylky od střední akce.",
       "ramena": "sham (žádné učení) · paired (skutečná odměna) · placebo (odměna se stejným rozsahem, ale bez vazby na výkon)",
       "vysledky": [
-        ["paired, medián zlepšení", "+6 bodů"],
-        ["placebo", "−9 bodů"],
-        ["sham (bez učení!)", "+9 bodů"],
-        ["rozptyl mezi losy", "−6 až +18 bodů"]
+        [
+          "paired, medián zlepšení",
+          "+6 bodů"
+        ],
+        [
+          "placebo",
+          "−9 bodů"
+        ],
+        [
+          "sham (bez učení!)",
+          "+9 bodů"
+        ],
+        [
+          "rozptyl mezi losy",
+          "−6 až +18 bodů"
+        ]
       ],
       "omezeni": "Rameno bez učení se zlepšilo víc než rameno s učením. To neznamená, že učení škodí — znamená to, že měřítko je zašuměné natolik, že se z něj nedá nic vyčíst. Chyba je v návrhu měření, ne ve výsledku."
     },
     "zkratky": [
-      ["problém vzdálené odměny", "jak poznat, který z dřívějších kroků způsobil odměnu, která přišla až teď"],
-      ["eligibility trace", "stopa po nedávné aktivitě, která pomalu vyprchává; když přijde odměna, posílí se to, co v ní ještě svítí"],
-      ["chyba predikce odměny", "rozdíl mezi tím, co jsem čekal, a co jsem dostal; mozky se učí právě z tohoto rozdílu, ne z odměny samotné"],
-      ["explorace", "občasné náhodné vybočení z naučeného chování, bez kterého se nedá objevit nic lepšího"],
-      ["deterministický", "vždy stejný vstup → vždy stejný výstup, žádná náhoda"]
+      [
+        "problém vzdálené odměny",
+        "jak poznat, který z dřívějších kroků způsobil odměnu, která přišla až teď"
+      ],
+      [
+        "eligibility trace",
+        "stopa po nedávné aktivitě, která pomalu vyprchává; když přijde odměna, posílí se to, co v ní ještě svítí"
+      ],
+      [
+        "chyba predikce odměny",
+        "rozdíl mezi tím, co jsem čekal, a co jsem dostal; mozky se učí právě z tohoto rozdílu, ne z odměny samotné"
+      ],
+      [
+        "explorace",
+        "občasné náhodné vybočení z naučeného chování, bez kterého se nedá objevit nic lepšího"
+      ],
+      [
+        "deterministický",
+        "vždy stejný vstup → vždy stejný výstup, žádná náhoda"
+      ]
     ]
   }
 ]
