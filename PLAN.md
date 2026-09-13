@@ -56,31 +56,59 @@ neprojde kontrolami — záporný nález je taky výsledek a zapisuje se.
   Nejdřív ověřit preregistrovaně, že LC → DN nese SMĚR (levý vs pravý
   podnět) nad rámec nullu z přehozených map.
 
-## Dál
-- **3. Prostor akcí větší než dvě.** ČÁSTEČNĚ VYŘEŠENO 12. 9. 2026:
-  všech 1 290 sestupných neuronů má v datech pojmenovaný typ a jsou mezi
-  nimi doložené povelové neurony, každý po jednom na stranu:
-  | typ | n | funkce podle literatury |
-  |---|---|---|
-  | DNa02 | 2 (1+1) | zatáčení, klasický steering neuron |
-  | DNa01 | 2 (1+1) | zatáčení |
-  | DNp09 | 2 (1+1) | zastavení / freezing |
-  | MDN | 4 (2+2) | couvání |
-  Akční prostor {vpřed, vlevo, vpravo, stát, vzad} jde tedy číst z
-  JMENOVITÝCH neuronů, ne z hrubého průměru přes 638 DN. Zbývá ověřit, že
-  jdou budit a číst nezávisle na sobě (exp03).
-- **4. Vjem z obrazovky.** Převod snímku hry na stimulaci vizuálních
-  neuronů s respektem k retinotopii (optický lalok má 77 812 neuronů
-  a strukturu; nesmí se z toho udělat náhodné plácnutí do poolu).
-  Kontrola: dva různé snímky musí dát různý vzorec aktivity, dva podobné
-  podobný.
-- **7. Úloha s odloženou odměnou.** Ve hře nepřijde odměna hned. Potřebuje
-  to eligibility trace přes víc kroků. Tady čekám největší problém.
-- **8. Rychlost.** Teď jeden průchod smyčkou trvá ~1,5 s na CPU. Hra
-  potřebuje aspoň 10 kroků za sekundu → 15× zrychlení, nebo běh v dávkách
-  mimo reálný čas (hra se přehraje offline, ne živě).
-- **9. Napojení na hru.** Server drží mozek, hra v prohlížeči posílá snímky
-  a dostává akce. Až sem, ne dřív.
+## Dál — cesta k cíli
+
+Cíl zůstává: octomilka hraje hru v prohlížeči. Zbývá k němu pět kroků a
+jeden rozcestník. Pořadí je dané závislostmi, ne chutí.
+
+### 6. Učení s odloženou odměnou — BĚŽÍ (exp09)
+Pevná zkušební sada 8 epizod, stejná pro všechna ramena, při jejím hraní se
+neučí. První predikce je kontrola měřidla: `sham` se nesmí pohnout o víc než
+2 p. b., jinak je běh neplatný.
+
+**Rozcestník podle výsledku:**
+
+| výsledek | co dál |
+|---|---|
+| měřidlo neplatné (P1 padne) | zvětšit zkušební sadu a zkrátit epizody; bez funkčního měřidla nemá smysl zkoušet jiná pravidla |
+| měřidlo dobré, učení funguje | rovnou krok 7 — složitější úloha (dva cíle, vyhýbání) |
+| měřidlo dobré, učení nefunguje | **vidlička níž** — tři možnosti, v tomhle pořadí |
+
+Vidlička, když se pravidlo nenaučí (nejlevnější první):
+1. **Učit graduovanou vrstvu, ne spikující.** Mapa vjem → akce sedí na
+   přechodu LC/HS → DN. Gradient se tam počítá snáz a je to jen 6 buněk HS
+   proti 60 tisícům neuronů. Levné, rychlé, dobře měřitelné.
+2. **Zmenšit úlohu na jeden krok s odměnou.** Ověřit, že pravidlo vůbec
+   funguje bez odkladu (exp02 to ukázal na jiné úloze — zopakovat na téhle),
+   a odklad přidávat po jednom kroku, dokud to nepraskne. Tím se zjistí,
+   kde přesně je hranice.
+3. **Přijmout vrozené chování a učení oddělit.** Hra může stát na
+   optomotorickém reflexu (exp07), který v zapojení už je, a učení řešit
+   jako samostatnou větev. Poctivé, ale je to ústup od cíle.
+
+### 7. Úloha, která se podobá hře
+Dva cíle místo jednoho (jeden odměňuje, druhý trestá), aby akce musela být
+podmíněná vjemem, ne jen reflexem. Kontrola: rameno s prohozeným významem
+cílů — když se moucha přeučí, je to politika, ne reflex.
+
+### 8. Rychlost na živý provoz
+Teď 0,25 s na krok (4 kroky/s). Na hru stačí, ale s rezervou:
+- dávkování více kroků do jednoho násobení matic,
+- zkrátit simulaci ze 120 na 60 kroků a ověřit, že odečet drží,
+- profilovat, kolik času žere graduovaná vrstva proti spikující.
+Cíl: 10 kroků/s. Když to nepůjde, hra poběží zpomaleně — to je přijatelné,
+moucha není akční hráč.
+
+### 9. Napojení na hru
+Server drží mozek a vystavuje jediný koncový bod: snímek dovnitř, akce ven.
+Hra běží v prohlížeči a volá ho. Nasazení vedle webu (`web/` na Vercelu,
+mozek na našem VPS). **Až sem, ne dřív** — dokud není co řídit, je to jen
+hezčí obal.
+
+### 10. Průběžně: web a zápis
+Po každém pokusu přibude článek do `web/src/data/pokusy.json` a výsledky se
+pushnou. Záporné nálezy se zapisují stejně jako kladné — zatím jsou
+zajímavější.
 
 ## Pravidla, která platí pro každý krok
 1. Preregistrace s prahy PŘED během. Kritéria vyvrácení taky.
