@@ -37,8 +37,17 @@ neprojde kontrolami — záporný nález je taky výsledek a zapisuje se.
   nemohou vystřelit vůbec — doplněno v `sim2.py`, kotva se tím mění na
   **ws = 0,0393**. Detailně `experiments/NALEZ-OPTICKY-LALOK.md`.
 
+- **5b. Graduovaná vrstva místo obcházení** (13. 9. 2026, HOTOVO).
+  Optický lalok se neobchází, nahrazuje se validovaným modelem: flyvis
+  (Lappalainen et al., Nature 2024) + vlastní graduovaná vrstva nad vahami
+  FlyWire. HS buňky nesou směr a jsou lateralizované (rozdíl L−P u 180°
+  třikrát až šestkrát větší než u 0°). `experiments/NALEZ-ARCHITEKTURA.md`.
+
 ## Kde jsme
-- **5b. Obejít optický lalok.** Budit rovnou vizuální projekční neurony
+- **6. Uzavřít smyčku přes novou architekturu.** HS/LC → spikující model →
+  DNa02 → akce, a nad tím zopakovat učení z exp02. Teprve tohle je
+  „vidí a řídí".
+- ~~5b. Obejít optický lalok~~ (nahrazeno bodem 5b výše). Budit rovnou vizuální projekční neurony
   (LC/LPLC, 7 682 kusů) — ty spikují a v DN dávají 1,7–5,8 Hz při ~1 %
   aktivity, lateralizovaně (LPLC2 vpravo +0,181, LC4 vpravo +0,122).
   Rysy ze snímku se spočítají mimo model a nasadí na LC podle jejich známé
@@ -65,12 +74,12 @@ neprojde kontrolami — záporný nález je taky výsledek a zapisuje se.
   a strukturu; nesmí se z toho udělat náhodné plácnutí do poolu).
   Kontrola: dva různé snímky musí dát různý vzorec aktivity, dva podobné
   podobný.
-- **6. Úloha s odloženou odměnou.** Ve hře nepřijde odměna hned. Potřebuje
+- **7. Úloha s odloženou odměnou.** Ve hře nepřijde odměna hned. Potřebuje
   to eligibility trace přes víc kroků. Tady čekám největší problém.
-- **7. Rychlost.** Teď jeden průchod smyčkou trvá ~1,5 s na CPU. Hra
+- **8. Rychlost.** Teď jeden průchod smyčkou trvá ~1,5 s na CPU. Hra
   potřebuje aspoň 10 kroků za sekundu → 15× zrychlení, nebo běh v dávkách
   mimo reálný čas (hra se přehraje offline, ne živě).
-- **8. Napojení na hru.** Server drží mozek, hra v prohlížeči posílá snímky
+- **9. Napojení na hru.** Server drží mozek, hra v prohlížeči posílá snímky
   a dostává akce. Až sem, ne dřív.
 
 ## Pravidla, která platí pro každý krok
@@ -87,3 +96,6 @@ neprojde kontrolami — záporný nález je taky výsledek a zapisuje se.
    V exp03 byl práh 0,3 nesplnitelný, protože null měl medián 0,35.
 8. **Pro polohové úlohy měřit chybu dekódování, ne korelaci.** Chyba
    oddělila signál od nullu 18×, korelace jen 1,4×.
+9. **Rešerši stavu poznání dělat PŘED stavěním.** Graduovanost optického
+   laloku i hotový model (flyvis) byly publikované; objevovali jsme je
+   znovu experimentem. Známé znalosti použít, pak ověřit experimentem.
