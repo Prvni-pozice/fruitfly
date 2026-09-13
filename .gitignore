@@ -22,3 +22,8 @@ logs/
 
 # upstream klon má vlastní git
 flybrain/
+
+# Astro web
+web/node_modules/
+web/dist/
+web/.astro/

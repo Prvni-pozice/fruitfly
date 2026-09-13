@@ -1,0 +1,83 @@
+[
+  {
+    "id": "exp00",
+    "datum": "2026-09-12",
+    "nazev": "Mozek naběhl",
+    "otazka": "Rozběhne se celý connectome octomilky na našem VPS?",
+    "vysledek": "ano",
+    "cisla": "138 584 neuronů, 3,7 M spojů, sestaveno za 10 s",
+    "text": "Cukr → sosák za 15 ms, přesně jak to popisuje Nature 2024. Nic z toho není naprogramované, vypadne to ze zapojení. Moucha běží na stroji, kde jinak jede tabulkový průzkum trhu."
+  },
+  {
+    "id": "exp01",
+    "datum": "2026-09-12",
+    "nazev": "Falešný poplach",
+    "otazka": "Propíše se učení v houbovitém tělísku až do motorického výstupu?",
+    "vysledek": "ne",
+    "cisla": "první los +12,4 Hz, po dvaceti losech medián +2,8 a nula v intervalu spolehlivosti",
+    "text": "První pokus vypadal jako objev. Dvacet dalších ho sežralo. Kdybychom to publikovali po prvním losu, měli jsme krásný graf a nulový nález."
+  },
+  {
+    "id": "exp01b",
+    "datum": "2026-09-12",
+    "nazev": "Jeden parametr, dva opačné závěry",
+    "otazka": "Na čem vlastně závisí, co nám vyjde?",
+    "vysledek": "varovani",
+    "cisla": "při 0,12 efekt +2,3 Hz, při 0,30 efekt −7,6 Hz",
+    "text": "Síla synapsí není v datech, je to volný parametr. A na něm visí i znaménko výsledku. Ukotvili jsme ho podle publikovaného modelu, ne podle toho, co nám dává hezčí graf."
+  },
+  {
+    "id": "exp02",
+    "datum": "2026-09-12",
+    "nazev": "Naučila se zatáčet",
+    "otazka": "Změní smyčka chování podle odměny?",
+    "vysledek": "ano",
+    "cisla": "20 losů z 20, chování překlopeno v 16, po obrácení pravidla se přeučila 10× z 10",
+    "text": "Před tréninkem zatáčela na oba podněty doprava. Po tréninku doleva na levý. A když jsme pravidlo obrátili, přeučila se — takže to není drift, ale skutečné učení."
+  },
+  {
+    "id": "exp03",
+    "datum": "2026-09-13",
+    "nazev": "Oko jako mřížka pixelů",
+    "otazka": "Jde promítnout obrázek na mouší oko poctivě?",
+    "vysledek": "ano",
+    "cisla": "768 sloupců, chyba polohy 0,013 proti nullu 0,232",
+    "text": "Každé ommatidium je jeden pixel a FlyWire má zveřejněné, který neuron kouká kam. Poloha podnětu přežije i několik synapsí do hloubky. Předtím jsme to marně zkoušeli spočítat ze souřadnic — vyšlo zorné pole 316°, což by byla velmi ostražitá moucha."
+  },
+  {
+    "id": "nalez-optika",
+    "datum": "2026-09-13",
+    "nazev": "Půlka mozku nespikuje",
+    "otazka": "Proč se zrakový signál nikam nedostane?",
+    "vysledek": "zasadni",
+    "cisla": "T4/T5 ani HS nevystřelily ani jednou",
+    "text": "Protože celá zraková dráha mouchy pracuje s plynulou změnou napětí, ne se spiky. Model, který umí jen spiky, jí neprotlačí nic. Dva dny jsme objevovali něco, co je v literatuře od roku 2019."
+  },
+  {
+    "id": "exp05",
+    "datum": "2026-09-13",
+    "nazev": "Vidí a řídí",
+    "otazka": "Dojede obraz ze scény až k neuronu, který ovládá zatáčení?",
+    "vysledek": "ano",
+    "cisla": "směr pohybu rozliší 5 poloh z 5; 0,25 s na krok",
+    "text": "Zrakovou část jsme nahradili natrénovaným modelem, centrální mozek zůstal z connectomu. Mezi tím je most po sloupcích. Vedlejší efekt: vyhodit optický lalok ze spikující části je zároveň správnější i čtyřikrát rychlejší."
+  },
+  {
+    "id": "exp07",
+    "datum": "2026-09-13",
+    "nazev": "Sleduje cíl, ale nepřesvědčivě",
+    "otazka": "Zvládne to bez učení, jen ze zapojení?",
+    "vysledek": "castecne",
+    "cisla": "0,26 proti 0,14 s přeházenými směry — ale jen v 6 epizodách z 10",
+    "text": "Náznak ano, důkaz ne. Rozptyl mezi epizodami je větší než rozdíl, který měříme."
+  },
+  {
+    "id": "exp08",
+    "datum": "2026-09-13",
+    "nazev": "Odložená odměna: zatím ne",
+    "otazka": "Naučí se, když odměna přijde až na konci?",
+    "vysledek": "ne",
+    "cisla": "kontrolní rameno bez učení se zlepšilo o 9 bodů",
+    "text": "Třikrát záporně. Potřetí poučně: zlepšilo se i rameno, které se vůbec neučilo — takže drift měří naše metrika, ne moucha. Příště pevná sada hodnoticích epizod."
+  }
+]
