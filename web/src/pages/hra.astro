@@ -64,6 +64,20 @@ import politika from "../data/politika.json";
         na stejný pohled odpoví vždycky stejně — takže tabulka je věrný záznam
         toho, co by odpověděl živě, ne náhražka.
       </p>
+      <h2>Jak víme, že to není náhoda</h2>
+      <p>
+        Odehráli jsme čtyřicet epizod ve třech režimech. Moucha udrží cíl
+        v <b>81 %</b> času, náhodné zatáčení v 25 % a moucha, která se vůbec
+        netočí, ve 32 % (cíl sám občas projde středem). Ve zvolených 21 × 9
+        pohledech míří zatáčení správným směrem v 93 % případů.
+      </p>
+      <p>
+        První verze hry působila náhodně a měla pravdu — moucha tehdy
+        sledovala jen levou polovinu pole. Měla dvě chyby: pravé oko nebylo
+        zrcadlené a obě oči dostávaly celý obraz, i když skutečná moucha má
+        každé oko na svou polovinu prostoru. Po opravě vzrostl podíl
+        správného směru zhruba z poloviny na 93 %.
+      </p>
       <p class="varovani">
         <b>A teď to nepříjemné:</b> tohle chování se moucha nenaučila. Má ho
         v zapojení. Čtyři pokusy o učení z odměny skončily neúspěchem, což si
@@ -140,8 +154,8 @@ import politika from "../data/politika.json";
         stav.hz = [l, p];
       }
 
-      stav.uhel -= Math.max(-1, Math.min(1, zataceni)) * 9;
-      stav.cil += stav.smer * 4.5;
+      stav.uhel -= Math.max(-1, Math.min(1, zataceni)) * 12;   // 9 bylo málo: moucha věděla kam, ale nestíhala
+      stav.cil += stav.smer * 3.0;
       if (Math.abs(stav.cil) > 70) {
         stav.smer *= -1;
         stav.cil = Math.max(-70, Math.min(70, stav.cil));
@@ -158,20 +172,23 @@ import politika from "../data/politika.json";
       ctx.fillStyle = s.getPropertyValue("--pozadi");
       ctx.fillRect(0, 0, w, h);
 
-      // zorné pole
-      ctx.fillStyle = s.getPropertyValue("--karta");
+      // Zorné pole se kreslí PEVNÝMI barvami, ne barvami motivu: model
+      // pracuje s tmavým sloupem na světlém poli a v tmavém režimu se
+      // barvy motivu obrátí, takže sloup vycházel bílý — což je přesný
+      // opak toho, co moucha vidí. (Nahlášeno z mobilu 14. 9. 2026.)
+      ctx.fillStyle = "#f2f1ec";
       ctx.fillRect(0, 0, w, h - 60);
       ctx.strokeStyle = s.getPropertyValue("--linka");
       ctx.strokeRect(0.5, 0.5, w - 1, h - 61);
 
-      // cíl
+      // cíl — tmavý sloup, vždy tmavý
       if (Math.abs(o) <= ZORNE_POLE / 2) {
         const x = (o / ZORNE_POLE + 0.5) * w;
-        ctx.fillStyle = s.getPropertyValue("--text");
+        ctx.fillStyle = "#26251f";
         ctx.fillRect(x - 22, 20, 44, h - 100);
       }
       // střed pohledu
-      ctx.strokeStyle = s.getPropertyValue("--akcent");
+      ctx.strokeStyle = "#7fa300";
       ctx.setLineDash([5, 5]);
       ctx.beginPath(); ctx.moveTo(w / 2, 10); ctx.lineTo(w / 2, h - 70); ctx.stroke();
       ctx.setLineDash([]);

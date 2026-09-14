@@ -108,7 +108,17 @@ class Agent2:
             # přiřadí T4a-d náhodné směry a rozlišení vlevo/vpravo se rozpadne.)
             strom = cKDTree(uv_l2)
             _, kand = strom.query(uv_l2, k=7)
+            # PRAVÉ OKO JE ZRCADLO. Podtyp T4a preferuje v každém oku svůj
+            # vlastní směr vůči tělu, ne vůči obrázku — takže se u pravého
+            # oka musí prohodit vodorovná dvojice (a<->b) i svislá (c<->d).
+            # Bez toho moucha sleduje cíl jen v levé polovině zorného pole
+            # a v pravé zatáčí náhodně (změřeno 14. 9. 2026: správný směr
+            # 75–100 % vlevo, ale 12–75 % vpravo). Nález byl zapsaný
+            # v NALEZ-ARCHITEKTURA.md z mostu do flyvis, jen se sem
+            # nikdy nepromítl.
             smery = {"a": (1, 0), "b": (-1, 0), "c": (0, 1), "d": (0, -1)}
+            if hemi == "right":
+                smery = {"a": (-1, 0), "b": (1, 0), "c": (0, -1), "d": (0, 1)}
             sous = {}
             for s_, (dx, dy) in smery.items():
                 vyb = np.arange(len(uv_l2))
@@ -139,8 +149,8 @@ class Agent2:
         x = np.zeros(len(self.i_graded), dtype=np.float32)
         for hemi in ("left", "right"):
             o = self.oci[hemi]
-            jas = self._jas(o, snimek)
-            jas_p = self._jas(o, predchozi) if predchozi is not None else jas
+            jas = self._jas(o, snimek, hemi)
+            jas_p = self._jas(o, predchozi, hemi) if predchozi is not None else jas
             m = self.pohyb(hemi, jas, jas_p)
             for T, (poz, mapa) in o["t45"].items():
                 v = m[T][mapa][: len(poz)]
@@ -151,9 +161,20 @@ class Agent2:
         return (self.W_g2s @ stav).astype(np.float32)
 
     @staticmethod
-    def _jas(o, snimek) -> np.ndarray:
+    def _jas(o, snimek, hemi: str = "left") -> np.ndarray:
+        """Každé oko vidí SVOU polovinu zorného pole.
+
+        Do 14. 9. 2026 dostávala obě oči celý obraz, takže cíl vpravo budil
+        levé oko úplně stejně jako pravé a lateralizace neměla odkud vzniknout.
+        Projevilo se to tak, že moucha sledovala cíl jen v levé půlce pole
+        (správný směr 75–100 %) a v pravé zatáčela náhodně (12–75 %).
+        Skutečná moucha má oči po stranách hlavy a jejich zorná pole se
+        překrývají jen úzkým pruhem vpředu.
+        """
         uv = o["uv"]; h, w = snimek.shape
-        col = np.clip((uv[:, 0] * (w - 1)).round().astype(int), 0, w - 1)
+        lo, hi = (0.0, 0.55) if hemi == "left" else (0.45, 1.0)
+        x = lo + uv[:, 0] * (hi - lo)
+        col = np.clip((x * (w - 1)).round().astype(int), 0, w - 1)
         row = np.clip(((1 - uv[:, 1]) * (h - 1)).round().astype(int), 0, h - 1)
         return snimek[row, col].astype(np.float32)
 
