@@ -622,7 +622,8 @@
       "Chyba byla v tom, jak měříme. Porovnávali jsme první a poslední kola tréninku, jenže každé kolo začíná s náhodně umístěným cílem. Některá kola jsou prostě snazší. Takže se dalo „zlepšit\" čistě tím, že se ke konci vylosovaly lehčí úlohy.",
       "Opravili jsme to nudně a spolehlivě: osm pevných zkušebních epizod, pořád stejných, stejných pro všechna ramena, a při jejich hraní se neučí ani nešumí. Trénink běží jinde.",
       "Od té chvíle dává kontrolní rameno přesnou nulu. Ne skoro nulu — nulu na tři desetinná místa, ve všech následujících třiceti šesti bězích.",
-      "Není to objev o mouše. Je to objev o nás. A bez něj by všechno ostatní na téhle stránce byla literatura faktu o šumu."
+      "Není to objev o mouše. Je to objev o nás. A bez něj by všechno ostatní na téhle stránce byla literatura faktu o šumu.",
+      "DODATEK ze 14. 9. 2026: tenhle pokus běžel na mouše, která kvůli dvěma chybám viděla jen na levou polovinu, a učil rozhraní, o kterém jsme později zjistili, že nese jedno procento vstupu do rozhodujícího neuronu. Závěr o učení z něj tedy neplatí. Popsaná metodická poučení platí dál — a proč to celé padlo, je v článku úplně dole."
     ],
     "cisla": "sham +9,0 p. b. před opravou · 0,000 po opravě · 36 běhů po sobě",
     "metodika": {
@@ -685,7 +686,8 @@
       "Nefungovalo to na žádné příčce. Ani při odkladu jedna, což odklad prakticky není.",
       "Takže odklad je z podezřelých venku — a to je cennější, než to zní. Přestali jsme vylepšovat něco, co nebylo rozbité.",
       "A jedna příčka žebříku byla navíc úplně k ničemu, což jsme zjistili až potom. Při odkladu jedna trvá blok jediný krok, a ten je hned po restartu scény. Jenže naše moucha je detektor pohybu a na nehybné scéně vydá přesnou nulu. Takže se nic neaktivovalo, nic se nezměnilo a my měřili prázdno.",
-      "Je to ta samá past, na kterou jsme narazili už u první verze hry. Šlápli jsme do ní podruhé."
+      "Je to ta samá past, na kterou jsme narazili už u první verze hry. Šlápli jsme do ní podruhé.",
+      "DODATEK ze 14. 9. 2026: tenhle pokus běžel na mouše, která kvůli dvěma chybám viděla jen na levou polovinu, a učil rozhraní, o kterém jsme později zjistili, že nese jedno procento vstupu do rozhodujícího neuronu. Závěr o učení z něj tedy neplatí. Popsaná metodická poučení platí dál — a proč to celé padlo, je v článku úplně dole."
     ],
     "cisla": "odklad 1: 0 · 0 · 0 · 0 (artefakt) · odklad 2 až 10: náhodný rozptyl kolem nuly · měřidlo drží ve všech 16 bězích",
     "metodika": {
@@ -749,7 +751,8 @@
       "První čtyři losy: všechny kladné, medián osm a půl bodu, kontrolní rameno na nule. Vypadalo to jako konec dlouhého trápení.",
       "Přidali jsme dalších osm losů. Medián spadl na dva a půl bodu a placebo — rameno s náhodnou odměnou — bylo dokonce lepší.",
       "Celkově přes dvanáct losů: učení 3,8, placebo 4,1, a párově je učení lepší v sedmi případech z dvanácti. Hod mincí.",
-      "Je to podruhé, co nás první měření navedla špatným směrem. Po prvním takovém případu jsme si napsali pravidlo o dvaceti opakováních. A stejně jsme se u čtyř nechali unést — dokonce jsme u toho nahlas psali, že závěry zatím dělat nebudeme."
+      "Je to podruhé, co nás první měření navedla špatným směrem. Po prvním takovém případu jsme si napsali pravidlo o dvaceti opakováních. A stejně jsme se u čtyř nechali unést — dokonce jsme u toho nahlas psali, že závěry zatím dělat nebudeme.",
+      "DODATEK ze 14. 9. 2026: tenhle pokus běžel na mouše, která kvůli dvěma chybám viděla jen na levou polovinu, a učil rozhraní, o kterém jsme později zjistili, že nese jedno procento vstupu do rozhodujícího neuronu. Závěr o učení z něj tedy neplatí. Popsaná metodická poučení platí dál — a proč to celé padlo, je v článku úplně dole."
     ],
     "cisla": "první 4 losy: učení +8,4 vs placebo +2,9 · všech 12: +3,8 vs +4,1 · párově 7 z 12",
     "metodika": {
@@ -804,6 +807,83 @@
       [
         "regrese k průměru",
         "jev, kdy se výjimečně dobré první měření při opakování vrátí k běžné hodnotě"
+      ]
+    ]
+  },
+  {
+    "id": "jedno-procento",
+    "datum": "2026-09-14",
+    "nazev": "Týden jsme učili jedno procento mozku",
+    "podtitul": "Šest neúspěšných pokusů mělo jednu společnou příčinu",
+    "vysledek": "zasadni",
+    "shrnuti": "Všechny pokusy naučit mouchu z odměny selhaly. Ukázalo se, že jsme celou dobu šroubovali vypínač, který nebyl připojený.",
+    "pribeh": [
+      "Šestkrát po sobě jsme se pokusili naučit mouchu něco z odměny a šestkrát to nevyšlo. Pokaždé jsme našli chybu, opravili ji a zkusili to znovu.",
+      "Nejdřív jsme mysleli, že je problém ve zpoždění odměny. Nebyl — nefungovalo to ani bez zpoždění. Pak že je měřítko špatné. Bylo, a po opravě dávalo přesnou nulu tam, kde mělo. Pak že jsme šum přidávali na špatné místo. To byla pravda a opravili jsme to. Pak že pravidlo neumí obrátit znaménko. Taky pravda, taky opraveno.",
+      "A pořád nic.",
+      "Tak jsme se konečně zeptali na otázku, kterou jsme si měli položit jako první: kolik vlastně ta věc, kterou učíme, znamená pro neuron, který rozhoduje?",
+      "Ten neuron dostává signál ze 758 synapsí. My jsme celou dobu měnili dvanáct z nich. V přepočtu na sílu spojů to bylo <b>necelé jedno procento</b>. Zbylých devadesát devět procent přicházelo odjinud a my se jich ani nedotkli.",
+      "Je to jako týden ladit ovládání hlasitosti a divit se, že rádio hraje pořád stejně — protože ten knoflík není připojený k zesilovači.",
+      "Zkusili jsme tedy učit i tu druhou cestu, těch zbylých 746 synapsí. Nevyšlo to taky. Takže odpověď na otázku „jde to naučit\" pořád neznáme — víme jen, že šest pokusů ji ve skutečnosti nepoložilo.",
+      "Napsali jsme si z toho nový nástroj a nové pravidlo. Nástroj hrubou silou zkouší, jestli vůbec existuje nastavení, které úlohu řeší. Pravidlo zní: spustit ho dřív než experiment.",
+      "Mimochodem dvě z těch šesti úloh byly rovnou nesplnitelné. Jedna zněla „drž cíl co nejdál od středu pohledu\" — jenže moucha vidí jen pohyb, takže když cíl vytlačí za okraj, přestane ho vidět, nemá podle čeho zatáčet a cíl se vrátí. Splnit to znamená udržet stav, ve kterém nemáte žádnou informaci. Druhá úloha měla strop: moucha už ji uměla na 85 %."
+    ],
+    "cisla": "12 učených synapsí = 0,8 % vstupu · 746 zbylých = 99,2 % · 6 neúspěšných pokusů · 3 úlohy shodně +6 p. b. při hrubé síle",
+    "metodika": {
+      "design": "Zpětná diagnostika série záporných nálezů. Změřen podíl váhy vstupů do DNa02 podle zdroje a hrubou silou otestována splnitelnost tří úloh.",
+      "postup": "exp15_je_to_resitelne.py náhodně přeškáluje učené synapse (rozsah −2 až +2, tedy včetně obracení znamének) a měří výsledek na pevné zkušební sadě. Osm nezávislých nastavení na úlohu.",
+      "vysledky": [
+        [
+          "DNa02 vlevo — z graduované vrstvy",
+          "7 synapsí, váha 151"
+        ],
+        [
+          "DNa02 vlevo — ze spikující části",
+          "365 synapsí, váha 13 784"
+        ],
+        [
+          "podíl učeného rozhraní",
+          "1,1 % a 0,6 %"
+        ],
+        [
+          "hrubá síla, úloha „drž cíl daleko\"",
+          "+6,2 p. b."
+        ],
+        [
+          "hrubá síla, úloha „drž cíl stranou\"",
+          "+6,0 p. b."
+        ],
+        [
+          "hrubá síla, široké rozhraní (1376 synapsí)",
+          "+5,5 p. b."
+        ],
+        [
+          "učení přes 746 synapsí (12 losů)",
+          "paired +0,4 vs placebo +0,8"
+        ]
+      ],
+      "omezeni": "Test hrubou silou je průkazný jen u málo parametrů. U 746 rozměrů osm náhodných vzorků nenajde nic, takže tam absence nálezu nedokazuje nesplnitelnost. Otázka, jestli je tahle moucha naučitelná, proto zůstává otevřená — tenhle článek říká jen to, že dosavadní pokusy ji nezodpověděly."
+    },
+    "zkratky": [
+      [
+        "DNa02",
+        "neuron, jeden na každé straně, kterým skutečná moucha řídí zatáčení"
+      ],
+      [
+        "synaptická váha",
+        "síla spoje mezi dvěma neurony; odvozuje se od počtu synapsí mezi nimi"
+      ],
+      [
+        "node perturbation",
+        "učení bez zpětného šíření: šum se vpustí do neuronu a co s ním korelovalo při odměně, to se posílí"
+      ],
+      [
+        "preregistrace",
+        "zapsat předem, co bude znamenat úspěch a co neúspěch; brání dovysvětlování výsledku po faktu"
+      ],
+      [
+        "placebo rameno",
+        "kontrola se stejně velkým zásahem, ale bez obsahu"
       ]
     ]
   }
