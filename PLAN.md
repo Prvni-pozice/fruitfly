@@ -75,7 +75,35 @@ jako nepotvrzené. Kdyby se k němu projekt vracel, cesta je jasná: efekt
 +3,4 p. b. potřebuje k rozhodnutí zhruba 40 losů místo 12, což je ~5 hodin
 strojového času — udělat to až tehdy, když bude čím podepřít, že to stojí za to.
 
-### 6b. Hra na vrozeném chování — DALŠÍ NA ŘADĚ
+### 6c. Proč se nic nenaučilo — VYSVĚTLENO 14. 9. 2026
+
+Čtyři záporné pokusy o učení měly společnou příčinu, kterou žádná
+preregistrace ani placebo nechytily, protože obojí hlídá pravdivost
+výsledku, ne splnitelnost zadání.
+
+**Učené rozhraní neslo 1 % vstupu.** Dvanáct synapsí z graduované vrstvy
+na DNa02 má váhu 151 a 87; zbylých 746 synapsí ze spikující části má
+13 784 a 14 380. Tedy **1,1 % a 0,6 %**. Učil jsem jedno procento drive
+rozhodujícího neuronu a divil se, že se chování nehýbe.
+
+**Test splnitelnosti** (`exp15_je_to_resitelne.py`) to odhalil hrubou
+silou: náhodné přenastavení učených vah, včetně obracení znamének,
+nezlepší výsledek o víc než 6 p. b. — a to u tří různých úloh shodně.
+U dvanácti parametrů je takový test průkazný; u 746 už ne (osm vzorků
+v sedmi stech rozměrech nenajde nic), takže tam absence nálezu nic
+nedokazuje.
+
+**Dvě úlohy byly navíc špatně položené:**
+- „drž cíl co nejdál" je pro detektor pohybu s omezeným zorným polem
+  nesplnitelná: za okrajem pohledu moucha nevidí, nemá podle čeho
+  zatáčet a cíl se vrátí. Úspěch by vyžadoval udržet stav bez informace.
+- „drž cíl ve středu" má strop: po opravě očí to moucha umí na 85 %.
+
+**Nové pravidlo pro každý další pokus o učení:** před během ověřit hrubou
+silou, že existuje nastavení učených parametrů, které úlohu řeší. Bez toho
+je záporný nález nálezem o zadání, ne o učení.
+
+### 6b. Hra na vrozeném chování — HOTOVO
 Moucha sleduje cíl, protože to má v zapojení (exp07), ne protože se to
 naučila. Je to míň, než byl původní cíl, ale je to hratelné a poctivé.
 Učení zůstává otevřenou samostatnou větví, ne podmínkou hry.

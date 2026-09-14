@@ -1,0 +1,26 @@
+{
+  "verdikt": "ZÁPORNÝ: neučí se ani přes 746 synapsí, které nesou 99 % vstupu",
+  "vysledky": [
+    {
+      "seed": 0,
+      "rezim": "sham",
+      "pred": 0.6876506361494222,
+      "po": 0.6876506361494222,
+      "zmena": 0.0
+    },
+    {
+      "seed": 0,
+      "rezim": "paired",
+      "pred": 0.6876506361494222,
+      "po": 0.699855801675076,
+      "zmena": 0.01220516552565376
+    },
+    {
+      "seed": 0,
+      "rezim": "placebo",
+      "pred": 0.6876506361494222,
+      "po": 0.7136058951582254,
+      "zmena": 0.025955259008803133
+    }
+  ]
+}

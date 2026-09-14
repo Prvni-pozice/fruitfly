@@ -220,9 +220,15 @@ class Agent2:
         Tady se mění jen to, co skutečně vede od zraku k zatáčení: 7 synapsí
         do levého DNa02 a 5 do pravého. Zůstává to omezené connectomem —
         mění se síla existujících spojů, žádný nový nevzniká.
+
+        Update je PŘIČÍTACÍ, ne násobící. Násobící verze (`W *= 1 + s·δ·e`)
+        má kladný faktor, takže váha nikdy nezmění znaménko — a úloha „dívej
+        se jinam než na cíl" vyžaduje právě obrácení směru. Byla tím pádem
+        strukturálně nenaučitelná, ať se pravidlo snažilo sebevíc (exp13:
+        váhy se posunuly průměrně o 16 %, chování se nezměnilo).
+        Krok se škáluje typickou velikostí vah, aby zůstal srovnatelný
+        napříč synapsemi.
         """
-        if not hasattr(self, "_W_g2s_uc"):
-            self._W_g2s_uc = self.W_g2s.tolil()
         for strana, ix in (("vlevo", self.dna_l), ("vpravo", self.dna_r)):
             for r in ix:
                 lo, hi = self.W_g2s.indptr[r], self.W_g2s.indptr[r + 1]
@@ -233,7 +239,8 @@ class Agent2:
                 mx = np.abs(e).max()
                 if mx > 0:
                     e = e / mx
-                self.W_g2s.data[lo:hi] *= (1.0 + sila * delta * e).astype(np.float32)
+                mer = float(np.abs(self._W_g2s0.data[lo:hi]).mean()) or 1.0
+                self.W_g2s.data[lo:hi] += (sila * delta * e * mer).astype(np.float32)
 
     def reset_rozhrani(self) -> None:
         self.W_g2s = self._W_g2s0.copy()
