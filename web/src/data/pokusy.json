@@ -477,43 +477,50 @@
   {
     "id": "sleduje-cil",
     "datum": "2026-09-13",
-    "nazev": "Sleduje cíl. Asi. Možná",
-    "podtitul": "Náznak, který se zatím neumíme dokázat",
-    "vysledek": "castecne",
-    "shrnuti": "Zapojení samo o sobě dává chování, které cíl sleduje. Jenže rozptyl mezi pokusy je větší než to, co měříme.",
+    "nazev": "Půl mouchy je slepá, zjistili jsme po týdnu",
+    "podtitul": "Sledování cíle vyšlo slabě. Protože moucha viděla jen doleva",
+    "vysledek": "ano",
+    "shrnuti": "Vrozené sledování cíle vypadalo jako sotva znatelný náznak. Po opravě dvou chyb v očích drží moucha cíl 88 % času.",
     "pribeh": [
-      "Skutečná moucha má vrozený reflex: když se jí svět zatočí před očima, zatočí se za ním. Nikdo ji to neučí, má to v drátech.",
-      "Zkusili jsme, jestli to má i naše. Bez jakéhokoli učení — prostě pustit a koukat, jestli za pohyblivým cílem jde.",
-      "Vyšlo 0,26 proti 0,14, když jsme jí zamíchali informaci o směru. Vypadá to hezky. Ale po jednotlivých pokusech to vychází jen šest z deseti, a mezi pokusy to skáče od 0,08 do 0,52.",
-      "Takže: náznak ano, důkaz ne. Píšeme to sem přesně takhle, protože kdybychom napsali jen ten první rozdíl, znělo by to mnohem líp, než jak si zasloužíme."
+      "Skutečná moucha má vrozený reflex: když se jí svět pohne před očima, otočí se za ním. Nikdo ji to neučí, má to v drátech.",
+      "Zkusili jsme, jestli to má i naše. Vyšlo 0,26 proti 0,14 s přeházenou informací o směru — náznak, ale po jednotlivých pokusech to vycházelo jen šest z deseti. Napsali jsme tehdy, že je to náznak, ne důkaz.",
+      "Pak si toho někdo všiml při hraní hry: pohyb té mouchy působí náhodně. Změřili jsme to a vyšlo, že sleduje cíl jen v levé půlce zorného pole. V pravé zatáčí, jak ji zrovna napadne.",
+      "Chyby byly dvě a obě v očích. Za prvé, pravé oko nebylo zrcadlené — detektory pohybu v něm hlásily směry, jako by to bylo levé oko. Za druhé, a to je ta horší: obě oči dostávaly celý obraz. Skutečná moucha má oči po stranách hlavy, každé kouká na svou polovinu světa. U nás viděly obě všechno, takže cíl vpravo budil levé oko úplně stejně jako pravé a rozdíl stran neměl z čeho vzniknout.",
+      "Po opravě drží moucha cíl v 88 % času proti 44 % s přeházenými směry a 20 %, když se vůbec netočí. Dvanáct pokusů z dvanácti, rozdíl 52 procentních bodů. Původní verze měla šest procentních bodů a byla na hranici šumu.",
+      "Poučení je nepříjemné a stojí za to ho říct nahlas: ten poznatek o zrcadlení jsme už jednou udělali jinde v projektu a zapsali si ho do dokumentace. Jen jsme ho nikdy nepoužili tam, kde měl být. Mít správnou věc napsanou a nepromítnout ji je horší než na ni vůbec nepřijít."
     ],
-    "cisla": "0,26 se správnými směry · 0,14 s přeházenými · 0,18 s nehybnou mouchou · ale jen 6 pokusů z 10",
+    "cisla": "0,880 se správnými směry · 0,440 s přeházenými · 0,200 nehybná · 12 z 12 epizod · rozdíl +52,0 p. b.",
     "metodika": {
-      "design": "Deset epizod po 25 krocích, měří se podíl kroků, kdy je cíl do 20 stupňů od středu pohledu. Žádné učení, jen zapojení.",
+      "design": "Dvanáct epizod po 25 krocích, měří se podíl kroků, kdy je cíl do 20 stupňů od středu pohledu. Žádné učení, jen zapojení connectomu.",
       "ramena": "skutečné přiřazení směrů · přeházené přiřazení směrů (zničí informaci o pohybu, vše ostatní nechá) · nehybná moucha (dolní mez — jak často cíl projde středem sám od sebe)",
+      "postup": "Oprava spočívala ve dvou změnách v agent2.py: u pravého oka se prohodí směrové dvojice podtypů T4/T5 (a↔b, c↔d), a každé oko vzorkuje jen svou polovinu obrazu s úzkým překryvem vpředu (0–55 % a 45–100 % šířky).",
       "vysledky": [
         [
           "skutečné směry, medián",
-          "0,260"
+          "0,880"
         ],
         [
           "přeházené směry",
-          "0,140"
+          "0,440"
         ],
         [
           "nehybná moucha",
-          "0,180"
+          "0,200"
         ],
         [
-          "epizod, kde skutečné > přeházené",
-          "6 z 10"
+          "epizod se správným pořadím",
+          "12 z 12"
         ],
         [
-          "rozsah mezi epizodami",
-          "0,08 až 0,52"
+          "rozdíl mediánů",
+          "+52,0 p. b."
+        ],
+        [
+          "před opravou očí",
+          "0,260 / 0,140 / 6 z 10"
         ]
       ],
-      "omezeni": "Dvě ze tří předem zapsaných predikcí prošly, ta nejdůležitější ne. Deset epizod na tenhle rozptyl nestačí."
+      "omezeni": "Sledování je vrozené, ne naučené — plyne ze zapojení, které jsme nijak neupravovali. Zároveň to znamená, že všechny dosavadní pokusy o UČENÍ běžely na mouše, která polovinu zorného pole zpracovávala špatně, a jejich záporné výsledky je proto nutné přehrát."
     },
     "zkratky": [
       [
@@ -521,12 +528,20 @@
         "vrozený reflex: když se obraz světa posune, zvíře se otočí za ním, aby ho srovnalo"
       ],
       [
-        "medián",
-        "prostřední hodnota po seřazení"
+        "T4 a T5",
+        "detektory pohybu v mouším oku; každý podtyp (a–d) hlásí jiný směr"
       ],
       [
-        "epizoda",
-        "jeden pokus od začátku do konce; tady 25 kroků hry"
+        "lateralizace",
+        "rozdíl mezi levou a pravou stranou; bez něj nejde poznat, kam zatočit"
+      ],
+      [
+        "zorné pole",
+        "kus prostoru, který oko vidí; mouší oči se překrývají jen úzkým pruhem vpředu"
+      ],
+      [
+        "medián",
+        "prostřední hodnota po seřazení"
       ]
     ]
   },
