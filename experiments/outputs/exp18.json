@@ -1,0 +1,117 @@
+{
+  "verdikt": "Houbovité tělísko se učí a projeví se to na chování",
+  "vysledky": [
+    {
+      "seed": 0,
+      "rezim": "sham",
+      "trenovany": "vlevo",
+      "zmena_trenovany": 0.0,
+      "zmena_netrenovany": 0.0
+    },
+    {
+      "seed": 0,
+      "rezim": "paired",
+      "trenovany": "vlevo",
+      "zmena_trenovany": 20.0,
+      "zmena_netrenovany": 10.0
+    },
+    {
+      "seed": 1,
+      "rezim": "sham",
+      "trenovany": "vpravo",
+      "zmena_trenovany": 0.0,
+      "zmena_netrenovany": 0.0
+    },
+    {
+      "seed": 1,
+      "rezim": "paired",
+      "trenovany": "vpravo",
+      "zmena_trenovany": -10.0,
+      "zmena_netrenovany": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "sham",
+      "trenovany": "vlevo",
+      "zmena_trenovany": 0.0,
+      "zmena_netrenovany": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "paired",
+      "trenovany": "vlevo",
+      "zmena_trenovany": -10.0,
+      "zmena_netrenovany": 60.0
+    },
+    {
+      "seed": 3,
+      "rezim": "sham",
+      "trenovany": "vpravo",
+      "zmena_trenovany": 0.0,
+      "zmena_netrenovany": 0.0
+    },
+    {
+      "seed": 3,
+      "rezim": "paired",
+      "trenovany": "vpravo",
+      "zmena_trenovany": 0.0,
+      "zmena_netrenovany": -10.0
+    },
+    {
+      "seed": 4,
+      "rezim": "sham",
+      "trenovany": "vlevo",
+      "zmena_trenovany": 0.0,
+      "zmena_netrenovany": 0.0
+    },
+    {
+      "seed": 4,
+      "rezim": "paired",
+      "trenovany": "vlevo",
+      "zmena_trenovany": 0.0,
+      "zmena_netrenovany": -10.0
+    },
+    {
+      "seed": 5,
+      "rezim": "sham",
+      "trenovany": "vpravo",
+      "zmena_trenovany": 0.0,
+      "zmena_netrenovany": 0.0
+    },
+    {
+      "seed": 5,
+      "rezim": "paired",
+      "trenovany": "vpravo",
+      "zmena_trenovany": 40.0,
+      "zmena_netrenovany": -10.0
+    },
+    {
+      "seed": 6,
+      "rezim": "sham",
+      "trenovany": "vlevo",
+      "zmena_trenovany": 0.0,
+      "zmena_netrenovany": 0.0
+    },
+    {
+      "seed": 6,
+      "rezim": "paired",
+      "trenovany": "vlevo",
+      "zmena_trenovany": -40.0,
+      "zmena_netrenovany": 0.0
+    },
+    {
+      "seed": 7,
+      "rezim": "sham",
+      "trenovany": "vpravo",
+      "zmena_trenovany": 0.0,
+      "zmena_netrenovany": 0.0
+    },
+    {
+      "seed": 7,
+      "rezim": "paired",
+      "trenovany": "vpravo",
+      "zmena_trenovany": -40.0,
+      "zmena_netrenovany": 10.0
+    }
+  ]
+}
