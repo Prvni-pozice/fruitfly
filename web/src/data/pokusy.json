@@ -886,5 +886,81 @@
         "kontrola se stejně velkým zásahem, ale bez obsahu"
       ]
     ]
+  },
+  {
+    "id": "paka-ctyri-procenta",
+    "datum": "2026-09-15",
+    "nazev": "Moucha se učí. Jen to nikam nevede",
+    "podtitul": "Našli jsme správné místo pro učení a změřili, že je moc slabé",
+    "vysledek": "castecne",
+    "shrnuti": "Paměťové centrum mouchy opravdu mění chování a je přitom vybíravé. Jenže má na zatáčení páku čtyři procenta.",
+    "pribeh": [
+      "Po šesti marných pokusech jsme si konečně přečetli, jak se to dělá jinde. Odpověď byla jednoznačná: moucha se z odměny neučí tam, kde vydává povely, ale ve svém paměťovém centru — houbovitém tělísku. Učili jsme celou dobu na špatném místě.",
+      "V mapě zapojení je ta cesta celá. Ze zraku do paměťového centra vede přes třináct tisíc synapsí a z něj zpátky k neuronu, který řídí zatáčení, dalších sto čtyřicet tři.",
+      "Zkusili jsme to a poprvé za celý projekt se něco pohnulo správně: když jsme mouchu trénovali na jeden obrázek, změnilo se její chování právě u něj — a u druhého obrázku vůbec. To je přesně to, co paměť dělá. Je vybíravá.",
+      "Jenže směr té změny se nedal řídit. U poloviny pokusů šla nahoru, u druhé dolů.",
+      "Mouší mozek má na to dvě různé dopaminové party: jedna hlásí odměnu, druhá trest. Čekali jsme, že budou táhnout proti sobě, a změřili to. Netáhnou. Ta odměnová tlačí do strany, ta trestová jen ubírá plyn oběma. Není to páka doleva a doprava, je to páka do strany a brzda.",
+      "Tak jsme udělali poslední test, nejjednodušší ze všech. Vzali jsme po jednom všech čtyřiaosmdesát neuronů, kterými paměťové centrum promlouvá do zbytku mozku, každý zvlášť skoro vypnuli a koukli, co to udělá se zatáčením.",
+      "Nejvíc se dalo pohnout o deset jednotek. Výchozí hodnota byla dvě stě třicet.",
+      "Čtyři procenta. Paměť tam je, funguje a je vybíravá — jen má na volant vliv jako pasažér, který může kývnout hlavou. Ne že by se moucha nechtěla učit. Ona se učí. Jen to, co se naučí, nemá jak prosadit."
+    ],
+    "cisla": "84 testovaných výstupů paměti · největší vliv 10 Hz · výchozí hodnota 230 Hz · páka 4 %",
+    "metodika": {
+      "design": "Tři navazující pokusy. (19) Deprese KC→MBON řízená bránou PAM nebo PPL1 podle správnosti akce, 12 losů. (20) Táž deprese vždy přes PAM, cíl u všech losů stejný. (21) Vyčerpávající test páky: každý z 84 MBON s vstupem z KC zvlášť zeslaben na desetinu, měřen posun zatáčení.",
+      "vstupy": "Kenyonovy buňky se budí zvenčí — v modelu nevystřelí ani jedna z 5 177, protože vizuální vstup jde jen na 354 z nich po ~37 synapsích, hluboko pod prahem. Zapojení KC→MBON i MBON→DNa02 zůstává z connectomu.",
+      "vysledky": [
+        [
+          "PAM → DNa02 vlevo / vpravo",
+          "+70 183 / −114 573"
+        ],
+        [
+          "PPL1 → DNa02 vlevo / vpravo",
+          "−73 388 / −142 234"
+        ],
+        [
+          "učení se správným směrem (exp19)",
+          "6 z 12 losů"
+        ],
+        [
+          "jeden směr, vždy PAM (exp20)",
+          "6 z 12 losů"
+        ],
+        [
+          "specificita vůči netrénovanému podnětu",
+          "potvrzena ve všech bězích"
+        ],
+        [
+          "největší posun jedním MBON",
+          "−10 Hz z 230 Hz"
+        ]
+      ],
+      "omezeni": "Platí pro tenhle model, ne pro živou mouchu. Kenyonovy buňky se budí uměle, protože je model neprotlačí; je to stejný ústupek jako u optického laloku. Test páky byl vyčerpávající jen po jednom neuronu — kombinace více neuronů najednou otestované nejsou a mohou dát víc."
+    },
+    "zkratky": [
+      [
+        "houbovité tělísko",
+        "paměťové centrum mouchy; obdoba hipokampu"
+      ],
+      [
+        "Kenyonovy buňky",
+        "5 177 neuronů, které kódují podněty v paměťovém centru"
+      ],
+      [
+        "MBON",
+        "výstupní neurony paměťového centra — kudy paměť promlouvá do zbytku mozku"
+      ],
+      [
+        "PAM a PPL1",
+        "dvě skupiny dopaminových neuronů: první signalizuje odměnu, druhá trest"
+      ],
+      [
+        "deprese synapsí",
+        "zeslabení spoje; hlavní způsob, jak si moucha pamatuje"
+      ],
+      [
+        "páka",
+        "jak moc dokáže jedna část soustavy ovlivnit výsledek"
+      ]
+    ]
   }
 ]

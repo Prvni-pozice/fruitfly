@@ -1,0 +1,173 @@
+{
+  "verdikt": "ZÁPORNÝ: dopaminové brány směr nevyberou",
+  "vysledky": [
+    {
+      "seed": 0,
+      "rezim": "sham",
+      "proti": false,
+      "posun_spravnym_smerem": 0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 0,
+      "rezim": "paired",
+      "proti": false,
+      "posun_spravnym_smerem": 20.0,
+      "posun_netrenovany": 10.0
+    },
+    {
+      "seed": 1,
+      "rezim": "sham",
+      "proti": false,
+      "posun_spravnym_smerem": -0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 1,
+      "rezim": "paired",
+      "proti": false,
+      "posun_spravnym_smerem": 10.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "sham",
+      "proti": true,
+      "posun_spravnym_smerem": -0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "paired",
+      "proti": true,
+      "posun_spravnym_smerem": 50.0,
+      "posun_netrenovany": 30.0
+    },
+    {
+      "seed": 3,
+      "rezim": "sham",
+      "proti": true,
+      "posun_spravnym_smerem": 0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 3,
+      "rezim": "paired",
+      "proti": true,
+      "posun_spravnym_smerem": -40.0,
+      "posun_netrenovany": 10.0
+    },
+    {
+      "seed": 4,
+      "rezim": "sham",
+      "proti": false,
+      "posun_spravnym_smerem": 0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 4,
+      "rezim": "paired",
+      "proti": false,
+      "posun_spravnym_smerem": 0.0,
+      "posun_netrenovany": 10.0
+    },
+    {
+      "seed": 5,
+      "rezim": "sham",
+      "proti": false,
+      "posun_spravnym_smerem": -0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 5,
+      "rezim": "paired",
+      "proti": false,
+      "posun_spravnym_smerem": -40.0,
+      "posun_netrenovany": 10.0
+    },
+    {
+      "seed": 6,
+      "rezim": "sham",
+      "proti": true,
+      "posun_spravnym_smerem": -0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 6,
+      "rezim": "paired",
+      "proti": true,
+      "posun_spravnym_smerem": 90.0,
+      "posun_netrenovany": 20.0
+    },
+    {
+      "seed": 7,
+      "rezim": "sham",
+      "proti": true,
+      "posun_spravnym_smerem": -0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 7,
+      "rezim": "paired",
+      "proti": true,
+      "posun_spravnym_smerem": 30.0,
+      "posun_netrenovany": 10.0
+    },
+    {
+      "seed": 8,
+      "rezim": "sham",
+      "proti": false,
+      "posun_spravnym_smerem": 0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 8,
+      "rezim": "paired",
+      "proti": false,
+      "posun_spravnym_smerem": -20.0,
+      "posun_netrenovany": 20.0
+    },
+    {
+      "seed": 9,
+      "rezim": "sham",
+      "proti": false,
+      "posun_spravnym_smerem": -0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 9,
+      "rezim": "paired",
+      "proti": false,
+      "posun_spravnym_smerem": -50.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 10,
+      "rezim": "sham",
+      "proti": true,
+      "posun_spravnym_smerem": -0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 10,
+      "rezim": "paired",
+      "proti": true,
+      "posun_spravnym_smerem": 70.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 11,
+      "rezim": "sham",
+      "proti": true,
+      "posun_spravnym_smerem": 0.0,
+      "posun_netrenovany": 0.0
+    },
+    {
+      "seed": 11,
+      "rezim": "paired",
+      "proti": true,
+      "posun_spravnym_smerem": -20.0,
+      "posun_netrenovany": 10.0
+    }
+  ]
+}
