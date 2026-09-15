@@ -1,0 +1,134 @@
+{
+  "zaklad": {
+    "vlevo": 230.0,
+    "vpravo": -40.0
+  },
+  "vysledky": [
+    {
+      "jmeno": "všech 84",
+      "n": 84,
+      "posun_vlevo": -40.0,
+      "posun_vpravo": -70.0
+    },
+    {
+      "jmeno": "náhodných 10 (#0)",
+      "n": 10,
+      "posun_vlevo": 10.0,
+      "posun_vpravo": 0.0
+    },
+    {
+      "jmeno": "náhodných 10 (#1)",
+      "n": 10,
+      "posun_vlevo": 10.0,
+      "posun_vpravo": -10.0
+    },
+    {
+      "jmeno": "náhodných 10 (#2)",
+      "n": 10,
+      "posun_vlevo": 10.0,
+      "posun_vpravo": 0.0
+    },
+    {
+      "jmeno": "náhodných 20 (#0)",
+      "n": 20,
+      "posun_vlevo": 0.0,
+      "posun_vpravo": -10.0
+    },
+    {
+      "jmeno": "náhodných 20 (#1)",
+      "n": 20,
+      "posun_vlevo": -10.0,
+      "posun_vpravo": -70.0
+    },
+    {
+      "jmeno": "náhodných 20 (#2)",
+      "n": 20,
+      "posun_vlevo": 0.0,
+      "posun_vpravo": 0.0
+    },
+    {
+      "jmeno": "náhodných 40 (#0)",
+      "n": 40,
+      "posun_vlevo": -20.0,
+      "posun_vpravo": 60.0
+    },
+    {
+      "jmeno": "náhodných 40 (#1)",
+      "n": 40,
+      "posun_vlevo": 0.0,
+      "posun_vpravo": -30.0
+    },
+    {
+      "jmeno": "náhodných 40 (#2)",
+      "n": 40,
+      "posun_vlevo": -20.0,
+      "posun_vpravo": 20.0
+    },
+    {
+      "jmeno": "náhodných 60 (#0)",
+      "n": 60,
+      "posun_vlevo": -10.0,
+      "posun_vpravo": 0.0
+    },
+    {
+      "jmeno": "náhodných 60 (#1)",
+      "n": 60,
+      "posun_vlevo": -10.0,
+      "posun_vpravo": -10.0
+    },
+    {
+      "jmeno": "náhodných 60 (#2)",
+      "n": 60,
+      "posun_vlevo": -40.0,
+      "posun_vpravo": -70.0
+    },
+    {
+      "jmeno": "top 5 (posun doprava)",
+      "n": 5,
+      "posun_vlevo": -10.0,
+      "posun_vpravo": 0.0
+    },
+    {
+      "jmeno": "top 10 (posun doprava)",
+      "n": 10,
+      "posun_vlevo": 0.0,
+      "posun_vpravo": -10.0
+    },
+    {
+      "jmeno": "top 20 (posun doprava)",
+      "n": 20,
+      "posun_vlevo": 10.0,
+      "posun_vpravo": -20.0
+    },
+    {
+      "jmeno": "top 40 (posun doprava)",
+      "n": 40,
+      "posun_vlevo": -10.0,
+      "posun_vpravo": -10.0
+    },
+    {
+      "jmeno": "top 5 (posun doleva)",
+      "n": 5,
+      "posun_vlevo": 10.0,
+      "posun_vpravo": -20.0
+    },
+    {
+      "jmeno": "top 10 (posun doleva)",
+      "n": 10,
+      "posun_vlevo": 20.0,
+      "posun_vpravo": -50.0
+    },
+    {
+      "jmeno": "top 20 (posun doleva)",
+      "n": 20,
+      "posun_vlevo": -40.0,
+      "posun_vpravo": 10.0
+    },
+    {
+      "jmeno": "top 40 (posun doleva)",
+      "n": 40,
+      "posun_vlevo": -30.0,
+      "posun_vpravo": -30.0
+    }
+  ]
+}

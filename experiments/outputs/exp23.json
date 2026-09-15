@@ -1,0 +1,174 @@
+{
+  "verdikt": "Rozdíl je, ale směry nejsou opačné",
+  "homeostaza": true,
+  "vysledky": [
+    {
+      "seed": 0,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 0,
+      "rezim": "paired",
+      "dt": 20.0,
+      "dn": 30.0,
+      "rozdil": -10.0
+    },
+    {
+      "seed": 1,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 1,
+      "rezim": "paired",
+      "dt": -10.0,
+      "dn": 0.0,
+      "rozdil": -10.0
+    },
+    {
+      "seed": 2,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "paired",
+      "dt": -10.0,
+      "dn": 0.0,
+      "rozdil": -10.0
+    },
+    {
+      "seed": 3,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 3,
+      "rezim": "paired",
+      "dt": 0.0,
+      "dn": -10.0,
+      "rozdil": 10.0
+    },
+    {
+      "seed": 4,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 4,
+      "rezim": "paired",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 5,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 5,
+      "rezim": "paired",
+      "dt": 40.0,
+      "dn": 0.0,
+      "rozdil": 40.0
+    },
+    {
+      "seed": 6,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 6,
+      "rezim": "paired",
+      "dt": -40.0,
+      "dn": -10.0,
+      "rozdil": -30.0
+    },
+    {
+      "seed": 7,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 7,
+      "rezim": "paired",
+      "dt": -40.0,
+      "dn": 30.0,
+      "rozdil": -70.0
+    },
+    {
+      "seed": 8,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 8,
+      "rezim": "paired",
+      "dt": -20.0,
+      "dn": -10.0,
+      "rozdil": -10.0
+    },
+    {
+      "seed": 9,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 9,
+      "rezim": "paired",
+      "dt": 90.0,
+      "dn": 10.0,
+      "rozdil": 80.0
+    },
+    {
+      "seed": 10,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 10,
+      "rezim": "paired",
+      "dt": -40.0,
+      "dn": 10.0,
+      "rozdil": -50.0
+    },
+    {
+      "seed": 11,
+      "rezim": "sham",
+      "dt": 0.0,
+      "dn": 0.0,
+      "rozdil": 0.0
+    },
+    {
+      "seed": 11,
+      "rezim": "paired",
+      "dt": 100.0,
+      "dn": -20.0,
+      "rozdil": 120.0
+    }
+  ]
+}
