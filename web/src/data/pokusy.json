@@ -962,5 +962,82 @@
         "jak moc dokáže jedna část soustavy ovlivnit výsledek"
       ]
     ]
+  },
+  {
+    "id": "vypnuta-chut-na-zivot",
+    "datum": "2026-09-17",
+    "nazev": "Mouše jsme zapomněli zapnout chuť na život",
+    "podtitul": "Model měl vypnutou celou soustavu, která říká „dobré\" a „špatné\"",
+    "vysledek": "zasadni",
+    "shrnuti": "Ptali jsme se, proč se moucha neučí. Ukázalo se, že v našem modelu neměla čím cítit odměnu.",
+    "pribeh": [
+      "Když moucha ve hře zatáčí za cílem, je otázka, po čem vlastně jde. Změřili jsme to: po ničem. Otáčí se k objektu, protože je tak zapojená — sedmasedmdesát procent toho, kam zatočí, určuje poloha objektu. Žádné chtění v tom není, je to reflex jako trhnutí nohy po ťuknutí do kolena.",
+      "Tak jsme jí chtěli dát něco dobrého. Moucha má v mapě zapojení chuťové neurony na cukr a má i dopaminové neurony, které u skutečné mouchy hlásí odměnu. Stačilo by je propojit.",
+      "Kápli jsme jí tedy virtuální cukr a koukli, jestli se odměnové neurony rozsvítí. Skoro vůbec. Zato ty trestové ano — což je u cukru trochu nečekané.",
+      "Hledali jsme chybu a našli ji v základech modelu. Neurony si posílají zprávy různými chemikáliemi a náš model u tří z nich — dopaminu, oktopaminu a serotoninu — nastavuje sílu spoje na nulu. Prostě je nepočítá.",
+      "Jsou to tři chemikálie, které v mozku dělají odměnu, trest, náladu a motivaci. Dohromady dva a půl tisíce neuronů a přes milion spojů. V našem modelu mlčí.",
+      "Takže odpověď na „proč se moucha neučí\" možná nezní, že je hloupá nebo že máme špatné pravidlo. Zní, že jsme jí vypnuli celý systém odměny a pak se divili, že jí na odměně nezáleží.",
+      "Zapnuli jsme oktopamin a dopamin jako obyčejné budivé spoje — což je hrubé zjednodušení, ve skutečnosti působí pomaleji a jinak — a cukr poprvé dosáhl až k odměnovým neuronům. Ne silně, ale dosáhl: rozsvítilo se dvacet devět z dvou set šedesáti jedna, v pěti různých podtypech.",
+      "Je to poprvé, co v tomhle projektu vznikl signál odměny sám od sebe, zevnitř zapojení, místo aby ho tam někdo vpíchl zvenčí."
+    ],
+    "cisla": "dopamin 791 neuronů / 378 682 synapsí · oktopamin 106 / 154 441 · serotonin 1 435 / 502 056 — všechny s nulovou vahou · po zapnutí: cukr budí 29 z 261 odměnových neuronů",
+    "metodika": {
+      "design": "Diagnostika po sérii neúspěšných pokusů o učení. Změřen podíl chování vysvětlený polohou vs pohybem podnětu, poté dohledána cesta od chuti k odměně a testována funkčně.",
+      "vstupy": "129 chuťových neuronů na cukr, 261 dopaminových PAM (odměna), 16 PPL1 (trest) — vše z anotací FlyWire. Stimulace 3,0 po 300 kroků.",
+      "postup": "Znaménko spoje se v modelu odvozuje z přenašeče: acetylcholin budí, GABA a glutamát tlumí, modulační (DA/SER/OCT) dostávají nulu. Pro test byly OCT a DA nastaveny jako budivé.",
+      "vysledky": [
+        [
+          "co řídí zatáčení — poloha podnětu",
+          "77,2 % rozptylu"
+        ],
+        [
+          "co řídí zatáčení — směr pohybu",
+          "1,7 %"
+        ],
+        [
+          "přímé synapse cukr → PAM",
+          "0"
+        ],
+        [
+          "cukr → PAM, modulační vypnuté",
+          "0,36 Hz (10 z 261)"
+        ],
+        [
+          "cukr → PAM, oktopamin zapnutý",
+          "1,58 Hz (21 z 261)"
+        ],
+        [
+          "cukr → PAM, i dopamin zapnutý",
+          "4,24 Hz (29 z 261)"
+        ],
+        [
+          "odpovídající podtypy",
+          "PAM07, PAM05, PAM08, PAM06, PAM02"
+        ]
+      ],
+      "omezeni": "Zapnout modulační přenašeče jako obyčejné budivé spoje je hrubé zjednodušení — ve skutečnosti působí přes jiné receptory, pomaleji a často mění citlivost místo toho, aby přímo budily. Zároveň po zapnutí rostou i trestové neurony, takže cukr zatím není jednoznačně odměňující. A jestli odpovídající podtypy PAM jsou ty, které jmenuje literatura, ověřit neumíme — FlyWire používá jiné názvosloví."
+    },
+    "zkratky": [
+      [
+        "neuropřenašeč",
+        "chemikálie, kterou neuron mluví na další neuron"
+      ],
+      [
+        "modulační přenašeč",
+        "dopamin, oktopamin, serotonin — nepředávají zprávu, ale mění, jak ostatní spoje fungují"
+      ],
+      [
+        "PAM a PPL1",
+        "dvě skupiny dopaminových neuronů: první signalizuje odměnu, druhá trest"
+      ],
+      [
+        "chuťové neurony (GRN)",
+        "buňky na noze a sosáku, kterými moucha ochutnává"
+      ],
+      [
+        "reflex",
+        "pevně zapojená odpověď na podnět, bez rozhodování"
+      ]
+    ]
   }
 ]
