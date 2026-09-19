@@ -1119,5 +1119,77 @@
         "vznikající uvnitř — tady odměna vyrobená zapojením, ne vložená zvenčí"
       ]
     ]
+  },
+  {
+    "id": "podmineny-sosak",
+    "datum": "2026-09-19",
+    "nazev": "Naučila se to. Jen jsme se dívali na špatnou končetinu",
+    "podtitul": "Devatenáct pokusů měřilo učení na volantu. Paměť ovládá jazyk",
+    "vysledek": "ano",
+    "shrnuti": "Pach spárovaný s cukrem začne sám vysouvat sosák — první učení v projektu, které přežilo celý předem zapsaný protokol.",
+    "pribeh": [
+      "Devatenáctkrát jsme se snažili naučit mouchu něco z odměny a devatenáctkrát nic. Pak přišla otázka zvenčí: a co když paměť funguje, jen nedosáhne na to, co měříte? Zatáčení řídí reflex. Možná ho paměť prostě nepřehlasuje.",
+      "Tak jsme udělali mapu. Zeslabili jsme výstupy paměťového centra a koukli, které části mozku se pohnou. Zatáčení: dvě procenta. Motoneurony sosáku: čtyřiadvacet. Polykání: šestadvacet. Paměť té mouchy nedosáhne na volant. Dosáhne na jazyk.",
+      "A ještě něco: když paměť zeslábla, sosák se zvedl. Paměťové výstupy krmení ve výchozím stavu brzdí, a odměna tu brzdu povoluje. Přesně to je mechanismus, kterým se skutečná octomilka učí, že po určitém pachu přijde cukr — a začne na ten pach vysouvat sosák dopředu.",
+      "Postavili jsme tedy nejstarší pokus z učebnic. Pach a cukr zároveň, dvacetkrát. Cukr projde jejím vlastním zapojením k dopaminu a dopamin přepíše paměť. Pak pach sám, bez cukru — a měříme, jestli sosák jede.",
+      "První běh neměřil nic, protože jsme pro „čistotu\" vypnuli zrakovou scénu a sosák spadl na dva spiky za měření. Ta samá podlaha, do které jsme šlápli už dřív. Scénu jsme vrátili a prodloužili měření.",
+      "A pak to přišlo. Dvanáct losů: pach spárovaný s cukrem zvedl sosák v deseti z nich, o čtyři hertze v mediánu, u některých z deseti na pětačtyřicet. Netrénovaný pach nic. A kontrolní rameno, kde moucha dostala stejný cukr, jen jindy než pach, dalo přesnou nulu ve všech dvanácti. Cukr sám nic nedělá. Spojení pachu s cukrem ano.",
+      "Ještě jedna poctivá poznámka: prvních šest losů mělo medián devět hertzů, plných dvanáct čtyři. Regrese k průměru, potřetí v tomhle projektu. Tentokrát ji výsledek přežil.",
+      "Takže po měsíci: moucha se učí. Vždycky se učila. My jsme se dívali na nohy, zatímco se to dělo na jazyku."
+    ],
+    "cisla": "páka paměti: sosák 24 %, zatáčení 2 % · pach + cukr: +4,06 Hz, 10 z 12 · netrénovaný pach −1,35 · cukr bez pachu 0,00 ve 12 z 12",
+    "metodika": {
+      "design": "(28) Mapa vlivu: zeslabení všech KC→MBON na desetinu, 6 pachů, relativní změna 13 populací. (29) Apetitivní podmiňování: 20 párování pach A + cukr; test pach A a B samotný před a po, 200 kroků. Tři ramena: sham, paired, unpaired (cukr zvlášť, jindy než pach). 12 losů, kritéria zapsaná předem.",
+      "vstupy": "Cukr = 129 chuťových neuronů (3,0). Brána deprese pro každý MBON = Σ frekvence PAM × synapse PAM→MBON z connectomu. Odečet = průměrná frekvence 24 motoneuronů sosáku. Zraková scéna přítomná v pozadí (bez ní podlaha 1–3 Hz).",
+      "vysledky": [
+        [
+          "páka paměti na sosák / polykání / zatáčení",
+          "24 % / 26 % / 2 %"
+        ],
+        [
+          "paired: sosák na pach A, medián",
+          "+4,06 Hz, roste 10 z 12"
+        ],
+        [
+          "paired: pach B (netrénovaný)",
+          "−1,35 Hz"
+        ],
+        [
+          "unpaired: cukr jindy než pach",
+          "0,00 Hz ve 12 z 12"
+        ],
+        [
+          "sham",
+          "0,00 ve 12 z 12"
+        ],
+        [
+          "prvních 6 losů vs plných 12",
+          "+9,27 vs +4,06 Hz"
+        ]
+      ],
+      "omezeni": "Kenyonovy buňky se budí přímo — model je z vizuálního vstupu neprotlačí. Modulační přenašeče působí jako obyčejné budivé spoje. Naučená odpověď je vysunutí sosáku, ne pohyb ve hře: na zatáčení má paměť páku 2 % a tam se učení neprojeví. Takže hra na webu zůstává vrozená."
+    },
+    "zkratky": [
+      [
+        "podmiňování (Pavlov)",
+        "spárování neutrálního podnětu s odměnou, po kterém podnět sám vyvolá odpověď"
+      ],
+      [
+        "PER (proboscis extension reflex)",
+        "vysunutí sosáku — mouší „mlsání\"; klasický odečet učení u octomilky"
+      ],
+      [
+        "unpaired",
+        "kontrolní rameno se stejným cukrem a pachem, ale ne zároveň; odděluje asociaci od pouhého vlivu cukru"
+      ],
+      [
+        "mapa vlivu",
+        "změření, které populace mozku se pohnou, když zasáhnete do jedné části"
+      ],
+      [
+        "regrese k průměru",
+        "výjimečně dobrá první měření se při opakování vrací k běžné hodnotě"
+      ]
+    ]
   }
 ]

@@ -1,0 +1,294 @@
+{
+  "verdikt": "PODMÍNĚNÝ SOSÁK: pach spárovaný s cukrem sám vyvolá krmení",
+  "losu": 12,
+  "vysledky": [
+    {
+      "seed": 0,
+      "rezim": "sham",
+      "predA": 14.791666984558105,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 0,
+      "rezim": "paired",
+      "predA": 14.791666984558105,
+      "dA": -0.41666698455810547,
+      "dB": -4.375,
+      "dopamin": 2396.0
+    },
+    {
+      "seed": 0,
+      "rezim": "unpaired",
+      "predA": 14.791666984558105,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 1,
+      "rezim": "sham",
+      "predA": 9.583333015441895,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 1,
+      "rezim": "paired",
+      "predA": 9.583333015441895,
+      "dA": 17.083333015441895,
+      "dB": -6.6666669845581055,
+      "dopamin": 2452.0
+    },
+    {
+      "seed": 1,
+      "rezim": "unpaired",
+      "predA": 9.583333015441895,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 2,
+      "rezim": "sham",
+      "predA": 22.70833396911621,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "paired",
+      "predA": 22.70833396911621,
+      "dA": 0.20833206176757812,
+      "dB": -3.541667938232422,
+      "dopamin": 2238.0
+    },
+    {
+      "seed": 2,
+      "rezim": "unpaired",
+      "predA": 22.70833396911621,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 3,
+      "rezim": "sham",
+      "predA": 10.0,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 3,
+      "rezim": "paired",
+      "predA": 10.0,
+      "dA": 35.41666793823242,
+      "dB": 2.7083330154418945,
+      "dopamin": 2227.0
+    },
+    {
+      "seed": 3,
+      "rezim": "unpaired",
+      "predA": 10.0,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 4,
+      "rezim": "sham",
+      "predA": 16.25,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 4,
+      "rezim": "paired",
+      "predA": 16.25,
+      "dA": 26.875,
+      "dB": 1.6666669845581055,
+      "dopamin": 2242.0
+    },
+    {
+      "seed": 4,
+      "rezim": "unpaired",
+      "predA": 16.25,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 5,
+      "rezim": "sham",
+      "predA": 10.833333015441895,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 5,
+      "rezim": "paired",
+      "predA": 10.833333015441895,
+      "dA": 1.458333969116211,
+      "dB": 2.083333969116211,
+      "dopamin": 2254.0
+    },
+    {
+      "seed": 5,
+      "rezim": "unpaired",
+      "predA": 10.833333015441895,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 6,
+      "rezim": "sham",
+      "predA": 11.25,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 6,
+      "rezim": "paired",
+      "predA": 11.25,
+      "dA": 6.041666030883789,
+      "dB": 2.2916669845581055,
+      "dopamin": 2252.0
+    },
+    {
+      "seed": 6,
+      "rezim": "unpaired",
+      "predA": 11.25,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 7,
+      "rezim": "sham",
+      "predA": 18.125,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 7,
+      "rezim": "paired",
+      "predA": 18.125,
+      "dA": 3.125,
+      "dB": -4.7916669845581055,
+      "dopamin": 2222.0
+    },
+    {
+      "seed": 7,
+      "rezim": "unpaired",
+      "predA": 18.125,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 8,
+      "rezim": "sham",
+      "predA": 10.833333015441895,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 8,
+      "rezim": "paired",
+      "predA": 10.833333015441895,
+      "dA": 7.0833330154418945,
+      "dB": 2.083333969116211,
+      "dopamin": 2160.0
+    },
+    {
+      "seed": 8,
+      "rezim": "unpaired",
+      "predA": 10.833333015441895,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 9,
+      "rezim": "sham",
+      "predA": 14.583333015441895,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 9,
+      "rezim": "paired",
+      "predA": 14.583333015441895,
+      "dA": 1.25,
+      "dB": 0.625,
+      "dopamin": 2439.0
+    },
+    {
+      "seed": 9,
+      "rezim": "unpaired",
+      "predA": 14.583333015441895,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 10,
+      "rezim": "sham",
+      "predA": 8.958333015441895,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 10,
+      "rezim": "paired",
+      "predA": 8.958333015441895,
+      "dA": 5.0,
+      "dB": -3.3333330154418945,
+      "dopamin": 2104.0
+    },
+    {
+      "seed": 10,
+      "rezim": "unpaired",
+      "predA": 8.958333015441895,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    },
+    {
+      "seed": 11,
+      "rezim": "sham",
+      "predA": 9.791666984558105,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 11,
+      "rezim": "paired",
+      "predA": 9.791666984558105,
+      "dA": -0.625,
+      "dB": -5.2083330154418945,
+      "dopamin": 2335.0
+    },
+    {
+      "seed": 11,
+      "rezim": "unpaired",
+      "predA": 9.791666984558105,
+      "dA": 0.0,
+      "dB": 0.0,
+      "dopamin": 1380.0
+    }
+  ]
+}

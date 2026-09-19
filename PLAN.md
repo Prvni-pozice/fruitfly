@@ -132,6 +132,29 @@ jakékoli. Otevřené zůstává jen to, co nejde bez přestavby modelu:
 realistický řídký kód KC (model je neprotlačí) a modulace jako změna
 citlivosti místo budivého spoje.
 
+### 6e. PRVNÍ DOLOŽENÉ UČENÍ — 19. 9. 2026 (exp28–29)
+
+Otázka od Zdeňka: co když paměť funguje, jen nedosáhne na motoriku, která
+je napojená na reflex? Mapa vlivu (exp28) to potvrdila: zeslabení výstupů
+paměti hýbe motoneurony sosáku o 24 % a polykání o 26 %, ale zatáčením
+(DNa02) o 2 %. Devatenáct pokusů měřilo učení tam, kde má paměť páku 2 %.
+
+exp29, klasické apetitivní podmiňování (pach + cukr -> pach sám vysune
+sosák), celá smyčka zevnitř connectomu (cukr -> PAM -> deprese KC->MBON
+řízená skutečným dopaminem), 12 losů, preregistrace, 3 ramena:
+  paired:   sosák na pach A +4,06 Hz medián, roste v 10/12 | pach B −1,35
+  unpaired: (cukr zvlášť, jindy) 0,00 ve 12/12 — cukr sám nic nedělá
+  sham:     0,00 ve 12/12
+Všechna čtyři předem zapsaná kritéria splněna. První várka 6 losů měla
+medián +9,3, plných 12 dalo +4,1 — regrese k průměru přišla, výsledek
+ji přežil.
+
+Co zůstává umělé: Kenyonovy buňky se budí přímo (model je neprotlačí),
+monoaminy jsou budivé spoje (Shiuovo pravidlo), odečet vyžaduje zrakovou
+scénu v pozadí (bez ní je sosák na 1–3 Hz, podlaha — první běh tím
+neměřil nic). Pravidlo do projektu: **před měřením učení ověřit pákou,
+že výstup paměť vůbec dosáhne** (exp28 je na to nástroj).
+
 ### 6b. Hra na vrozeném chování — HOTOVO
 Moucha sleduje cíl, protože to má v zapojení (exp07), ne protože se to
 naučila. Je to míň, než byl původní cíl, ale je to hratelné a poctivé.
