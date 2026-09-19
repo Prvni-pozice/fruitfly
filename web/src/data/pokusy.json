@@ -1039,5 +1039,85 @@
         "pevně zapojená odpověď na podnět, bez rozhodování"
       ]
     ]
+  },
+  {
+    "id": "cukr-jako-odmena",
+    "datum": "2026-09-19",
+    "nazev": "Dali jsme jí cukr. Ochutnala. A nic",
+    "podtitul": "Odměna poprvé vznikla uvnitř mozku — a stejně nedosáhla na volant",
+    "vysledek": "ne",
+    "shrnuti": "Zapnuli jsme mouše soustavu odměny podle původního vědeckého modelu, cukr rozsvítil správné neurony, paměť se změnila. Chování ne.",
+    "pribeh": [
+      "Minule jsme zjistili, že náš model má vypnuté tři chemikálie, které v mozku dělají odměnu a trest. Tak jsme si přečetli, jak to má původní vědecký model, podle kterého celý projekt stavíme. Má je zapnuté. Byla to naše odchylka, ne standard.",
+      "Zapnuli jsme je a přeměřili všechno, co dosud fungovalo: cukr pořád spouští sosák, hořká ho tlumí dokonce líp než dřív, moucha pořád vidí a zatáčí správně v osmi polohách z osmi. Nic se nerozbilo. A cukr poprvé rozsvítil odměnové neurony víc než ty trestové.",
+      "Pak jsme postavili to, co jsme chtěli od začátku: mouše se za správný čin dá cukr na chuťové neurony, cukr se skrz její vlastní zapojení dostane k dopaminu, a dopamin přepíše paměť. Žádné číslo od nás, celá smyčka zevnitř.",
+      "První úloha byla „zatoč doleva\". Nešlo to — a data řekla proč hned dvakrát. Za prvé: moucha je deterministická, dělá pořád totéž, a když její vrozený tah byl doprava, nikdy nezatočila doleva, nikdy neochutnala cukr a nikdy se neměla z čeho učit. Nula odměn z třiceti. Za druhé, a to je hlubší: dopamin umí paměťové spoje jen zeslabovat. Nikdy nepřidá, jen ubere. Paměť tím pádem nevybírá „doleva nebo doprava\", vybírá „jít k tomu, nebo od toho\". Přesně to u skutečné mouchy dělá.",
+      "Tak jsme jí dali úlohu, kterou paměť umí: cukr, kdykoli má cíl blízko. Přiblížení se odměňuje. Nechali jsme ji volně běhat a měřili, jestli si po tréninku drží cíl blíž.",
+      "Odměny tentokrát chodily, třicet až čtyřicet na kolo. Paměť se měnila. A vzdálenost k cíli se pohnula o půl stupně — špatným směrem, a u netrénovaného pachu víc než u trénovaného.",
+      "Po devatenácti pokusech je to konečně jasné a v číslech. Cesta chuť → dopamin → paměť → volant v tom mozku existuje a signál po ní projde. Paměť se mění a je vybíravá. Jenže její vliv na zatáčení je čtyři až sedmnáct procent, a to je řádově míň než šum mezi jednotlivými pokusy. Moucha se učí. Jen to, co se naučí, nemá jak prosadit — a tentokrát to říkáme s odměnou, která vznikla uvnitř ní."
+    ],
+    "cisla": "monoaminy +1 podle Shiu · cukr → PAM×261 = 1 207 vs PPL1×16 = 890 · exp26: 0/4, u poloviny losů 0 odměn · exp27: přiblížení 4/9, medián +0,47°",
+    "metodika": {
+      "design": "Tři navazující pokusy. (25) Benchmark přechodu na Shiuovo pravidlo znamének proti čtyřem předem zapsaným kritériím. (26) Endogenní odměna na úloze vlevo/vpravo, 4 losy, s explorací i bez. (27) Endogenní odměna za přiblížení při volném běhu, odečet průměrné vzdálenosti cíle, 9 losů, tři ramena.",
+      "vstupy": "Cukr = stimulace 129 chuťových neuronů (3,0 po 100 kroků). Brána deprese pro každý MBON = Σ frekvence PAM × počet synapsí PAM→MBON z connectomu, normováno. Kenyonovy buňky se budí přímo (model je neprotlačí, exp18).",
+      "ramena": "sham (bez cukru) · paired (cukr za správný čin / za blízkost) · placebo (cukr v náhodných krocích)",
+      "vysledky": [
+        [
+          "Shiu: cukr → sosák / s hořkou",
+          "89,9 / 54,6 Hz"
+        ],
+        [
+          "Shiu: řízení správně",
+          "8 z 8 poloh"
+        ],
+        [
+          "Shiu: optomotorika skutečné − přeházené",
+          "+77,5 p. b."
+        ],
+        [
+          "exp26 odměn u losů proti vrozenému tahu",
+          "0 z 30"
+        ],
+        [
+          "exp26 posun u losů s cukrem pokaždé",
+          "−20, −10 Hz (od cíle)"
+        ],
+        [
+          "exp27 odměn na los",
+          "34–41"
+        ],
+        [
+          "exp27 přiblížení k trénovanému pachu",
+          "4 z 9, medián +0,47°"
+        ],
+        [
+          "exp27 netrénovaný pach",
+          "medián −1,06°"
+        ]
+      ],
+      "omezeni": "Modulační přenašeče jsou zapnuté jako obyčejné budivé spoje, což je hrubé — ve skutečnosti mění citlivost, ne přímo budí. Kenyonovy buňky se budí uměle. A exp27 byl uzavřen po 9 losech, protože práh 9 z 12 už nešel splnit; nejde tedy o plných 12 předem plánovaných losů."
+    },
+    "zkratky": [
+      [
+        "monoaminy",
+        "dopamin, oktopamin, serotonin — chemikálie modulující náladu, odměnu a trest"
+      ],
+      [
+        "PAM a PPL1",
+        "dopaminové neurony odměny a trestu"
+      ],
+      [
+        "deprese synapsí",
+        "zeslabení spoje; hlavní způsob, jak si moucha pamatuje — a umí jen ubírat"
+      ],
+      [
+        "explorace",
+        "náhodné vybočení z naučeného chování; bez něj deterministický mozek nikdy nenarazí na odměnu"
+      ],
+      [
+        "endogenní",
+        "vznikající uvnitř — tady odměna vyrobená zapojením, ne vložená zvenčí"
+      ]
+    ]
   }
 ]

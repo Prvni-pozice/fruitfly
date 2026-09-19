@@ -103,6 +103,35 @@ nedokazuje.
 silou, že existuje nastavení učených parametrů, které úlohu řeší. Bez toho
 je záporný nález nálezem o zadání, ne o učení.
 
+### 6d. Vlna s endogenní odměnou — UZAVŘENO 19. 9. 2026, ZÁPORNĚ
+
+Rešerše: Shiu et al. 2024 i femaleflybrain počítají monoaminy (DA/OCT/SER)
+jako budivé (+1); upstream flybrain jim dával nulu, čímž mlčelo 2 332
+neuronů a přes milion synapsí včetně celé odměnové soustavy. fly-brain-
+minecraft (176k neuronů, reálný čas) je čistě vrozený — učení v uzavřené
+smyčce nedělá nikdo; femaleflybrain hlásí totéž, co my: „sensory front-endy
+jsou v modelu nekalibrované".
+
+- **exp25**: Shiuovo pravidlo prošlo všemi benchmarky (sosák 89,9 Hz, hořká
+  tlumí na 54,6; řízení 8/8; optomotorika +77,5 p. b.) a cukr se poprvé
+  stal odměnou (PAM×261 = 1 207 > PPL1×16 = 890). Od teď se používá
+  (`experiments/pravidlo_shiu.py`).
+- **exp26** (cukr -> PAM -> deprese, úloha vlevo/vpravo): 0/4. Diagnóza:
+  deterministická moucha bez explorace nikdy neochutná (0 odměn z 30);
+  a deprese umí vliv MBON jen odebrat, takže odměna za „doleva" posouvá
+  doprava. Paměť nevybírá stranu, vybírá přiblížit/vyhnout se.
+- **exp27** (cukr za přiblížení, odečet vzdálenosti v čase): odměny
+  nastávají (34–41 na los), ale přiblížení 4/9, medián +0,47°, netrénovaný
+  pach se hnul víc než trénovaný. Práh 9/12 nedosažitelný.
+
+**Souhrnný závěr po 19 pokusech o učení:** cesta chuť -> dopamin -> paměť
+-> zatáčení v modelu existuje a je průchozí, plasticita je specifická
+pro podnět, ale páka paměti na zatáčení (4–17 %, exp21–22) je řádově
+menší než šum mezi losy. Učení se do chování nepropíše, ať je pravidlo
+jakékoli. Otevřené zůstává jen to, co nejde bez přestavby modelu:
+realistický řídký kód KC (model je neprotlačí) a modulace jako změna
+citlivosti místo budivého spoje.
+
 ### 6b. Hra na vrozeném chování — HOTOVO
 Moucha sleduje cíl, protože to má v zapojení (exp07), ne protože se to
 naučila. Je to míň, než byl původní cíl, ale je to hratelné a poctivé.
