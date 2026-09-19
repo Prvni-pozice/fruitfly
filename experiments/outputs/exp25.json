@@ -1,0 +1,25 @@
+{
+  "verdikt": "Shiuovo pravidlo neškodí a vyrobí odměnu",
+  "nula": {
+    "MN_cukr": 86.66666412353516,
+    "MN_cukr_horka": 74.02777862548828,
+    "MN_nic": 0.0,
+    "PAM": 0.3575989603996277,
+    "PPL1": 7.291666030883789,
+    "aktivnich_pct": 1.2541130289210876,
+    "rizeni_spravne": 8,
+    "opto_skutecna": 0.9,
+    "opto_smery": 0.1
+  },
+  "shiu": {
+    "MN_cukr": 89.8611068725586,
+    "MN_cukr_horka": 54.58333206176758,
+    "MN_nic": 0.0,
+    "PAM": 4.623243808746338,
+    "PPL1": 55.625,
+    "aktivnich_pct": 6.1536685331640015,
+    "rizeni_spravne": 8,
+    "opto_skutecna": 0.825,
+    "opto_smery": 0.05
+  }
+}
