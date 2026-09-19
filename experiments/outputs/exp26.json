@@ -1,0 +1,90 @@
+{
+  "verdikt": "ZÁPORNÝ: ani skutečná chuť cukru směr nevybere",
+  "losu": 4,
+  "vysledky": [
+    {
+      "seed": 0,
+      "rezim": "sham",
+      "spravnym_smerem": 0.0,
+      "netrenovany": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 0,
+      "rezim": "paired",
+      "spravnym_smerem": -20.0,
+      "netrenovany": 0.0,
+      "dopamin": 3636.0
+    },
+    {
+      "seed": 0,
+      "rezim": "placebo",
+      "spravnym_smerem": -50.0,
+      "netrenovany": 0.0,
+      "dopamin": 1533.0
+    },
+    {
+      "seed": 1,
+      "rezim": "sham",
+      "spravnym_smerem": 0.0,
+      "netrenovany": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 1,
+      "rezim": "paired",
+      "spravnym_smerem": 0.0,
+      "netrenovany": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 1,
+      "rezim": "placebo",
+      "spravnym_smerem": 0.0,
+      "netrenovany": 0.0,
+      "dopamin": 1462.0
+    },
+    {
+      "seed": 2,
+      "rezim": "sham",
+      "spravnym_smerem": -0.0,
+      "netrenovany": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "paired",
+      "spravnym_smerem": -0.0,
+      "netrenovany": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 2,
+      "rezim": "placebo",
+      "spravnym_smerem": 20.0,
+      "netrenovany": -20.0,
+      "dopamin": 2012.0
+    },
+    {
+      "seed": 3,
+      "rezim": "sham",
+      "spravnym_smerem": -0.0,
+      "netrenovany": 0.0,
+      "dopamin": 0.0
+    },
+    {
+      "seed": 3,
+      "rezim": "paired",
+      "spravnym_smerem": -10.0,
+      "netrenovany": -10.0,
+      "dopamin": 3380.0
+    },
+    {
+      "seed": 3,
+      "rezim": "placebo",
+      "spravnym_smerem": -10.0,
+      "netrenovany": -10.0,
+      "dopamin": 1786.0
+    }
+  ]
+}
