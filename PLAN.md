@@ -155,6 +155,27 @@ scénu v pozadí (bez ní je sosák na 1–3 Hz, podlaha — první běh tím
 neměřil nic). Pravidlo do projektu: **před měřením učení ověřit pákou,
 že výstup paměť vůbec dosáhne** (exp28 je na to nástroj).
 
+### 6f. Obecný učicí systém — vlna exp30–32, 20. 9. 2026
+
+Otázka: umí moucha vyhodnotit vstup, dát čitelný výstup a učit se s pamětí,
+obecně, ne kvůli hře? Tři preregistrované pokusy nad `podminovani.py`:
+- **exp30 obrazová paměť** (obraz -> kód KC: retina -> rozmazání σ=4° ->
+  náhodná projekce -> 5 % WTA; kodér laděn jen na předběžné K0):
+  trénovaný sloup +4,9 Hz, roste 5/8 (práh 6, ZÁPORNÝ dle preregistrace);
+  zobecní na posun o 6° (0,96), rozliší druhou stranu (0,12), NErozliší
+  vodorovný pruh (1,11) — rozpozná polohu, ne tvar.
+- **exp31 tři paměti**: A+cukr roste 7/8 (+3,85, u dvou losů ~+30), C
+  neutrální stojí (−0,42), B+hořká sosák nesrazí (+0,31). Hořká chuť PPL1
+  rozsvítí, ale deprese v PPL1 kompartmentech na sosák nedosáhne.
+  **Paměť má v modelu jedno znaménko.**
+- **exp32 udržení**: A se naučí 7/8; po naučení B drží A ≥ ½ v 7/8 (přesně
+  beze změny); B se přidá 6/8; vyhasínání bez cukru ΔA = 0,00 — bez
+  dopaminu se nic nemění (vlastnost modelu, ne mouchy). VŠECH 5 SPLNĚNO.
+
+Souhrn: doložený asociativní klasifikátor s trvalou, specifickou,
+vícestopou pamětí a čitelným výstupem (sosák). Meze: jen odměna (trest
+nedosáhne), rozpozná polohu, ne tvar; bez zapomínání; KC buzené kodérem.
+
 ### 6b. Hra na vrozeném chování — HOTOVO
 Moucha sleduje cíl, protože to má v zapojení (exp07), ne protože se to
 naučila. Je to míň, než byl původní cíl, ale je to hratelné a poctivé.

@@ -1191,5 +1191,74 @@
         "výjimečně dobrá první měření se při opakování vrací k běžné hodnotě"
       ]
     ]
+  },
+  {
+    "id": "obecna-pamet",
+    "datum": "2026-09-20",
+    "nazev": "Tři paměti vedle sebe a žádná se nepřepsala",
+    "podtitul": "Zkoušeli jsme, jestli je to paměť, nebo jeden naučený trik",
+    "vysledek": "castecne",
+    "shrnuti": "Moucha si drží víc vzpomínek najednou, nová nepřepíše starou a bez odměny nezapomíná. Umí ale jen odměnu, a u obrázků pozná kde, ne co.",
+    "pribeh": [
+      "Po prvním úspěchu s cukrem přišla přirozená otázka: je to paměť, nebo jsme ji naučili jeden trik? Paměť musí unést víc stop, nesmí je míchat a měla by umět i špatné zkušenosti. Tak jsme to zkusili všechno naráz.",
+      "Nejdřív obrázky. Sloup v určité poloze jsme převedli na kód pro paměťové centrum — je to náš převod, ne mouší, protože v našem modelu zrak do paměti nedoteče. Naučili jsme ji jeden sloup a ptali se, co s ostatními. Sloup posunutý o šest stupňů: reaguje skoro stejně, zobecnila. Sloup na druhé straně: nereaguje, rozlišila. Vodorovný pruh: reaguje jako na ten naučený. Umí kde, neumí co. A celkově to o jeden los nedotáhlo na náš práh — píšeme neúspěch, i když se v tom něco děje.",
+      "Pak tři vůně najednou. Jednu s cukrem, jednu s hořkou chutí, jednu samotnou. Cukr: sosák jede, u dvou losů z deseti na třicet hertzů. Samotná vůně: nic, přesně jak má. Hořká: taky nic. Trest se do sosáku nepropíše. Zjistili jsme, že hořká chuť sice rozsvítí trestové neurony, ale ty vedou do jiných částí paměti, než které řídí jazyk. Paměť téhle mouchy umí jen dobré zprávy.",
+      "A nakonec to nejdůležitější: naučili jsme vůni A, pak vůni B, a ptali se, co zbylo z A. Zbylo všechno. Do posledního hertzu. Nová vzpomínka se přidala vedle staré, nepřepsala ji. A když jsme vůni A dvacetkrát pustili bez cukru, nezapomněla nic — v tomhle modelu bez dopaminu žádná změna nenastane, takže tohle je vlastnost modelu, ne mouchy, a čekali jsme ji.",
+      "Takže co to je: asociativní paměť, která si drží víc stop, nemíchá je a dá se přečíst na jazyku. S dvěma dírami, které jsou teď změřené, ne tušené — zná jen odměnu a u obrázků pozná polohu, ne tvar."
+    ],
+    "cisla": "obrázek: naučený +4,9 Hz (5 z 8), posun 0,96, druhá strana 0,12, pruh 1,11 · tři vůně: cukr +3,85 (7 z 8), hořká +0,31, nic −0,42 · udržení: A drží po B v 7 z 8, vyhasínání 0,00",
+    "metodika": {
+      "design": "Tři preregistrované pokusy po 8 losech nad společným základem. (30) Obraz → kód KC (jas 768 sloupců retiny → rozmazání σ=4° → pevná náhodná projekce → 5 % nejsilnějších buněk); kodér laděn jen na předběžné kritérium překryvu kódů, ne na výsledek. (31) Tři vzorce KC prokládaně 20 kol: A+cukr, B+hořká, C samo. (32) A+cukr 20×, pak B+cukr 20×, pak A samo 20×; odečet A po každé fázi.",
+      "vstupy": "Odměna z cukru přes skutečný dopamin (PAM), trest z hořké chuti přes PPL1, obojí s branou Σ frekvence DAN × synapse DAN→MBON. Odečet: 24 motoneuronů sosáku, 200 kroků, se zrakovou scénou v pozadí.",
+      "vysledky": [
+        [
+          "obraz — překryv kódů podobný / jiný / pruh",
+          "0,50 / 0,05 / 0,15"
+        ],
+        [
+          "obraz — naučený sloup",
+          "+4,9 Hz, roste 5 z 8"
+        ],
+        [
+          "obraz — posun 6° / druhá strana / pruh (podíl naučeného)",
+          "0,96 / 0,12 / 1,11"
+        ],
+        [
+          "tři vůně — A cukr / B hořká / C nic",
+          "+3,85 / +0,31 / −0,42 Hz"
+        ],
+        [
+          "udržení — A po naučení B",
+          "beze změny v 7 z 8"
+        ],
+        [
+          "udržení — vyhasínání bez cukru",
+          "ΔA = 0,00"
+        ]
+      ],
+      "omezeni": "Kód obrázku je náš, ne mouší. Kenyonovy buňky se budí přímo. Modulační přenašeče jako budivé spoje. Trest se do sosáku nepropíše, takže paměť má jedno znaménko. Bez dopaminu se v modelu nic nemění — zapomínání ani vyhasínání tu nejde měřit. Obrazový pokus skončil o jeden los pod prahem a je zapsaný jako záporný."
+    },
+    "zkratky": [
+      [
+        "asociativní paměť",
+        "paměť, která spojuje vstup s následkem; vstup pak sám vyvolá odpověď"
+      ],
+      [
+        "generalizace",
+        "reakce i na podobný, ale ne stejný podnět"
+      ],
+      [
+        "diskriminace",
+        "rozlišení dvou různých podnětů"
+      ],
+      [
+        "vyhasínání",
+        "slábnutí naučené odpovědi, když podnět přichází bez odměny"
+      ],
+      [
+        "WTA (winner-take-all)",
+        "z mnoha kandidátů zůstane jen několik nejsilnějších — tak vzniká řídký kód"
+      ]
+    ]
   }
 ]
