@@ -1,0 +1,137 @@
+{
+  "verdikt": "ZÁPORNÝ",
+  "K0": [
+    0.5,
+    0.05232558139534883
+  ],
+  "vysledky": [
+    {
+      "poloha": -36,
+      "rezim": "sham",
+      "d_trénovaný": 0.0,
+      "d_podobný": 0.0,
+      "d_jiný": 0.0,
+      "d_pruh": 0.0
+    },
+    {
+      "poloha": -36,
+      "rezim": "paired",
+      "d_trénovaný": 5.625,
+      "d_podobný": 12.5,
+      "d_jiný": -6.25,
+      "d_pruh": 6.25
+    },
+    {
+      "poloha": -24,
+      "rezim": "sham",
+      "d_trénovaný": 0.0,
+      "d_podobný": 0.0,
+      "d_jiný": 0.0,
+      "d_pruh": 0.0
+    },
+    {
+      "poloha": -24,
+      "rezim": "paired",
+      "d_trénovaný": 5.0,
+      "d_podobný": 4.7916669845581055,
+      "d_jiný": 9.791666984558105,
+      "d_pruh": 25.0
+    },
+    {
+      "poloha": -12,
+      "rezim": "sham",
+      "d_trénovaný": 0.0,
+      "d_podobný": 0.0,
+      "d_jiný": 0.0,
+      "d_pruh": 0.0
+    },
+    {
+      "poloha": -12,
+      "rezim": "paired",
+      "d_trénovaný": 21.666665077209473,
+      "d_podobný": 1.6666669845581055,
+      "d_jiný": 2.5,
+      "d_pruh": 7.5
+    },
+    {
+      "poloha": 0,
+      "rezim": "sham",
+      "d_trénovaný": 0.0,
+      "d_podobný": 0.0,
+      "d_jiný": 0.0,
+      "d_pruh": 0.0
+    },
+    {
+      "poloha": 0,
+      "rezim": "paired",
+      "d_trénovaný": -1.875,
+      "d_podobný": 1.4583330154418945,
+      "d_jiný": -0.20833301544189453,
+      "d_pruh": 26.458332061767578
+    },
+    {
+      "poloha": 12,
+      "rezim": "sham",
+      "d_trénovaný": 0.0,
+      "d_podobný": 0.0,
+      "d_jiný": 0.0,
+      "d_pruh": 0.0
+    },
+    {
+      "poloha": 12,
+      "rezim": "paired",
+      "d_trénovaný": -3.333333969116211,
+      "d_podobný": -1.6666669845581055,
+      "d_jiný": -2.708333969116211,
+      "d_pruh": 20.0
+    },
+    {
+      "poloha": 24,
+      "rezim": "sham",
+      "d_trénovaný": 0.0,
+      "d_podobný": 0.0,
+      "d_jiný": 0.0,
+      "d_pruh": 0.0
+    },
+    {
+      "poloha": 24,
+      "rezim": "paired",
+      "d_trénovaný": 4.791666030883789,
+      "d_podobný": 9.583332061767578,
+      "d_jiný": -0.625,
+      "d_pruh": 6.666666030883789
+    },
+    {
+      "poloha": 36,
+      "rezim": "sham",
+      "d_trénovaný": 0.0,
+      "d_podobný": 0.0,
+      "d_jiný": 0.0,
+      "d_pruh": 0.0
+    },
+    {
+      "poloha": 36,
+      "rezim": "paired",
+      "d_trénovaný": 16.04166603088379,
+      "d_podobný": 4.166666030883789,
+      "d_jiný": 5.625,
+      "d_pruh": 7.291666030883789
+    },
+    {
+      "poloha": 48,
+      "rezim": "sham",
+      "d_trénovaný": 0.0,
+      "d_podobný": 0.0,
+      "d_jiný": 0.0,
+      "d_pruh": 0.0
+    },
+    {
+      "poloha": 48,
+      "rezim": "paired",
+      "d_trénovaný": -6.875000953674316,
+      "d_podobný": -1.25,
+      "d_jiný": -0.20833396911621094,
+      "d_pruh": 25.0
+    }
+  ]
+}
